@@ -17,7 +17,7 @@ import { messages, projectDetails } from './data';
 const DashBoard1 = () => {
     // set pagetitle
     usePageTitle({
-        title: 'DashBoard',
+        title: 'Anasayfa',
         breadCrumbItems: [
             {
                 path: '/dashboard',
