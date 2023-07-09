@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce6aab4e57e92aaf957defcf01024a619e87a6305211868a88a350d244cb19a5
-size 895
+/* Layout types and other constants */
+
+export enum LayoutTypes {
+    LAYOUT_VERTICAL = 'vertical',
+    LAYOUT_HORIZONTAL = 'horizontal',
+}
+
+export enum LayoutColor {
+    LAYOUT_COLOR_LIGHT = 'light',
+    LAYOUT_COLOR_DARK = 'dark',
+}
+
+export enum LayoutWidth {
+    LAYOUT_WIDTH_FLUID = 'fluid',
+    LAYOUT_WIDTH_BOXED = 'boxed',
+}
+
+export enum MenuPositions {
+    MENU_POSITION_FIXED = 'fixed',
+    MENU_POSITION_SCROLLABLE = 'scrollable',
+}
+
+export enum SideBarTheme {
+    LEFT_SIDEBAR_THEME_LIGHT = 'light',
+    LEFT_SIDEBAR_THEME_DARK = 'dark',
+    LEFT_SIDEBAR_THEME_BRAND = 'brand',
+    LEFT_SIDEBAR_THEME_GRADIENT = 'gradient',
+}
+
+export enum SideBarTypes {
+    LEFT_SIDEBAR_TYPE_DEFAULT = 'default',
+    LEFT_SIDEBAR_TYPE_CONDENSED = 'condensed',
+    LEFT_SIDEBAR_TYPE_COMPACT = 'compact',
+}
+
+export enum TopbarTheme {
+    TOPBAR_THEME_LIGHT = 'light',
+    TOPBAR_THEME_DARK = 'dark',
+}

@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f8574165e9df09fe8203fe1aab72215a33af4a88033e6c1c77df218d3125e38
-size 1115
+import { useState } from 'react';
+import { Dropdown } from 'react-bootstrap';
+import classNames from 'classnames';
+
+const SearchDropdown = () => {
+    const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+
+    /*
+     * toggle search-dropdown
+     */
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
+    return (
+        <Dropdown show={dropdownOpen} onToggle={toggleDropdown} align="end">
+            <Dropdown.Toggle
+                id="dropdown-apps"
+                as="a"
+                onClick={toggleDropdown}
+                className={classNames('nav-link arrow-none waves-effect waves-light', {
+                    show: dropdownOpen,
+                })}
+            >
+                <i className="fe-search noti-icon"></i>
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu className="dropdown-lg p-0">
+                <form className="p-3">
+                    <input type="text" className="form-control" placeholder="Search ..." />
+                </form>
+            </Dropdown.Menu>
+        </Dropdown>
+    );
+};
+
+export default SearchDropdown;

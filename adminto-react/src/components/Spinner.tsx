@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d708593e9101ba90cd88044b9ebeef4e7d465dd056aa98c068d3293aad5d412c
-size 969
+import classNames from 'classnames';
+
+type SpinnerProps = {
+    tag?: string;
+    className?: string;
+    size?: 'lg' | 'md' | 'sm';
+    type?: 'bordered' | 'grow';
+    color?: string;
+    children?: React.ReactNode;
+};
+
+// Spinner
+const Spinner = (props: SpinnerProps) => {
+    const children = props.children || null;
+    const Tag: any = props.tag || 'div';
+    const color = props.color || 'secondary';
+    const size = props.size || '';
+
+    return (
+        <Tag
+            role="status"
+            className={classNames(
+                {
+                    'spinner-border': props.type === 'bordered',
+                    'spinner-grow': props.type === 'grow',
+                },
+                [`text-${color}`],
+                { [`avatar-${size}`]: size },
+                props.className
+            )}
+        >
+            {children}
+        </Tag>
+    );
+};
+
+Spinner.defaultProps = {
+    tag: 'div',
+    type: 'bordered',
+};
+
+export default Spinner;

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:25dbc40f98a5d876787bcffcc41a82db6eade6e0e16fbd86c0e709f828443af3
-size 256
+//
+// colorpicker.scss
+//
+
+.colorpicker {
+    background: $dropdown-bg;
+    box-shadow: $box-shadow;
+    border: 1px solid $dropdown-border-color;
+}
+
+.sp-picker-container {
+    .sp-alpha-handle {
+        right: 0;
+        left: auto;
+    }
+}

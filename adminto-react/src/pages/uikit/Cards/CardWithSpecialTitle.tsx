@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f95b27291323c71226caeab080261d8f28f5f0a67eae80df4b4ffd9e4035392
-size 700
+import { Link } from 'react-router-dom';
+import { Card } from 'react-bootstrap';
+import classNames from 'classnames';
+
+type CardWithSpecialTitleProps = {
+    align: string;
+};
+
+const CardWithSpecialTitle = ({ align }: CardWithSpecialTitleProps) => {
+    return (
+        <Card as={Card.Body} className={classNames('text-' + align)}>
+            <Card.Title as="h4">Special title treatment</Card.Title>
+            <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+            <Link to="#" className="btn btn-primary waves-effect waves-light">
+                Go somewhere
+            </Link>
+        </Card>
+    );
+};
+
+export default CardWithSpecialTitle;

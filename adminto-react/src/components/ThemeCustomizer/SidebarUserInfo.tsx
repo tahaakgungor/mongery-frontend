@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c9513241aa8854b0e8f16622f77f20f0e94a9f2e9102cc74c65e26b9d32f85c8
-size 921
+import { Form } from 'react-bootstrap';
+
+type SidebarUserInfoProps = {
+    toggleLeftSidebarUserInfo: (value: boolean) => void;
+    showSidebarUserInfo: boolean;
+};
+
+const SidebarUserInfo = ({ toggleLeftSidebarUserInfo, showSidebarUserInfo }: SidebarUserInfoProps) => {
+    return (
+        <>
+            <h6 className="fw-medium font-14 mt-4 mb-2 pb-1">Sidebar User Info</h6>
+
+            <Form.Check className="form-check form-switch mb-1">
+                <Form.Check.Input
+                    type="checkbox"
+                    name="leftsidebar-user"
+                    id="sidebaruser-check"
+                    onChange={(e) => toggleLeftSidebarUserInfo(e.target.checked)}
+                    checked={showSidebarUserInfo}
+                />
+                <Form.Check.Label htmlFor="sidebaruser-check">Enable</Form.Check.Label>
+            </Form.Check>
+        </>
+    );
+};
+
+export default SidebarUserInfo;

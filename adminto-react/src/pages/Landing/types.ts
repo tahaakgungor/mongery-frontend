@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:49cbf07df4eca5355975ad187dccaec5699b80aec9afe0a713cfadcb819f75ef
-size 566
+export type Layout = {
+    name: string;
+    image: string;
+    link: string;
+};
+
+export type Testimonial = {
+    id: number;
+    clientName: string;
+    title: string;
+    avatar: string;
+    message: string;
+};
+
+export type Statistic = {
+    icon: string;
+    title: string;
+    value: number;
+    counterOptions?: Record<string, any>;
+};
+
+export type PricingPlan = {
+    id: number;
+    name: string;
+    price: number;
+    duration: string;
+    features: Array<string>;
+};
+
+export type Service = {
+    image: string;
+    title: string;
+    shortDesc: string;
+};

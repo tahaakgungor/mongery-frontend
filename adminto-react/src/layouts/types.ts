@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c984aa20818f7b4641b7c13a4a5970e574bf269b74d49d34687858278b21d24f
-size 635
+export type Language = {
+    name: string;
+    flag: string;
+};
+
+export type AppItem = {
+    name: string;
+    icon: string;
+    redirectTo: string;
+};
+
+export type Notification = {
+    id: number;
+    text: string;
+    subText: string;
+    icon?: string;
+    avatar?: string;
+    bgColor?: string;
+};
+
+export type ProfileMenu = {
+    label: string;
+    icon: string;
+    redirectTo: string;
+};
+
+export type SearchOptions = {
+    label: string;
+    icon?: string;
+    type: string;
+    value?: string;
+    userDetails?: {
+        firstname: string;
+        lastname: string;
+        position: string;
+        avatar: string;
+    };
+};

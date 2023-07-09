@@ -1,3 +1,53 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a8c01ae59f6614a27eb86b149dcd4d14abee4600f70968b1e10cd52075c64979
-size 1148
+import { useState } from 'react';
+import { Col, Row } from 'react-bootstrap';
+
+// hooks
+import { usePageTitle } from '../../../hooks';
+
+// component
+import ChatUsers from './ChatUsers';
+import ChatArea from './ChatArea';
+
+// types
+import { ChatUser } from './types';
+
+// dummy data
+import { users } from './data';
+
+const ChatApp = () => {
+    // set pagetitle
+    usePageTitle({
+        title: 'Chat',
+        breadCrumbItems: [
+            {
+                path: '/apps/chat',
+                label: 'Apps',
+            },
+            {
+                path: '/apps/chat',
+                label: 'Chat',
+                active: true,
+            },
+        ],
+    });
+
+    const [selectedUser, setSelectedUser] = useState<ChatUser>(users[1]);
+
+    // On user change
+    const onUserChange = (user: ChatUser) => {
+        setSelectedUser(user);
+    };
+
+    return (
+        <Row>
+            <Col xl={3} lg={4}>
+                <ChatUsers onUserSelect={onUserChange} />
+            </Col>
+            <Col xl={9} lg={8}>
+                <ChatArea selectedUser={selectedUser} />
+            </Col>
+        </Row>
+    );
+};
+
+export default ChatApp;

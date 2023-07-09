@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4fec3ba66946534b3e4b1d37604ca6b7b659073ad8ea9602b18d67b09e3b0462
-size 1701
+import { Button, ButtonGroup, Dropdown } from 'react-bootstrap';
+
+const DropendVariationDropdowns = () => {
+    return (
+        <>
+            <h5 className="mb-1 mt-5">Dropend variation</h5>
+            <p className="text-muted font-13 mb-3">
+                Trigger dropdown menus right of their toggle elements, with the <code>drop</code> prop.
+            </p>
+            <Dropdown as={ButtonGroup} className="mb-2 me-1" drop="end">
+                <Dropdown.Toggle variant="blue">
+                    Dropend <i className="mdi mdi-chevron-right"></i>
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Item href="#">Action</Dropdown.Item>
+                    <Dropdown.Item href="#">Another action</Dropdown.Item>
+                    <Dropdown.Item href="#">Something else here</Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item href="#">Separated link</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+            <Dropdown as={ButtonGroup} className="mb-2" drop="end">
+                <Button variant="success">Split Dropend</Button>
+                <Dropdown.Toggle variant="success">
+                    <i className="mdi mdi-chevron-right"></i>
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+        </>
+    );
+};
+
+export default DropendVariationDropdowns;

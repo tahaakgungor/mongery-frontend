@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7b6825c46dc72b0614289161b0d586b489d384c495dba0b3a89772765c01e205
-size 530
+import { useEffect, useState } from 'react';
+
+// actions
+import { changePageTitle } from '../redux/actions';
+
+// hooks
+import { useRedux } from '.';
+
+export default function usePageTitle(value: {
+    title: string;
+    breadCrumbItems: {
+        label: string;
+        path: string;
+        active?: boolean;
+    }[];
+}) {
+    const { dispatch } = useRedux();
+
+    const [pageTitle] = useState(value);
+
+    useEffect(() => {
+        // set page title
+        dispatch(changePageTitle(pageTitle));
+    }, [dispatch, pageTitle]);
+}

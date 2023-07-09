@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0daaf35179bb2f03dc0cb2611cf2d16d9076005a5b486001662c0890d79b4104
-size 473
+import React from 'react';
+import 'jsvectormap';
+import 'jsvectormap/dist/maps/canada.js';
+
+//components
+import BaseVectorMap from './BaseVectorMap';
+
+type CanadaVectorMapProps = {
+    width?: string;
+    height?: string;
+    options?: Record<string, unknown>;
+};
+
+const CanadaVectorMap = ({ width, height, options }: CanadaVectorMapProps) => {
+    return <BaseVectorMap width={width} height={height} options={options} type="canada" />;
+};
+
+export default CanadaVectorMap;

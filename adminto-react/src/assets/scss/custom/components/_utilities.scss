@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:07f007b645f26fcaee86e3b1af6809781a04801b47eb6dd7e7340ba7211c5f27
-size 728
+// 
+// backgrounds.scss
+//
+
+
+@each $color,
+$value in $theme-colors {
+    .bg-#{$color} {
+        background-color: $value !important;
+    }
+    .bg-soft-#{$color} {
+        background-color: rgba(($value), 0.25) !important;
+    }
+    .text-#{$color} {
+        color: $value !important;
+    }
+}
+
+.bg-ghost {
+    opacity: 0.4;
+}
+
+
+
+// dark mode
+body[data-layout-color="dark"] {
+    @each $color, $value in $dark-theme-colors {
+        .bg-#{$color} {
+            background-color: $value !important;
+        }
+        .bg-soft-#{$color} {
+            background-color: rgba(($value), 0.25) !important;
+        }
+        .text-#{$color} {
+            color: $value !important;
+        }
+    }
+}

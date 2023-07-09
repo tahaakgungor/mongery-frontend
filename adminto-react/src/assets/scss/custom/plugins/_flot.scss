@@ -1,3 +1,64 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:042e8771974ba7cb1643149381788a0f7c1c7ab29aa49085ad32ae4655d2a067
-size 1120
+//
+// flot.scss
+//
+
+.flotTip {
+    padding: 8px 12px;
+    background-color: #{rgba(map-get($grays, "900"), 0.9)};
+    z-index: 100;
+    color: #{map-get($grays, "100")};
+    opacity: 1;
+    border-radius: 3px;
+}
+
+.legend {
+    tr {
+        height: 30px;
+        font-family: $font-family-secondary;
+    }
+}
+
+.legendLabel {
+    padding-left: 5px !important;
+    line-height: 10px;
+    padding-right: 20px;
+    font-size: 13px;
+    font-weight: $font-weight-medium;
+    color: #{map-get($grays, "600")};
+}
+
+.legendColorBox {
+   > div {
+        border:none !important;
+        div {
+            border-radius: 50%;
+        }
+    }
+}
+
+.legend{
+     >div{
+        background-color: $card-bg !important;
+    }
+}
+
+
+@include media-breakpoint-down(sm) {
+    .legendLabel {
+        display: none;
+    }
+}
+
+
+
+
+// dark mode
+body[data-layout-color="dark"] {
+    .flotTip {
+        background-color: #{rgba(map-get($dark-grays, "800"), 0.9)};
+        color: #{map-get($dark-grays, "300")};
+    }
+    .legendLabel {
+        color: #{map-get($dark-grays, "600")};
+    }
+}

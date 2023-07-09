@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:11c7e28fe1b540aa7cad9c74ac0a8e836515a4fe580a09c5fee153711cecc88e
-size 564
+// 
+// maintenance.scss
+//
+
+.svg-computer {
+    stroke-dasharray: 1134;
+    stroke-dashoffset: -1134;
+    animation: draw-me 5s infinite;
+    animation-direction: normal;
+    height: 160px;
+}
+
+@keyframes draw-me {
+    from {
+        stroke-dashoffset: -1134;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .svg-computer {
+        stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+        animation: none;
+        animation-direction: normal;
+    }
+}

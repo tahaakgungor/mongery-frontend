@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:456070e506306018b027671496888f4624c9771b8537820975cc0374da7b4a96
-size 198
+export type KanbanBoardTask = {
+    id: number;
+    title: string;
+    status: string;
+    priority?: string;
+    userAvatar: string;
+    userName: string;
+    task: number;
+    comment: number;
+};

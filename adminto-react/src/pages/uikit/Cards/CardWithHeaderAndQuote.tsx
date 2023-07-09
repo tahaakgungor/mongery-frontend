@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b8b41937b9e8a64a114ae52bc5446303eafaac2d85079a681c7de1979956825b
-size 661
+import { Card } from 'react-bootstrap';
+
+const CardWithHeaderAndQuote = () => {
+    return (
+        <Card>
+            <Card.Header>Quote</Card.Header>
+            <Card.Body>
+                <blockquote className="card-bodyquote mb-0">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer className="blockquote-footer text-muted">
+                        Someone famous in <cite title="Source Title">Source Title</cite>
+                    </footer>
+                </blockquote>
+            </Card.Body>
+        </Card>
+    );
+};
+
+export default CardWithHeaderAndQuote;

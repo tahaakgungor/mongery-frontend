@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5a0c35f70cf91042ec84ab49dc411c9188d1e3b7262aac164412eb371cc19b5c
-size 196
+import { APICore } from '../helpers/api/apiCore';
+
+export default function useUser() {
+    const api = new APICore();
+
+    const loggedInUser = api.getLoggedInUser();
+    return [loggedInUser];
+}

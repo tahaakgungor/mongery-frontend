@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8094bc204ad73cb5887437134c439627f8d5c8b119fdd8adf676db75657ca2a
-size 460
+// 
+// faq.scss
+//
+
+.faq-question-q-box {
+    height: 30px;
+    width: 30px;
+    color: $primary;
+    text-align: center;
+    border-radius: 50%;
+    float: left;
+    font-weight: $font-weight-bold;
+    line-height: 30px;
+    background-color: rgba($primary,0.15);
+}
+
+.faq-question {
+    margin-top: 0;
+    margin-left: 50px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.faq-answer {
+    margin-left: 50px;
+    color: $text-muted;
+}

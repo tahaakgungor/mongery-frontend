@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:059c1d3c1d9d5b93d1703b4472055a9740c21f17696820ffacf8f21d81330d35
-size 521
+//
+// sparkline.scss
+//
+
+.jqstooltip {
+    box-sizing: content-box;
+    width: auto !important;
+    height: auto !important;
+    background-color: $white !important;
+    box-shadow: $box-shadow-lg;
+    padding: 5px 10px !important;
+    border-radius: 3px;
+    border-color: $white !important;
+}
+
+.jqsfield {
+    color: $black !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+    font-family: $font-family-base !important;
+    font-weight: $label-font-weight !important;
+}

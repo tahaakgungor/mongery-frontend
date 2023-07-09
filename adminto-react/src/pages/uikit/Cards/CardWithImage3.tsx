@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f44e5cb5dbb89e9ef80a8dcb4c3a7801d1fdc693e53c84329d1ac49f7f377f1
-size 489
+import { Card } from 'react-bootstrap';
+
+// images
+import cardImg from '../../../assets/images/gallery/3.jpg';
+
+const CardWithImage3 = () => {
+    return (
+        <Card>
+            <Card.Img src={cardImg} />
+            <Card.Body>
+                <Card.Text>
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                </Card.Text>
+            </Card.Body>
+        </Card>
+    );
+};
+
+export default CardWithImage3;

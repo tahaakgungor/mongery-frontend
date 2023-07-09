@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4b2fa96d67807cd39858721c0dd59c41d78a9e3225be19c3dd489cb818a4331
-size 614
+//
+// toastr.scss
+//
+
+
+/* =============
+   Notification
+============= */
+#toast-container {
+    > div {
+        box-shadow: $box-shadow;
+        opacity: 1;
+    }
+    >:hover {
+        box-shadow: $box-shadow;
+        opacity: 0.9;
+    }
+    
+}
+
+@mixin toast-variant($bg) {
+    border: 2px solid $bg !important;
+    background-color: rgba($bg, 0.8) !important;
+}
+
+@each $color, $value in $theme-colors {
+    .toast-#{$color} {
+      @include toast-variant($value);
+    }
+}
+
+
+// for error
+
+.toast-error {
+    background-color: rgba($danger,0.8);
+    border: 2px solid $danger;
+}

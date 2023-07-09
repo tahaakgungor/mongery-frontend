@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b15db362a5e481d9b8963ba114627c0c787e9175bd4d4a2215a65de87ee8268
-size 1114
+import { Card, Col, Row } from 'react-bootstrap';
+
+// hooks
+import { usePageTitle } from '../../../hooks';
+
+// component
+import ImageShapes from './ImageShape';
+import ImageSizes from './ImageSizes';
+
+const Images = () => {
+    // set pagetitle
+    usePageTitle({
+        title: 'Images',
+        breadCrumbItems: [
+            {
+                path: '/base-ui/images',
+                label: 'Base UI',
+            },
+            {
+                path: '/base-ui/images',
+                label: 'Images',
+                active: true,
+            },
+        ],
+    });
+
+    return (
+        <Row>
+            <Col xs={12}>
+                <Card>
+                    <Card.Body>
+                        <Row>
+                            <Col xl={6}>
+                                <ImageShapes />
+                            </Col>
+                            <Col xl={6}>
+                                <ImageSizes />
+                            </Col>
+                        </Row>
+                    </Card.Body>
+                </Card>
+            </Col>
+        </Row>
+    );
+};
+
+export default Images;

@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9868d21579015b9d32e3b7d34bc76c311e0ff265230fe9f7a3546f4eed8bdddb
-size 855
+import { Button } from 'react-bootstrap';
+
+const BlockButton = () => {
+    return (
+        <>
+            <h4 className="header-title mt-4">Block Buttons</h4>
+            <p className="sub-header">
+                Create block level buttons by adding class <code>.d-grid</code> to parent div.
+            </p>
+
+            <div className="button-list pe-xl-4 d-grid">
+                <Button size="lg" className="waves-effect waves-light">
+                    Block Button
+                </Button>
+                <Button variant="pink" className="waves-effect waves-light">
+                    Block Button
+                </Button>
+                <Button variant="success" size="sm" className="waves-effect waves-light">
+                    Block Button
+                </Button>
+            </div>
+        </>
+    );
+};
+
+export default BlockButton;

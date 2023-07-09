@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0bfb4864bfff38efe23d5eb6dfe66b87cc98c34a80417c0f14b6a76b41c8d4af
-size 426
+import SimpleBar from 'simplebar-react';
+
+type ScrollbarProps = SimpleBar.Props & {
+    className?: string;
+    style?: Record<string, unknown>;
+    children?: unknown;
+};
+
+const Scrollbar = ({ className, style, children, ...otherProps }: ScrollbarProps) => {
+    return (
+        <SimpleBar className={className} style={style} {...otherProps}>
+            {children}
+        </SimpleBar>
+    );
+};
+
+export default Scrollbar;

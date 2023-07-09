@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68cb4f003d0c31b1d74994324e9b17c10fa5cec4eafcc8d75ba893c1393a657d
-size 467
+import { ReportHandler } from 'web-vitals';
+
+const reportWebVitals = (onPerfEntry?: ReportHandler) => {
+    if (onPerfEntry && onPerfEntry instanceof Function) {
+        import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+            getCLS(onPerfEntry);
+            getFID(onPerfEntry);
+            getFCP(onPerfEntry);
+            getLCP(onPerfEntry);
+            getTTFB(onPerfEntry);
+        });
+    }
+};
+
+export default reportWebVitals;

@@ -1,3 +1,67 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16c56f8e2ee76e3ea52d8173dd066cb81493a1f09058ed492d8eb9b2444db6f2
-size 1231
+//
+// gallery.scss
+//
+
+.portfolioFilter {
+    a {
+        transition: all 0.3s ease-out;
+        color: #{map-get($grays, "900")};
+        border-radius: 3px;
+        padding: 5px 10px;
+        display: inline-block;
+        font-weight: $font-weight-medium;
+        &:hover {
+            color: $primary !important;
+        }
+    }
+    a.current {
+        color: $primary !important;
+    }
+}
+
+.thumb {
+    background-color: $card-bg;
+    border-radius: 3px;
+    box-shadow: $box-shadow-sm;
+    margin-top: 24px;
+    padding: 10px;
+}
+
+.thumb-img {
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.gal-detail {
+    h4 {
+        margin-top: 16px;
+        font-size: 16px;
+    }
+}
+
+// light box
+.ReactModal__Body--open {
+    .ReactModalPortal {
+        > div {
+            z-index: 1031 !important;
+        }
+    }
+    .ril-toolbar {
+        align-items: center;
+        .ril-toolbar__item__child {
+            p {
+                margin-bottom: 0;
+                line-height: 2.6;
+            }
+        }
+    }
+}
+
+// dark mode
+body[data-layout-color="dark"] {
+    .portfolioFilter {
+        a {
+            color: #{map-get($dark-grays, "800")};
+        }
+    }
+}

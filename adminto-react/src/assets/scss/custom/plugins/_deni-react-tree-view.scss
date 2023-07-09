@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:98b97e54e8a64290e0d9a2398d459ac9ee2eeb52597d0c4128172daea865876a
-size 380
+//
+// deni-react-tree-view.scss
+//
+
+.deni-react-treeview-container {
+    height: auto !important;
+    width: auto !important;
+    border: 0px solid !important;
+}
+
+.deni-react-treeview-container {
+    background-color: $card-bg !important;
+}
+
+.deni-react-treeview-container.classic {
+    .deni-react-treeview-item-container.classic {
+        color: $body-color !important;
+    }
+}

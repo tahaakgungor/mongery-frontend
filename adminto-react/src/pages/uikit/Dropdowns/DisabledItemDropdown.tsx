@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:78c9d7388ed4bd81745fc49adbaaa1cdc31d317f04d1e529753bb0051b24b6fa
-size 891
+import { ButtonGroup, Dropdown } from 'react-bootstrap';
+
+const DisabledItemDropdown = () => {
+    return (
+        <>
+            <h5 className="mb-1 mt-5">Disabled Item</h5>
+            <p className="text-muted font-13 mb-3">
+                Add <code>disabled</code> prop to item in the dropdown to <strong>style them as disabled</strong>.
+            </p>
+
+            <Dropdown as={ButtonGroup}>
+                <Dropdown.Toggle>
+                    Disabled <i className="mdi mdi-chevron-down"></i>
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Item>Regular link</Dropdown.Item>
+                    <Dropdown.Item disabled>Disabled link</Dropdown.Item>
+                    <Dropdown.Item>Another link</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+        </>
+    );
+};
+
+export default DisabledItemDropdown;

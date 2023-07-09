@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a8afb5c35ee233ac27efbc5629c72b1486b45855dadaa1e1352bf1122a9906d2
-size 550
+
+//
+// bootstrap-taginput.scss
+//
+
+/* Bootstrap tagsinput */
+.bootstrap-tagsinput {
+    box-shadow: none;
+    padding: 4px 7px 4px;
+    width: 100%;
+    background-color: $input-bg;
+    border-color: $input-border-color;
+
+    input{
+      color: $input-color;
+      &::placeholder{
+        color: $input-color;
+      }
+    }
+  
+    .label-info {
+      background-color: $primary;
+      display: inline-block;
+      font-size: 13px;
+      margin: 3px 1px;
+      padding: 0 5px;
+      border-radius: 3px;
+      font-weight: $font-weight-medium;
+    }
+}

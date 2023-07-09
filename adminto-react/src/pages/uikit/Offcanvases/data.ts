@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ad73e5f18026e785ba28444d6496538ecb80289bdc35fa46f4448023676565ee
-size 775
+// types
+import { BackdropOption, PlacementOption } from './types';
+
+const backdropOptions: BackdropOption[] = [
+    {
+        name: 'Enable body scrolling',
+        scroll: true,
+        backdrop: false,
+    },
+    {
+        name: 'Enable backdrop (default)',
+        scroll: false,
+        backdrop: true,
+    },
+    {
+        name: 'Enable both scrolling & backdrop',
+        scroll: true,
+        backdrop: true,
+    },
+];
+
+const placementOptions: PlacementOption[] = [
+    {
+        name: 'top',
+        placement: 'top',
+    },
+    {
+        name: 'right',
+        placement: 'end',
+    },
+    {
+        name: 'bottom',
+        placement: 'bottom',
+    },
+    {
+        name: 'left',
+        placement: 'start',
+    },
+];
+
+export { backdropOptions, placementOptions };

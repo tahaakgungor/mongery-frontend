@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f63cb6c71614a8b51c4adc5194abdacd5a6cd2fc7a71e9b5680142cb6c9a61fd
-size 774
+import { Card, Spinner } from 'react-bootstrap';
+
+const SpinnerPlacements = () => {
+    return (
+        <Card>
+            <Card.Body>
+                <h4 className="mt-0 header-title">Placement</h4>
+                <p className="text-muted mb-4">
+                    Use <code>flexbox utilities</code>, <code>float utilities</code>, or <code>text alignment</code>{' '}
+                    utilities to place spinners exactly where you need them in any situation.
+                </p>
+                <div className="d-flex align-items-center">
+                    <strong>Loading...</strong>
+                    <Spinner className="ms-auto" animation="border" />
+                </div>
+            </Card.Body>
+        </Card>
+    );
+};
+
+export default SpinnerPlacements;

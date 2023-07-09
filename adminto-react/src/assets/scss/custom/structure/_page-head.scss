@@ -1,3 +1,67 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dd5a1b0c9750bbbf28ca5eee7eac1b289a7604857843852c0b17e3324c790296
-size 1204
+// 
+// page-title.scss
+//
+
+.page-title-box {
+    .page-title-box-alt {
+        background-color: transparent;
+        padding: 24px 27px;
+        box-shadow: none;
+        margin-bottom: 0;
+    }
+    .page-title {
+        margin: 0;
+        line-height: 75px;
+        color: #{map-get($grays, "900")};
+    }
+
+    .page-title-right {
+        float: right;
+        margin-top: 22px;
+    }
+
+    .breadcrumb {
+        padding-top: 5px;
+    }
+}
+
+
+@include media-breakpoint-down(md) {
+    .page-title-box {
+        .page-title {
+            display: block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            line-height: 70px;
+        }
+
+        .breadcrumb {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .page-title-box {
+        .page-title-right {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 419px) {
+    .page-title-box .breadcrumb {
+        display: none;
+    }
+}
+
+
+// dark mode
+body[data-layout-color="dark"] {
+    .page-title-box {
+        .page-title {
+            color: #{map-get($dark-grays, "800")};
+        }
+    }
+}

@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:623f15a1071501a13d224e48c5ea25953ec732b33db4a1a4baed8d6c77597e24
-size 735
+//
+// taskboard.scss
+//
+
+.tasklist {
+    min-height: 40px;
+    margin-bottom: 0;
+
+    > li {
+        background-color: $card-bg;
+        border: $border-width solid $border-color;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 3px;
+    }
+    .kanban-detail {
+        margin-left: 35px;
+        li {
+            i {
+                font-size: 16px;
+                color: #{map-get($grays, "600")};
+                padding: 0px 5px;
+                line-height: 32px;
+            }
+        }
+    }
+}
+
+body[data-layout-color="dark"] {
+    .kanban-detail {
+        li {
+            i {
+                color: #{map-get($dark-grays, "600")};
+            }
+        }
+    }
+}

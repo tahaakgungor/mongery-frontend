@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:972a66c8d2dfa7cbcf8aeaab5b25af351d55b9dfe5c8fe787ff1c8136927b368
-size 948
+import React from 'react';
+import Lightbox from 'react-image-lightbox';
+
+// types
+import { Image } from './types';
+
+type LightBoxProps = {
+    images: Image[];
+    photoIndex: number;
+    closeLightbox: () => void;
+    moveNext: () => void;
+    movePrev: () => void;
+};
+
+const LightBox = ({ images, photoIndex, closeLightbox, moveNext, movePrev }: LightBoxProps) => {
+    return (
+        <>
+            <Lightbox
+                mainSrc={images[photoIndex].src}
+                nextSrc={images[(photoIndex + 1) % images.length].src}
+                prevSrc={images[(photoIndex + images.length - 1) % images.length].src}
+                onCloseRequest={closeLightbox}
+                onMovePrevRequest={movePrev}
+                onMoveNextRequest={moveNext}
+                imageTitle={<p>{images[photoIndex].caption}</p>}
+                mainSrcThumbnail={images[photoIndex].caption}
+            />
+        </>
+    );
+};
+
+export default LightBox;

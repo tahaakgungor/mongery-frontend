@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:108e8ca80a06ac3a768fc3e270b1b1c293ab410edfa3577e0932b174d9727fd5
-size 848
+// constants
+import { PageTitleAction, PageTitleState } from './constants';
+
+const INIT_STATE = {
+    pageTitle: {
+        title: '',
+        breadCrumbItems: [
+            {
+                label: '',
+                path: '',
+            },
+        ],
+    },
+};
+
+const PageTitle = (
+    state: PageTitleState = INIT_STATE,
+    action: {
+        type: PageTitleAction;
+        payload: {
+            title: string;
+            breadCrumbItems: {
+                label: string;
+                path: string;
+                active?: boolean;
+            }[];
+        };
+    }
+) => {
+    switch (action.type) {
+        case PageTitleAction.CHANGE_PAGETITLE:
+            return {
+                ...state,
+                pageTitle: action.payload,
+            };
+        default:
+            return { ...state };
+    }
+};
+
+export default PageTitle;

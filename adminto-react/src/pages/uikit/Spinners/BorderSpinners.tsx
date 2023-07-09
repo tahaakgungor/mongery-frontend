@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c072ed873cd14263e681d55c19ef216c8af966affd8548dee1cddf18d2786c6c
-size 449
+import { Card, Spinner } from 'react-bootstrap';
+
+const BorderedSpinners = () => {
+    return (
+        <Card>
+            <Card.Body>
+                <h4 className="mt-0 header-title">Border spinner</h4>
+                <p className="text-muted mb-4">Use the border spinners for a lightweight loading indicator.</p>
+                <Spinner animation="border" />
+            </Card.Body>
+        </Card>
+    );
+};
+
+export default BorderedSpinners;

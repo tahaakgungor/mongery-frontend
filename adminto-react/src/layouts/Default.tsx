@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e8dc5a38873961c7483569568d02fe6cea357b4459cc1db630019b0236b1ab12
-size 727
+import { Suspense, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
+
+// hooks
+import { useRedux } from '../hooks/';
+
+// utils
+import { changeBodyAttribute } from '../utils';
+
+const loading = () => <div className=""></div>;
+
+type DefaultLayoutProps = {};
+
+const DefaultLayout = (props: DefaultLayoutProps) => {
+    const { appSelector } = useRedux();
+
+    const { layoutColor } = appSelector((state) => ({
+        layoutColor: state.Layout.layoutColor,
+    }));
+
+    useEffect(() => {
+        changeBodyAttribute('data-layout-color', layoutColor);
+    }, [layoutColor]);
+
+    return (
+        <Suspense fallback={loading()}>
+            <Outlet />
+        </Suspense>
+    );
+};
+export default DefaultLayout;

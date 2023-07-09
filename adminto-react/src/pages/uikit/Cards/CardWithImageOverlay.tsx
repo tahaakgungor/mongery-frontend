@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:418e1512bd5feffc94aeb3d146907f42acf04b3a3ba85964da7296081d13d203
-size 788
+import { Card } from 'react-bootstrap';
+
+// images
+import cardImg from '../../../assets/images/gallery/6.jpg';
+
+const CardWithImageOverlay = () => {
+    return (
+        <Card className="text-white">
+            <Card.Img src={cardImg} alt="" />
+            <Card.ImgOverlay>
+                <Card.Title className="text-white">Card title</Card.Title>
+                <Card.Text>
+                    This is a wider card with supporting text below as a natural lead-in to additional content. This
+                    content is a little bit longer.
+                </Card.Text>
+                <Card.Text>
+                    <small>Last updated 3 mins ago</small>
+                </Card.Text>
+            </Card.ImgOverlay>
+        </Card>
+    );
+};
+
+export default CardWithImageOverlay;

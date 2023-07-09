@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:70bbb8059dde7eaf38e0d7c3e9beb431e898681e1124570e1c11dd851053e52c
-size 776
+import { Link } from 'react-router-dom';
+import { Card } from 'react-bootstrap';
+
+const CardWithHeaderAndFooter = () => {
+    return (
+        <Card className="text-center">
+            <Card.Header>Featured</Card.Header>
+            <Card.Body>
+                <Card.Text>
+                    With supporting text below as a natural lead-in to additional content. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.
+                </Card.Text>
+                <Link to="#" className="btn btn-primary waves-effect waves-light">
+                    Go somewhere
+                </Link>
+            </Card.Body>
+            <Card.Footer className="text-muted">2 days ago</Card.Footer>
+        </Card>
+    );
+};
+
+export default CardWithHeaderAndFooter;

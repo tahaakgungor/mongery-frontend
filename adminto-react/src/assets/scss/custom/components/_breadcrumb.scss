@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f597bb4f685adbd563c455614a0a2df827f4083398b2113934c78b1980fcc2a1
-size 426
+
+// 
+// breadcrumb.scss
+//
+
+
+// Breadcrumb item arrow
+.breadcrumb-item {
+    > a {
+        color: #{map-get($grays, "700")};
+    }
+    +.breadcrumb-item {
+        &::before {
+            font-family: "Material Design Icons";
+        }
+    }
+}
+
+
+// dark mode
+body[data-layout-color="dark"] {
+    .breadcrumb-item {
+        > a {
+            color: #{map-get($dark-grays, "700")};
+        }
+    }
+}
+  

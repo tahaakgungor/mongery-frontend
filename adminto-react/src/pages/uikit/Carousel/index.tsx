@@ -1,3 +1,61 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:55eefb7464bf51ddd8fae9a53f5f8907f0c77ef4066af7a8e8f3ce4df6b1e137
-size 1542
+import { Col, Row } from 'react-bootstrap';
+
+// hooks
+import { usePageTitle } from '../../../hooks';
+
+// component
+import DefaultSlides from './DefaultSlides';
+import SlidesWithControls from './SlideWithControls';
+import SlidesWithIndicators from './SlideWithIndicators';
+import SlidesWithCaptions from './SlideWithCaptions';
+import CrossFade from './Crossfade';
+import IndividualInterval from './IndividualInterval';
+
+const Carousel = () => {
+    // set pagetitle
+    usePageTitle({
+        title: 'Carousel',
+        breadCrumbItems: [
+            {
+                path: '/base-ui/carousel',
+                label: 'Base UI',
+            },
+            {
+                path: '/base-ui/carousel',
+                label: 'Carousel',
+                active: true,
+            },
+        ],
+    });
+
+    return (
+        <>
+            <Row>
+                <Col lg={6}>
+                    <DefaultSlides />
+                </Col>
+                <Col lg={6}>
+                    <SlidesWithControls />
+                </Col>
+            </Row>
+            <Row>
+                <Col lg={6}>
+                    <SlidesWithIndicators />
+                </Col>
+                <Col lg={6}>
+                    <SlidesWithCaptions />
+                </Col>
+            </Row>
+            <Row>
+                <Col lg={6}>
+                    <CrossFade />
+                </Col>
+                <Col lg={6}>
+                    <IndividualInterval />
+                </Col>
+            </Row>
+        </>
+    );
+};
+
+export default Carousel;

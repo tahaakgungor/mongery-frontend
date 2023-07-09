@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d5d0e4116060f1f4124e6bccc8fd07b7c45c2d47a6592a024609414dad6414d
-size 831
+import { Card, Spinner } from 'react-bootstrap';
+
+const colors: string[] = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
+
+const ColorBorderSpinners = () => {
+    return (
+        <Card>
+            <Card.Body>
+                <h4 className="mt-0 header-title">Color Border spinner</h4>
+                <p className="text-muted mb-4">
+                    All standard visual variants are available for both animation styles by setting the{' '}
+                    <code>variant</code> property.
+                </p>
+
+                {(colors || []).map((color, index) => {
+                    return <Spinner key={index.toString()} className="m-2" variant={color} animation="border" />;
+                })}
+            </Card.Body>
+        </Card>
+    );
+};
+
+export default ColorBorderSpinners;

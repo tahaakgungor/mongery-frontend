@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4cbc68d1f724bbe20868db568a99f43f27bbb30e8105c3796354f4497d35fa3c
-size 872
+import { useState } from 'react';
+import { Button, Card, Collapse } from 'react-bootstrap';
+
+const HorizontalCollapse = () => {
+    const [open, setOpen] = useState<boolean>(false);
+
+    return (
+        <>
+            <p>
+                <Button onClick={() => setOpen(!open)} aria-controls="example-collapse-text" aria-expanded={open}>
+                    Toggle width collapse
+                </Button>
+            </p>
+            <Collapse in={open} dimension="width">
+                <div>
+                    <Card as={Card.Body} className="mb-0" style={{ width: '450px' }}>
+                        This is some placeholder content for a horizontal collapse. It's hidden by default and shown
+                        when triggered.
+                    </Card>
+                </div>
+            </Collapse>
+        </>
+    );
+};
+
+export default HorizontalCollapse;

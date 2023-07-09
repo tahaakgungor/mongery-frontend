@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2a219ce2198c29eebb0dd8b8b3ae40643612fd34019708fea1dcdfbe50c9fd2b
-size 451
+import { Link } from 'react-router-dom';
+
+type ThemeSettingProps = {
+    handleRightSideBar: () => void;
+};
+
+const ThemeSetting = ({ handleRightSideBar }: ThemeSettingProps) => {
+    return (
+        <>
+            <Link to="#" className="nav-link right-bar-toggle waves-effect waves-light" onClick={handleRightSideBar}>
+                <i className="fe-settings noti-icon"></i>
+            </Link>
+        </>
+    );
+};
+
+export default ThemeSetting;

@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e365ee1cdc1f04b63b2369bbe4f3fee34250c31212d0d1ed72e3583571503f0
-size 717
+// 
+// Custom-radio.scss
+//
+
+
+// checkbox & radio color
+@each $color, $value in $theme-colors {
+    .form-check {
+        &.form-check-#{$color} {
+            .form-check-input:checked {
+                background-color: $value !important;
+                border-color: $value !important;
+            }
+        }
+    }
+}    
+
+
+// dark mode
+body[data-layout-color="dark"] {
+    @each $color, $value in $dark-theme-colors {
+        .form-check {
+            &.form-check-#{$color} {
+                .form-check-input:checked {
+                    background-color: $value !important;
+                    border-color: $value !important;
+                }
+            }
+        }
+    } 
+}

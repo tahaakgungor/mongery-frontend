@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10bf8cd577a92b0b7440e39f638f54bdb416c030d90d3e472ddf8aa342ecaf04
-size 1562
+import { Card, Nav, Tab } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+// types
+import { TabContent } from './types';
+
+type DefaultTabsProps = {
+    tabContents: TabContent[];
+};
+
+const DefaultTabs = ({ tabContents }: DefaultTabsProps) => {
+    return (
+        <Card>
+            <Card.Body>
+                <h4 className="header-title mb-4">Default Tabs</h4>
+
+                <Tab.Container defaultActiveKey="Profile">
+                    <Nav as="ul" variant="tabs">
+                        {(tabContents || []).map((tab, index) => {
+                            return (
+                                <Nav.Item as="li" key={index.toString()}>
+                                    <Nav.Link as={Link} to="#" eventKey={tab.title} className="cursor-pointer">
+                                        {tab.title}
+                                    </Nav.Link>
+                                </Nav.Item>
+                            );
+                        })}
+                    </Nav>
+
+                    <Tab.Content>
+                        {(tabContents || []).map((tab, index) => {
+                            return (
+                                <Tab.Pane eventKey={tab.title} id={String(tab.id)} key={index.toString()}>
+                                    <p>{tab.text}</p>
+                                </Tab.Pane>
+                            );
+                        })}
+                    </Tab.Content>
+                </Tab.Container>
+            </Card.Body>
+        </Card>
+    );
+};
+
+export default DefaultTabs;

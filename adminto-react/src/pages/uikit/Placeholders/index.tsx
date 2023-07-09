@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b13bdf5a8ce141ce02ad351e92d0ff8f62bc50ec1e2b73a55441f6677f80fca
-size 1285
+import { Col, Row } from 'react-bootstrap';
+
+// hooks
+import { usePageTitle } from '../../../hooks';
+
+// component
+import BasicPlaceholders from './BasicPlaceholders';
+import PlaceholdersAnimation from './PlaceholdersAnimation';
+import PlaceholdersConcept from './PlaceholdersConcept';
+import PlaceholdersWidth from './PlaceholdersWidth';
+import PlaceholdersWithSizes from './PlaceholdersWithSizes';
+import PlaceholdersWithVariants from './PlaceholdersWithVariants';
+
+const Placeholders = () => {
+    // set pagetitle
+    usePageTitle({
+        title: 'Placeholders',
+        breadCrumbItems: [
+            {
+                path: '/base-ui/placeholders',
+                label: 'Base UI',
+            },
+            {
+                path: '/base-ui/placeholders',
+                label: 'Placeholders',
+                active: true,
+            },
+        ],
+    });
+
+    return (
+        <Row>
+            <Col xl={6}>
+                <BasicPlaceholders />
+                <PlaceholdersWidth />
+                <PlaceholdersAnimation />
+            </Col>
+            <Col xl={6}>
+                <PlaceholdersWithVariants />
+                <PlaceholdersConcept />
+                <PlaceholdersWithSizes />
+            </Col>
+        </Row>
+    );
+};
+
+export default Placeholders;

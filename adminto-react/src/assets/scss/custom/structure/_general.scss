@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a0aa7d77dce1fa1e93ba9d846ca30036d8af1d63a6bd654268b8e9a36fc8069e
-size 121
+// 
+// general.scss
+//
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+

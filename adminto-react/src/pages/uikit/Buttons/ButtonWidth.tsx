@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:822d2e5a43e29ebe4ccd2619cd1facaec93ed8d7b3fab52469610b7f5e314c2e
-size 1179
+import { Button } from 'react-bootstrap';
+
+const ButtonWidth = () => {
+    return (
+        <>
+            <h4 className="header-title">Button Width</h4>
+            <p className="sub-header">
+                Create buttons with minimum width by adding add <code>.width-xs</code>, <code>.width-sm</code>,{' '}
+                <code>.width-md</code>, <code>.width-lg</code> or <code>.width-xl</code>.
+            </p>
+
+            <div className="button-list">
+                <Button className="width-xs waves-effect waves-light">xs</Button>
+                <Button variant="success" className="width-sm waves-effect waves-light">
+                    Small
+                </Button>
+                <Button variant="info" className="width-md waves-effect waves-light">
+                    Middle
+                </Button>
+                <Button variant="warning" className="width-lg waves-effect waves-light">
+                    Large
+                </Button>
+                <Button variant="danger" className="width-xl waves-effect waves-light">
+                    Extra Large
+                </Button>
+            </div>
+        </>
+    );
+};
+
+export default ButtonWidth;

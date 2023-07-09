@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f074c867a3e343371c031b7c385d8d6485add03f80634ac241da9d4b7d54772f
-size 471
+// 
+// accordions.scss
+//
+
+.custom-accordion {
+    .accordion-arrow {
+        font-size: 1.2rem;
+        position: absolute;
+        right: 0;
+    }
+    a {
+        &.collapsed {
+            i.accordion-arrow {
+                &:before {
+                    content: "\F0142";
+                }
+            }
+        }
+    }
+}
+
+.custom-accordion {
+    .card {
+        box-shadow: none;
+        border: 1px solid $border-color !important;
+    }
+}

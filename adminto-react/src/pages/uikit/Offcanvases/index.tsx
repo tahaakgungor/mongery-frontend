@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:747f0604301d0bb9d2a7bb3da7c17548e59cfbef9079865ef8e70de2b9288c3c
-size 1089
+import { Row, Col } from 'react-bootstrap';
+
+// hooks
+import { usePageTitle } from '../../../hooks';
+
+// components
+import DefaultOffcanvas from './DefaultOffcanvas';
+import OffCanvasWithBackdrop from './OffCanvasWithBackdrop';
+import OffcanvasPlacement from './OffcanvasPlacement';
+
+// dummy data
+import { backdropOptions, placementOptions } from './data';
+
+const Offcanvases = () => {
+    // set pagetitle
+    usePageTitle({
+        title: 'Offcanvas',
+        breadCrumbItems: [
+            {
+                path: '/base-ui/offcanvas',
+                label: 'Base UI',
+            },
+            {
+                path: '/base-ui/offcanvas',
+                label: 'Offcanvas',
+                active: true,
+            },
+        ],
+    });
+
+    return (
+        <Row>
+            <Col md={6}>
+                <DefaultOffcanvas />
+                <OffCanvasWithBackdrop options={backdropOptions} />
+            </Col>
+
+            <Col md={6}>
+                <OffcanvasPlacement options={placementOptions} />
+            </Col>
+        </Row>
+    );
+};
+
+export default Offcanvases;

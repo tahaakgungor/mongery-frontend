@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f5b6172b57f3bf9083c2887ab49ed50d8d01dcfa394669f185c99ba7311753a
-size 467
+import React from 'react';
+import 'jsvectormap';
+import 'jsvectormap/dist/maps/world.js';
+
+//components
+import BaseVectorMap from './BaseVectorMap';
+
+type WorldVectorMapProps = {
+    width?: string;
+    height?: string;
+    options?: Record<string, unknown>;
+};
+
+const WorldVectorMap = ({ width, height, options }: WorldVectorMapProps) => {
+    return <BaseVectorMap width={width} height={height} options={options} type="world" />;
+};
+
+export default WorldVectorMap;

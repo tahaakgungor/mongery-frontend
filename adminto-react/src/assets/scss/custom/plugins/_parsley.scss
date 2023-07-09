@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de87c4e1c8f404546240505578e1537ad1e774c4fd4eacc9b3936a53d7f6b52f
-size 543
+//
+// parsley.scss
+//
+
+.parsley-errors-list {
+    margin: 0;
+    padding: 0;
+
+    >li {
+        list-style: none;
+        color: $danger;
+        margin-top: 5px;
+        padding-left: 20px;
+        position: relative;
+
+        &:before {
+            content: "\F0159";
+            font-family: "Material Design Icons";
+            position: absolute;
+            left: 2px;
+            top: -1px;
+        }
+    }
+}
+
+.parsley-error {
+    border-color: $danger;
+}
+
+.parsley-success {
+    border-color: $success;
+}

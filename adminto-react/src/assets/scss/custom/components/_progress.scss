@@ -1,3 +1,72 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4728fc0de7761f3539c4307506cdfc99813d7bff7209867d9ee81a3b096cefd6
-size 1135
+// 
+// progress.scss
+//
+
+// Custom height
+
+// Progress height small
+.progress-sm {
+    height: 5px !important;
+  }
+  
+  
+  // Progress height medium
+  .progress-md {
+    height: 8px !important;
+  }
+  
+  
+  // Progress height large
+  .progress-lg {
+    height: 12px !important;
+  }
+  
+  // Progress height extra large
+  .progress-xl {
+    height: 15px;
+  }
+  
+  // progress
+  
+  .progress{
+    margin-top: 18px;
+  }
+  
+  .progress-animated {
+    animation-duration: 5s;
+    animation-name: animationProgress;
+    transition: 5s all;
+  }
+  
+  
+  
+  @each $color,
+  $value in $theme-colors {
+      .progress-bar-alt-#{$color} {
+          background-color: rgba(($value), 0.2);
+      }
+  }
+  
+  
+  /* Progressbar Animated */
+  @-webkit-keyframes animationProgress {
+    from {
+      width:0;
+    }
+  }
+  @keyframes animationProgress {
+    from {
+      width:0;
+    }
+  }
+
+
+  // dark mode
+body[data-layout-color="dark"] {
+  @each $color,
+  $value in $dark-theme-colors {
+      .progress-bar-alt-#{$color} {
+          background-color: rgba(($value), 0.2);
+      }
+  }
+}

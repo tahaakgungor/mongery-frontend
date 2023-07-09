@@ -1,3 +1,51 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b6b7263b3e18e6087fcea9de4d261358051bef67fb454549e60abca851c8e605
-size 1176
+import { Col, Row } from 'react-bootstrap';
+
+// hooks
+import { usePageTitle } from '../../../hooks';
+
+// components
+import DefaultProgress from './DefaultProgress';
+import ContextualAlternatives from './ContextualAlternatives';
+import Striped from './Striped';
+import Sizes from './Sizes';
+
+const Progress = () => {
+    // set pagetitle
+    usePageTitle({
+        title: 'Progress',
+        breadCrumbItems: [
+            {
+                path: '/base-ui/progress',
+                label: 'Base UI',
+            },
+            {
+                path: '/base-ui/progress',
+                label: 'Progress',
+                active: true,
+            },
+        ],
+    });
+
+    return (
+        <>
+            <Row>
+                <Col md={6}>
+                    <DefaultProgress />
+                </Col>
+                <Col md={6}>
+                    <ContextualAlternatives />
+                </Col>
+            </Row>
+            <Row>
+                <Col md={6}>
+                    <Striped />
+                </Col>
+                <Col md={6}>
+                    <Sizes />
+                </Col>
+            </Row>
+        </>
+    );
+};
+
+export default Progress;
