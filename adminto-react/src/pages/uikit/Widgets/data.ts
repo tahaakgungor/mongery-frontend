@@ -36,7 +36,9 @@ const contact: Contact = {
     name: 'Johnathan Deo',
     mobile: '(123) 123 1234',
     email: 'coderthemes@gmail.com',
-    location: 'USA',
+    firmaAdi: 'Mongey Yazılım İnşaat Müh. Metal San. ve Tic. Ltd. Şti.',
+    adres: 'USA',
+
 };
 
 export { statisticsWidgets, contact };

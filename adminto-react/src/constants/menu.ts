@@ -47,7 +47,7 @@ const MENU_ITEMS: MenuItemTypes[] = [
     },
     {
         key: 'apps-contacts',
-        label: 'Müşteriler',
+        label: 'Sipariş Oluşltur',
         isTitle: false,
         icon: 'mdi mdi-book-open-page-variant-outline',
         url: '/apps/contacts',
@@ -637,7 +637,7 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
             },
             {
                 key: 'apps-contacts',
-                label: 'Müşteriler',
+                label: 'Sipariş Oluştur',
                 isTitle: false,
                 url: '/apps/contacts',
                 parentKey: 'apps',

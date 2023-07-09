@@ -2,12 +2,21 @@ import { Button, Card, Dropdown } from 'react-bootstrap';
 
 // types
 import { Contact } from '../pages/apps/Contacts/List/types';
+import { Link, Location } from 'react-router-dom';
+import { SetStateAction, useState } from 'react';
 
 type ContactDetailsProps = {
     contact: Contact;
 };
 //a
 const ContactDetails = ({ contact }: ContactDetailsProps) => {
+    const [selectedCustomer, setSelectedCustomer] = useState<Contact | null>(null);
+
+    const handleSelectCustomer = (customer: Contact) => {
+        setSelectedCustomer(customer);
+        console.log(customer);
+    };
+
     return (
         <Card>
             <Card.Body className="text-center">
@@ -44,10 +53,22 @@ const ContactDetails = ({ contact }: ContactDetailsProps) => {
                         </p>
 
                         <p className="text-muted font-13">
-                            <strong>Location :</strong> <span className="ms-2">{contact.location}</span>
+                            <strong>Adress :</strong> <span className="ms-2">{contact.adres}</span>
                         </p>
+                        <p className="text-muted font-13">
+                            <strong>Firma Adı : </strong> <span className="ms-2">{contact.firmaAdi}</span>
+                        </p>
+
+
                     </div>
-                    <Button className="rounded-pill waves-effect waves-light">Müşteriyi Seç</Button>
+                    <Link to={{
+                            pathname: `/apps/projects/${contact.id}`,
+                        }}
+                    >
+                    <Button className="rounded-pill waves-effect waves-light"  onClick={() => handleSelectCustomer(contact)}>
+                        Müşteriyi Seç
+                    </Button>
+                    </Link>
                 </div>
             </Card.Body>
         </Card>

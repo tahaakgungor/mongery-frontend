@@ -5,5 +5,6 @@ export type Contact = {
     name: string;
     mobile: string;
     email: string;
-    location: string;
+    adres: string;
+    firmaAdi: string;
 };

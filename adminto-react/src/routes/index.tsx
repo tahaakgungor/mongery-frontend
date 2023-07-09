@@ -212,7 +212,7 @@ const AllRoutes = () => {
               element: <LoadComponent component={List} />,
             },
             {
-              path: 'projects',
+              path: 'projects/:id',
               element: <LoadComponent component={Projects} />,
             },
             {

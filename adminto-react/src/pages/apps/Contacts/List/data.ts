@@ -18,7 +18,8 @@ const contacts: Contact[] = [
         name: 'Johnathan Deo',
         mobile: '(123) 123 1234',
         email: 'coderthemes@gmail.com',
-        location: 'USA',
+        adres: 'USA',
+        firmaAdi: 'Mongey Yazılım İnşaat Müh. Metal San. ve Tic. Ltd. Şti.',
     },
     {
         id: 2,
@@ -28,7 +29,8 @@ const contacts: Contact[] = [
         name: 'Johnathan Deo',
         mobile: '(123) 123 1234',
         email: 'coderthemes@gmail.com',
-        location: 'USA',
+        adres: 'USA',
+        firmaAdi: 'Mongey Yazılım İnşaat Müh. Metal San. ve Tic. Ltd. Şti.',
     },
     {
         id: 3,
@@ -38,7 +40,8 @@ const contacts: Contact[] = [
         name: 'Johnathan Deo',
         mobile: '(123) 123 1234',
         email: 'coderthemes@gmail.com',
-        location: 'USA',
+        adres: 'USA',
+        firmaAdi: 'Mongey Yazılım İnşaat Müh. Metal San. ve Tic. Ltd. Şti.',
     },
     {
         id: 4,
@@ -48,7 +51,8 @@ const contacts: Contact[] = [
         name: 'Johnathan Deo',
         mobile: '(123) 123 1234',
         email: 'coderthemes@gmail.com',
-        location: 'USA',
+        adres: 'USA',
+        firmaAdi: 'Mongey Yazılım İnşaat Müh. Metal San. ve Tic. Ltd. Şti.',
     },
     {
         id: 5,
@@ -58,7 +62,8 @@ const contacts: Contact[] = [
         name: 'Johnathan Deo',
         mobile: '(123) 123 1234',
         email: 'coderthemes@gmail.com',
-        location: 'USA',
+        adres: 'USA',
+        firmaAdi: 'Mongey Yazılım İnşaat Müh. Metal San. ve Tic. Ltd. Şti.',
     },
     {
         id: 6,
@@ -68,7 +73,8 @@ const contacts: Contact[] = [
         name: 'Johnathan Deo',
         mobile: '(123) 123 1234',
         email: 'coderthemes@gmail.com',
-        location: 'USA',
+        adres: 'USA',
+        firmaAdi: 'Mongey Yazılım İnşaat Müh. Metal San. ve Tic. Ltd. Şti.',
     },
 ];
 
