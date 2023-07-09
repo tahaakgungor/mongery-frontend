@@ -11,29 +11,20 @@ const Projects = ({ projectDetails }: ProjectsProps) => {
     return (
         <Card>
             <Card.Body>
-                <Dropdown className="float-end" align="end">
-                    <Dropdown.Toggle as="a" className="cursor-pointer card-drop">
-                        <i className="mdi mdi-dots-vertical"></i>
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item>Action</Dropdown.Item>
-                        <Dropdown.Item>Anothther Action</Dropdown.Item>
-                        <Dropdown.Item>Something Else</Dropdown.Item>
-                        <Dropdown.Item>Separated link</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+             
+            
 
-                <h4 className="header-title mt-0 mb-3">Latest Projects</h4>
+                <h4 className="header-title mt-0 mb-3">Son Siparişler</h4>
 
                 <Table responsive hover className="mb-0">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Project Name</th>
-                            <th>Start Date</th>
-                            <th>Due Date</th>
-                            <th>Status</th>
-                            <th>Assign</th>
+                            <th>Sipariş Numarası</th>
+                            <th>Müşteri</th>
+                            <th>Sipariş Oluşturulma Tarihi</th>
+                            <th>Tahmini Teslim</th>
+                            <th>Ürün Durumu</th>
+                            <th>Sipariş Oluşturan Kişi</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -44,30 +44,20 @@ const SalesChart = () => {
                 useSeriesColors: true,
             },
         },
-        labels: ['In-Store Sales', 'Download Sales', 'Mail-Order Sales'],
+        labels: ['Jiletli Tel', 'Çivili Tel', 'Tel'],
         tooltip: {
             enabled: false,
         },
     };
 
-    const apexData = [30, 12, 20];
+    const apexData = [1956, 1598, 3581];
 
     return (
         <Card>
             <Card.Body>
-                <Dropdown className="float-end" align="end">
-                    <Dropdown.Toggle as="a" className="cursor-pointer card-drop">
-                        <i className="mdi mdi-dots-vertical"></i>
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item>Action</Dropdown.Item>
-                        <Dropdown.Item>Anothther Action</Dropdown.Item>
-                        <Dropdown.Item>Something Else</Dropdown.Item>
-                        <Dropdown.Item>Separated link</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+               
 
-                <h4 className="header-title mt-0">Daily Sales</h4>
+                <h4 className="header-title mt-0">Satılan Ürün Ton Miktarı</h4>
 
                 <div dir="ltr">
                     <Chart

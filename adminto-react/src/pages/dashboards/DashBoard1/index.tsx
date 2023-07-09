@@ -8,7 +8,6 @@ import Statistics from './Statistics';
 import SalesChart from './SalesChart';
 import StatisticsChart from './StatisticsChart';
 import RevenueChart from './RevenueChart';
-import Users from './Users';
 import Inbox from './Inbox';
 import Projects from './Projects';
 
@@ -43,9 +42,6 @@ const DashBoard1 = () => {
                     <RevenueChart />
                 </Col>
             </Row>
-
-            <Users />
-
             <Row>
                 <Col xl={4}>
                     <Inbox messages={messages} />

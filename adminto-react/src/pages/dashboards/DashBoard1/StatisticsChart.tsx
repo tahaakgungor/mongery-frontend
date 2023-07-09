@@ -22,7 +22,7 @@ const StatisticsChart = () => {
             show: false,
         },
         xaxis: {
-            categories: ['2010', '2011', '2012', '2013', '2014', '2015'],
+            categories: ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'],
             axisBorder: {
                 show: false,
             },
@@ -62,7 +62,7 @@ const StatisticsChart = () => {
 
     const apexData = [
         {
-            name: 'Statistics',
+            name: 'Ürün Ton',
             data: [75, 42, 75, 38, 19, 93],
         },
     ];
@@ -70,19 +70,9 @@ const StatisticsChart = () => {
     return (
         <Card>
             <Card.Body>
-                <Dropdown className="float-end" align="end">
-                    <Dropdown.Toggle as="a" className="cursor-pointer card-drop">
-                        <i className="mdi mdi-dots-vertical"></i>
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item>Action</Dropdown.Item>
-                        <Dropdown.Item>Anothther Action</Dropdown.Item>
-                        <Dropdown.Item>Something Else</Dropdown.Item>
-                        <Dropdown.Item>Separated link</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+          
 
-                <h4 className="header-title mt-0">Statistics</h4>
+                <h4 className="header-title mt-0">Haftalık Bakış Açısı</h4>
 
                 <div dir="ltr">
                     <Chart options={apexOpts} series={apexData} type="bar" height={268} className="apex-charts mt-2" />

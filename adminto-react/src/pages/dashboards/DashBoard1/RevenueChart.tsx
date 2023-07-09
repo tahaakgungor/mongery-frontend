@@ -31,7 +31,7 @@ const RevenueChart = () => {
         },
         colors: ['#3cc469', '#188ae2'],
         xaxis: {
-            categories: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'],
+            categories: ['01/23', '02/23', '03/23', '04/23', '05/23', '06/23', '07/23', '08/23'],
             axisBorder: {
                 show: false,
             },
@@ -68,12 +68,12 @@ const RevenueChart = () => {
 
     const series = [
         {
-            name: 'Series A',
+            name: 'Toplam Kazanç',
             type: 'area',
             data: [50, 75, 30, 50, 75, 50, 75, 100],
         },
         {
-            name: 'Series B',
+            name: 'Toplam Sipariş',
             type: 'line',
             data: [0, 40, 80, 40, 10, 40, 50, 70],
         },
@@ -82,19 +82,9 @@ const RevenueChart = () => {
     return (
         <Card>
             <Card.Body>
-                <Dropdown className="float-end" align="end">
-                    <Dropdown.Toggle as="a" className="cursor-pointer card-drop">
-                        <i className="mdi mdi-dots-vertical"></i>
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item>Action</Dropdown.Item>
-                        <Dropdown.Item>Anothther Action</Dropdown.Item>
-                        <Dropdown.Item>Something Else</Dropdown.Item>
-                        <Dropdown.Item>Separated link</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+               
 
-                <h4 className="header-title mt-0">Total Revenue</h4>
+                <h4 className="header-title mt-0">Kazanç Grafiği</h4>
 
                 <div dir="ltr">
                     <Chart options={options} series={series} type="line" height={268} className="apex-charts mt-2" />

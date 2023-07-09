@@ -12,19 +12,9 @@ const Inbox = ({ messages }: InboxProps) => {
     return (
         <Card>
             <Card.Body>
-                <Dropdown className="float-end" align="end">
-                    <Dropdown.Toggle as="a" className="cursor-pointer card-drop">
-                        <i className="mdi mdi-dots-vertical"></i>
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item>Action</Dropdown.Item>
-                        <Dropdown.Item>Anothther Action</Dropdown.Item>
-                        <Dropdown.Item>Something Else</Dropdown.Item>
-                        <Dropdown.Item>Separated link</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+              
 
-                <h4 className="header-title mb-3">Inbox</h4>
+                <h4 className="header-title mb-3">Son Hareketler</h4>
 
                 <div className="inbox-widget">
                     {(messages || []).map((message, index) => {
