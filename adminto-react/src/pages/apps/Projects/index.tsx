@@ -54,6 +54,9 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
     const handleSelectQuantity = (value: string) => {
         setSelectedQuantity(Number(value));
     };
+
+
+
     return (
         <Row>
             {(projects || []).map((project, index) => {

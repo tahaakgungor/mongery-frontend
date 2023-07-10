@@ -33,11 +33,11 @@ const Invoice = () => {
                         <div className="panel-body">
                             <div className="clearfix">
                                 <div className="float-start">
-                            
+
                                         <span className="logo-lg">
                                             <img src={LogoDark} alt="" height="22" />
                                         </span>
-                                   
+
                                 </div>
                                 <div className="float-end">
                                     <h4>
@@ -142,7 +142,7 @@ const Invoice = () => {
                                         }}>
                                         <i className="fa fa-print"></i>
                                     </Link>
-                                    <Link to="#" className="btn btn-primary waves-effect waves-light">
+                                    <Link to="apps/siparisler" className="btn btn-primary waves-effect waves-light">
                                         Bitir
                                     </Link>
                                 </div>
