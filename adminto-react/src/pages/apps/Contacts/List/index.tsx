@@ -56,6 +56,10 @@ const List = () => {
             email: yup.string().required('Please enter Email address').email('Enter valid email'),
         })
     );
+
+    const handleSave=()=>{
+                
+    };
     return (
         <>
             <Row>
@@ -67,7 +71,7 @@ const List = () => {
                                     <div className="mt-3 mt-md-0">
                                         <Button variant="success" className="waves-effect waves-light" onClick={toggle}>
                                             <i className="mdi mdi-plus-circle me-1"></i>
-                                            Add contact
+                                            Müşteri Ekle
                                         </Button>
                                     </div>
                                 </Col>
@@ -105,31 +109,31 @@ const List = () => {
             </Row>
             <Modal show={modal} onHide={toggle} centered>
                 <Modal.Header closeButton>
-                    <Modal.Title as="h4">Add Contact</Modal.Title>
+                    <Modal.Title as="h4">Müşteri Ekle</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <VerticalForm<MemberData> onSubmit={() => {}} resolver={schemaResolver} defaultValues={{}}>
                         <FormInput
-                            label={'Name'}
+                            label={'İsim Soyisim'}
                             type="text"
-                            name="name"
-                            placeholder="Enter name"
+                            name="isim"
+                            placeholder="İsim Giriniz"
                             containerClass={'mb-3'}
                         />
 
                         <FormInput
-                            label={'Position'}
+                            label={'Firma'}
                             type="text"
-                            name="position"
-                            placeholder="Enter position"
+                            name="firma"
+                            placeholder="Firma Adı"
                             containerClass={'mb-3'}
                         />
 
                         <FormInput
-                            label={'Company'}
+                            label={'Telefon'}
                             type="text"
-                            name="company"
-                            placeholder="Enter company"
+                            name="telefon"
+                            placeholder="Telefon Numarası"
                             containerClass={'mb-3'}
                         />
 
@@ -140,8 +144,14 @@ const List = () => {
                             placeholder="Enter email"
                             containerClass={'mb-3'}
                         />
-
-                        <Button variant="light" className="waves-effect waves-light me-1" type="submit">
+                         <FormInput
+                            label={'Adres'}
+                            type="text"
+                            name="adres"
+                            placeholder="Firma Adresi"
+                            containerClass={'mb-3'}
+                        />
+                        <Button variant="light" className="waves-effect waves-light me-1" type="submit" onClick={handleSave}>
                             Save
                         </Button>
                         <Button variant="danger" className="waves-effect waves-light" onClick={toggle}>
