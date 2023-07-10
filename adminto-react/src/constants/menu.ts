@@ -59,6 +59,13 @@ const MENU_ITEMS: MenuItemTypes[] = [
         icon: 'mdi mdi-briefcase-variant-outline',
         url: '/apps/projects',
     },
+    {
+        key: 'apps-siparisler',
+        label: 'Siparişler',
+        isTitle: false,
+        icon: 'mdi mdi-briefcase-variant-outline',
+        url: '/apps/siparisler',
+    },
     { key: 'custom', label: 'Custom', isTitle: true },
     {
         key: 'extra-pages',
@@ -647,6 +654,13 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
                 label: 'Ürünler',
                 isTitle: false,
                 url: '/apps/projects',
+                parentKey: 'apps',
+            },
+            {
+                key: 'apps-siparisler',
+                label: 'Siparişler',
+                isTitle: false,
+                url: '/apps/siparisler',
                 parentKey: 'apps',
             },
         ],

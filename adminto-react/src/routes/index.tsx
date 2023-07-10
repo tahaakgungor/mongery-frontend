@@ -35,6 +35,7 @@ const Kanban = React.lazy(() => import('../pages/apps/Tasks/Board'));
 const TaskDetail = React.lazy(() => import('../pages/apps/Tasks/Detail'));
 const Projects = React.lazy(() => import('../pages/apps/Projects'));
 const List = React.lazy(() => import('../pages/apps/Contacts/List'));
+const Siparisler = React.lazy(() => import('../pages/apps/Siparisler'));
 const Profile = React.lazy(() => import('../pages/apps/Contacts/Profile'));
 
 // extra pages
@@ -214,6 +215,10 @@ const AllRoutes = () => {
                         {
                             path: 'projects',
                             element: <LoadComponent component={Projects} />,
+                        },
+                        {
+                            path: 'siparisler',
+                            element: <LoadComponent component={Siparisler} />,
                         },
                         {
                             path: 'contacts/profile',
