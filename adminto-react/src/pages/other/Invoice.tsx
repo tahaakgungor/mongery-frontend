@@ -139,8 +139,7 @@ const Invoice = () => {
                                         className="btn btn-dark waves-effect waves-light me-1"
                                         onClick={(e) => {
                                             window.print();
-                                        }}
-                                    >
+                                        }}>
                                         <i className="fa fa-print"></i>
                                     </Link>
                                     <Link to="#" className="btn btn-primary waves-effect waves-light">

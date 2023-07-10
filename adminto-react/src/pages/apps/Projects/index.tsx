@@ -10,7 +10,12 @@ import {
     Row,
     Tooltip,
     FormSelect,
+    Modal,
+    Form,
+    InputGroup,
+    FormControl,
 } from 'react-bootstrap';
+import { BsPlus, BsDash } from 'react-icons/bs';
 import classNames from 'classnames';
 
 // hooks
@@ -20,11 +25,11 @@ import { usePageTitle } from '../../../hooks';
 import { FormInput } from '../../../components/form';
 
 // types
-import { ProjectsList } from './types';
+import { CustomInput, ProjectsList } from './types';
 
 // dummy data
 import { projects } from './data';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 type SingleProjectProps = {
     projects: ProjectsList[];
@@ -200,6 +205,9 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
 };
 
 const Projects = () => {
+    const [modalVisible, setModalVisible] = useState(false);
+    const [customInputs, setCustomInputs] = useState<CustomInput[]>([{ name: '', placeholder: '' }]);
+
     // set pagetitle
     usePageTitle({
         title: 'Ürünler',
@@ -216,53 +224,96 @@ const Projects = () => {
         ],
     });
 
+    const toggleModal = () => {
+        setModalVisible(!modalVisible);
+    };
+
+    const handleAddProject = () => {
+        toggleModal();
+    };
+
+    const handleSaveProduct = () => {
+        toggleModal();
+    };
+
+    const handleAddInput = (index: number, key: string = '', value: string = ''): void => {
+        const list = [...customInputs];
+        list[index][key] = value;
+        setCustomInputs(list);
+    };
+
+    function handleRemoveInput(index: number): void {
+        const list = [...customInputs];
+        list.splice(index, 1);
+        setCustomInputs(list);
+    }
     return (
         <>
             <Row>
+                <Modal show={modalVisible} onHide={toggleModal}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Ürün Ekle</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Col sm={8}>
+                            <FormSelect name="phase" className="mb-3">
+                                <option value="0">Ürün Kategorisi</option>
+                                <option value="1">Kategori 1</option>
+                                <option value="2">Kategori 2</option>
+                                <option value="3">Kategori 3</option>
+                            </FormSelect>
+
+                            <FormInput type="text" name="name" placeholder="Ürün Adı" containerClass={'mb-3'} />
+
+                            <FormInput type="text" name="name" placeholder="Ürün Fiyatı" containerClass={'mb-3'} />
+                            <FormInput type="text" name="name" placeholder="Ürün Stoğu" containerClass={'mb-3'} />
+                            <FormInput type="text" name="name" placeholder="Ürün Açıklaması" containerClass={'mb-3'} />
+                            <FormInput type="text" name="name" placeholder="Ürün Resmi" containerClass={'mb-3'} />
+                            <Form.Group>
+                                <Form.Label>Özel Alanlar</Form.Label>
+                                {customInputs.map((input, index) => (
+                                    <InputGroup key={index} className="mb-3">
+                                        <FormControl
+                                            placeholder="Alan Adı"
+                                            value={input.name}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                                handleAddInput(index, 'name', e.target.value)
+                                            }
+                                        />
+                                        <FormControl
+                                            placeholder="Alan Değeri"
+                                            value={input.placeholder}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                                handleAddInput(index, 'placeholder', e.target.value)
+                                            }
+                                        />
+                                        <Button variant="danger" onClick={() => handleRemoveInput(index)}>
+                                            <BsDash />
+                                        </Button>
+                                    </InputGroup>
+                                ))}
+                                <Button
+                                    variant="success"
+                                    onClick={() => setCustomInputs([...customInputs, { name: '', placeholder: '' }])}>
+                                    <BsPlus />
+                                </Button>
+                            </Form.Group>
+                        </Col>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={toggleModal}>
+                            Close
+                        </Button>
+                        <Button variant="primary" onClick={handleSaveProduct}>
+                            Save
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+
                 <Col sm={4}>
-                    <Link to="#" className="btn btn-purple rounded-pill w-md waves-effect waves-light mb-3">
-                        <i className="mdi mdi-plus me-1"></i>
-                        Create Project
-                    </Link>
-                </Col>
-                <Col sm={8}>
-                    <div className="float-end">
-                        <form className="row g-2 align-items-center mb-2 mb-sm-0">
-                            <div className="col-auto">
-                                <div className="d-flex">
-                                    <label className="d-flex align-items-center">
-                                        Phase
-                                        <FormInput
-                                            type="select"
-                                            name="phase"
-                                            containerClass="d-inline-block ms-2"
-                                            className="form-select-sm">
-                                            <option>All Projects(6)</option>
-                                            <option>completed</option>
-                                            <option>Quantity</option>
-                                        </FormInput>
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="col-auto">
-                                <div className="d-flex">
-                                    <label className="d-flex align-items-center">
-                                        Sort
-                                        <FormInput
-                                            type="select"
-                                            name="sort"
-                                            containerClass="d-inline-block ms-2"
-                                            className="form-select-sm">
-                                            <option>Date</option>
-                                            <option>Name</option>
-                                            <option>End date</option>
-                                            <option>Start Date</option>
-                                        </FormInput>
-                                    </label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    <Button variant="primary" className="mb-3" onClick={handleAddProject}>
+                        <i className="mdi mdi-plus-circle me-1"></i> Ürün Ekle
+                    </Button>
                 </Col>
             </Row>
             <SingleProject projects={projects} />

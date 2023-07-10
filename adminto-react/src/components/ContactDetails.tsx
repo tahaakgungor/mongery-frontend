@@ -58,16 +58,16 @@ const ContactDetails = ({ contact }: ContactDetailsProps) => {
                         <p className="text-muted font-13">
                             <strong>Firma Adı : </strong> <span className="ms-2">{contact.firmaAdi}</span>
                         </p>
-
-
                     </div>
-                    <Link to={{
-                            pathname: `/apps/projects/${contact.id}`,
-                        }}
-                    >
-                    <Button className="rounded-pill waves-effect waves-light"  onClick={() => handleSelectCustomer(contact)}>
-                        Müşteriyi Seç
-                    </Button>
+                    <Link
+                        to={{
+                            pathname: '/apps/projects/',
+                        }}>
+                        <Button
+                            className="rounded-pill waves-effect waves-light"
+                            onClick={() => handleSelectCustomer(contact)}>
+                            Müşteriyi Seç
+                        </Button>
                     </Link>
                 </div>
             </Card.Body>

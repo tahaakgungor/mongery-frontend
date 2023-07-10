@@ -8,4 +8,11 @@ export type ProjectsList = {
     price: number;
     quantity: number;
     variant: string;
+    customInput?: CustomInput;
 };
+
+export type CustomInput = {
+    name: string;
+    placeholder: string;
+    [key: string]: string;
+}
