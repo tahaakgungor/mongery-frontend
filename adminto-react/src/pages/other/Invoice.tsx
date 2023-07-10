@@ -1,6 +1,7 @@
 import { Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import LogoDark from '../../assets/images/logo-dark.png';
+import LogoLight from '../../assets/images/logo-light.png';
 // hooks
 import { usePageTitle } from '../../hooks';
 
@@ -32,11 +33,15 @@ const Invoice = () => {
                         <div className="panel-body">
                             <div className="clearfix">
                                 <div className="float-start">
-                                    <h3>Adminto</h3>
+                            
+                                        <span className="logo-lg">
+                                            <img src={LogoDark} alt="" height="22" />
+                                        </span>
+                                   
                                 </div>
                                 <div className="float-end">
                                     <h4>
-                                        Invoice # <br />
+                                        Proforma # <br />
                                         <strong>{invoiceDetails.invoice_id}</strong>
                                     </h4>
                                 </div>
@@ -58,14 +63,14 @@ const Invoice = () => {
                                     </div>
                                     <div className="float-end mt-3">
                                         <p>
-                                            <strong>Order Date: </strong> {invoiceDetails.order_date}
+                                            <strong>Sipariş Oluşturulma Tarihi: </strong> {invoiceDetails.order_date}
                                         </p>
                                         <p className="m-t-10">
-                                            <strong>Order Status: </strong>{' '}
+                                            <strong>Sipariş Durumu: </strong>{' '}
                                             <span className="label label-pink">{invoiceDetails.order_status}</span>
                                         </p>
                                         <p className="m-t-10">
-                                            <strong>Order ID: </strong> {invoiceDetails.order_id}
+                                            <strong>Sipariş Numarası: </strong> {invoiceDetails.order_id}
                                         </p>
                                     </div>
                                 </Col>
@@ -78,11 +83,11 @@ const Invoice = () => {
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Item</th>
-                                                    <th>Description</th>
-                                                    <th>Quantity</th>
-                                                    <th>Unit Cost</th>
-                                                    <th>Total</th>
+                                                    <th>Ürün</th>
+                                                    <th>Açıklama</th>
+                                                    <th>Adet</th>
+                                                    <th>Birim Fiyat</th>
+                                                    <th>Toplam</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -106,7 +111,7 @@ const Invoice = () => {
                             <Row>
                                 <Col xl={6} xs={6} className="col-xl-6 col-6">
                                     <div className="clearfix mt-4">
-                                        <h5 className="small text-dark fw-normal">PAYMENT TERMS AND POLICIES</h5>
+                                        <h5 className="small text-dark fw-normal">Ödeme Politikası</h5>
 
                                         <small>
                                             All accounts are to be paid within 7 days from receipt of invoice. To be
@@ -120,10 +125,10 @@ const Invoice = () => {
                                     <p className="text-end">
                                         <b>Sub-total:</b> {invoiceDetails.sub_total}
                                     </p>
-                                    <p className="text-end">Discout: {invoiceDetails.discount}%</p>
-                                    <p className="text-end">VAT: {invoiceDetails.vat}%</p>
+                                    <p className="text-end">İndirim: {invoiceDetails.discount}%</p>
+                                    <p className="text-end">KDV: {invoiceDetails.vat}%</p>
                                     <hr />
-                                    <h3 className="text-end">USD {invoiceDetails.total}</h3>
+                                    <h3 className="text-end">$ {invoiceDetails.total}</h3>
                                 </Col>
                             </Row>
                             <hr />
@@ -139,7 +144,7 @@ const Invoice = () => {
                                         <i className="fa fa-print"></i>
                                     </Link>
                                     <Link to="#" className="btn btn-primary waves-effect waves-light">
-                                        Submit
+                                        Bitir
                                     </Link>
                                 </div>
                                 <div className="clearfix"></div>
