@@ -4,17 +4,23 @@ import { Button, Card, Dropdown } from 'react-bootstrap';
 import { Contact } from '../pages/apps/Contacts/List/types';
 import { Link, Location } from 'react-router-dom';
 import { SetStateAction, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { musteriSec } from '../myRedux/Musteriler/slice';
+import { useAppSelector, useAppDispatch } from '../myRedux/hooks';
 
 type ContactDetailsProps = {
     contact: Contact;
 };
+
 //a
 const ContactDetails = ({ contact }: ContactDetailsProps) => {
     const [selectedCustomer, setSelectedCustomer] = useState<Contact | null>(null);
+    const dispatch = useAppDispatch();
 
     const handleSelectCustomer = (customer: Contact) => {
         setSelectedCustomer(customer);
         console.log(customer);
+        dispatch(musteriSec(customer));
     };
 
     return (

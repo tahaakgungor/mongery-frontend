@@ -30,6 +30,8 @@ import { CustomInput, ProjectsList } from './types';
 // dummy data
 import { projects } from './data';
 import { ChangeEvent, useState } from 'react';
+import { useAppSelector } from '../../../myRedux/hooks';
+import { RootState } from '../../../redux/store';
 
 type SingleProjectProps = {
     projects: ProjectsList[];
@@ -55,7 +57,9 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
         setSelectedQuantity(Number(value));
     };
 
+    const musteri = useAppSelector((state) => state.musteriler123);
 
+    console.log(musteri);
 
     return (
         <Row>
