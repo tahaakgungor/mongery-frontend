@@ -16,12 +16,12 @@ type ContactDetailsProps = {
 //a
 const ContactDetails = ({ contact }: ContactDetailsProps) => {
     const [selectedCustomer, setSelectedCustomer] = useState<Contact | null>(null);
-    const {dispatch, appSelector} = useRedux();
+    const { dispatch, appSelector } = useRedux();
 
     const handleSelectCustomer = (customer: Contact) => {
         setSelectedCustomer(customer);
         console.log(customer);
-        dispatch(selectedMusteri(customer));
+        dispatch(selectedMusteri('musteri', customer));
     };
 
     return (

@@ -12,6 +12,17 @@ export type MusterilerActionType = {
     payload: any;
 };
 
+type MusterilerData = {
+    id: number;
+    avatar: string;
+    shortDesc: string;
+    name: string;
+    mobile: string;
+    email: string;
+    adres: string;
+    firmaAdi: string;
+};
+
 export const getMusteriler = (data: any): MusterilerActionType => ({
     type: MusterilerActionTypes.GET_MUSTERILER,
     payload: data,
@@ -27,9 +38,9 @@ export const addMusteri = (data: any): MusterilerActionType => ({
     payload: data,
 });
 
-export const selectedMusteri = (data: any): MusterilerActionType => ({
+export const selectedMusteri = (actionType:string,data: MusterilerData): MusterilerActionType => ({
     type: MusterilerActionTypes.SELECTED_MUSTERI,
-    payload: data,
+    payload: {actionType,data},
 });
 
 export const apiResponseSuccess = (data: any): MusterilerActionType => ({

@@ -57,7 +57,7 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
         setSelectedQuantity(Number(value));
     };
 
-    const musteri = appSelector((state) => state);
+    const musteri = appSelector((state) => state.Musteriler.musteriler);
 
     console.log(musteri);
 
