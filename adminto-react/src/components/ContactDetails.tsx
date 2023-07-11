@@ -6,7 +6,8 @@ import { Link, Location } from 'react-router-dom';
 import { SetStateAction, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { musteriSec } from '../myRedux/Musteriler/slice';
-import { useAppSelector, useAppDispatch } from '../myRedux/hooks';
+import { selectedMusteri } from '../redux/musteriler/actions';
+import { useRedux } from '../hooks';
 
 type ContactDetailsProps = {
     contact: Contact;
@@ -15,12 +16,12 @@ type ContactDetailsProps = {
 //a
 const ContactDetails = ({ contact }: ContactDetailsProps) => {
     const [selectedCustomer, setSelectedCustomer] = useState<Contact | null>(null);
-    const dispatch = useAppDispatch();
+    const {dispatch, appSelector} = useRedux();
 
     const handleSelectCustomer = (customer: Contact) => {
         setSelectedCustomer(customer);
         console.log(customer);
-        dispatch(musteriSec(customer));
+        dispatch(selectedMusteri(customer));
     };
 
     return (

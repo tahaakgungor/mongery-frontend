@@ -4,11 +4,20 @@ import { MusterilerActionTypes } from './constants';
 const api = new APICore();
 
 const INIT_STATE = {
-    musteriler: [],
-    musteri: {},
-    loading: false,
-};
+    musteriler: [
+        {
+            id: 1,
+            avatar: 'avatar1.jpg',
+            shortDesc: 'Lorem ipsum dolor sit amet',
+            name: 'John Smith',
+            mobile: '+1-202-555-0175',
+            email: '',
+            adres: '',
+            firmaAdi: '',
+        },
+    ]
 
+};
 type MusterilerData = {
     id: number;
     avatar: string;
@@ -22,8 +31,6 @@ type MusterilerData = {
 
 type MusterilerActionType = {
     type:
-        | MusterilerActionTypes.API_RESPONSE_SUCCESS
-        | MusterilerActionTypes.API_RESPONSE_ERROR
         | MusterilerActionTypes.GET_MUSTERILER
         | MusterilerActionTypes.GET_MUSTERI
         | MusterilerActionTypes.ADD_MUSTERI
@@ -31,53 +38,35 @@ type MusterilerActionType = {
     payload: {
         actionType?: string;
         data?: MusterilerData | {};
-        error?: string;
     };
 };
 
 type State = {
-    musteriler?: MusterilerData[] | [];
-    musteri?: MusterilerData | {};
-    loading?: boolean;
-    value?: boolean;
+    musteriler?: MusterilerData | {};
 };
 
 const Musteriler = (state: State = INIT_STATE, action: MusterilerActionType): any => {
 
     switch (action.type) {
-        case MusterilerActionTypes.API_RESPONSE_SUCCESS:
-            switch (action.payload.actionType) {
-                case MusterilerActionTypes.GET_MUSTERILER: {
-                    return {
-                        ...state,
-                        musteriler: action.payload.data,
-                    };
-                }
-                case MusterilerActionTypes.GET_MUSTERI: {
-                    return {
-                        ...state,
-                        musteri: action.payload.data,
-                    };
-                }
-                case MusterilerActionTypes.ADD_MUSTERI: {
-                    return {
-                        ...state,
-                        musteri: action.payload.data,
-                    };
-                }
-                case MusterilerActionTypes.SELECTED_MUSTERI: {
-                    return {
-                        ...state,
-                        musteri: action.payload.data,
-                    };
-                }
-                default:
-                    return state;
-            }
-        case MusterilerActionTypes.API_RESPONSE_ERROR:
+        case MusterilerActionTypes.GET_MUSTERILER:
             return {
                 ...state,
-                error: action.payload.error,
+                musteriler: action.payload.data,
+            };
+        case MusterilerActionTypes.GET_MUSTERI:
+            return {
+                ...state,
+                musteriler: action.payload.data,
+            };
+        case MusterilerActionTypes.ADD_MUSTERI:
+            return {
+                ...state,
+                musteriler: action.payload.data,
+            };
+        case MusterilerActionTypes.SELECTED_MUSTERI:
+            return {
+                ...state,
+                musteriler: action.payload.data,
             };
         default:
             return state;
@@ -85,4 +74,6 @@ const Musteriler = (state: State = INIT_STATE, action: MusterilerActionType): an
 };
 
 export default Musteriler;
+
+
 

@@ -30,8 +30,7 @@ import { CustomInput, ProjectsList } from './types';
 // dummy data
 import { projects } from './data';
 import { ChangeEvent, useState } from 'react';
-import { useAppSelector } from '../../../myRedux/hooks';
-import { RootState } from '../../../redux/store';
+import { useRedux } from '../../../hooks';
 
 type SingleProjectProps = {
     projects: ProjectsList[];
@@ -40,6 +39,7 @@ type SingleProjectProps = {
 const SingleProject = ({ projects }: SingleProjectProps) => {
     const [cartItems, setCartItems] = useState<ProjectsList[]>([]);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
+    const { dispatch, appSelector } = useRedux();
 
     const addToCart = (project: ProjectsList, quantity: number) => {
         const exist = cartItems.find((x) => x.id === project.id);
@@ -57,7 +57,7 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
         setSelectedQuantity(Number(value));
     };
 
-    const musteri = useAppSelector((state) => state.musteriler123);
+    const musteri = appSelector((state) => state);
 
     console.log(musteri);
 
