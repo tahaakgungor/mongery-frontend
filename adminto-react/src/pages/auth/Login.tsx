@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Button, Alert, Row, Col } from 'react-bootstrap';
-import { Navigate, Link, useLocation } from 'react-router-dom';
+import { Button, Alert, Row, Col, Nav } from 'react-bootstrap';
+import { Navigate, Link, useLocation, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'react-i18next';
@@ -59,27 +59,27 @@ const Login = () => {
     const { t } = useTranslation();
     const { dispatch, appSelector } = useRedux();
     const location = useLocation();
+    const navigate = useNavigate();
     let redirectUrl = '/';
 
-    // const { user, userLoggedIn, loading, error } = appSelector((state) => ({
-    //     user: state.Auth.user,
-    //     loading: state.Auth.loading,
-    //     error: state.Auth.error,
-    //     userLoggedIn: state.Auth.userLoggedIn,
-    // }));
-
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState<string>('');
     const [userLoggedIn, setUserLoggedIn] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
+    const tok = appSelector((state) => state);
+
+
+
     useEffect(() => {
-        dispatch(resetAuth());
-    }, [dispatch]);
+        if (userLoggedIn) {
+            navigate('/dashboard'); // Kullanıcıyı dashboard sayfasına yönlendir
+        }
+    }, [userLoggedIn, navigate]);
 
     /*
     form validation schema
-    */
+  */
     const schemaResolver = yupResolver(
         yup.object().shape({
             email: yup.string().required(t('Please enter Email')).email(t('Please enter valid Email')),
@@ -87,9 +87,9 @@ const Login = () => {
         })
     );
 
-    /*a
+    /*
     handle form submission
-    */
+  */
     const onSubmit = (formData: UserData) => {
         setLoading(true);
         setError('');
@@ -99,24 +99,21 @@ const Login = () => {
     const handleLogin = async (email: string, password: string) => {
         try {
             let token = await login(email, password);
-            console.log(token);
-            dispatch(getToken(token));
-            setLoading(false);
-            console.log('login oldu');
+            dispatch(getToken('token', token));
 
-            if (location.state) {
-                const { from } = location.state as LocationState;
-                redirectUrl = from ? from.pathname : '/';
-            }
+            console.log(token);
+            setLoading(true);
+            setUserLoggedIn(true);
+            setUser(token);
         } catch (error) {
+            setLoading(false);
+            setError('Invalid Credentials');
             console.log(error);
         }
     };
 
     return (
         <>
-            {userLoggedIn && user && <Navigate to={redirectUrl} replace />}
-
             <AuthLayout bottomLinks={<BottomLink />}>
                 <div className="text-center mb-4">
                     <h4 className="text-uppercase mt-0">{t('Sign In')}</h4>
@@ -145,7 +142,8 @@ const Login = () => {
                         type="password"
                         name="password"
                         placeholder="Enter your password"
-                        containerClass={'mb-3'}></FormInput>
+                        containerClass={'mb-3'}
+                    />
 
                     <FormInput
                         type="checkbox"

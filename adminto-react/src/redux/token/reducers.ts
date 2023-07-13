@@ -11,7 +11,8 @@ type TokenData = {
 
 type TokenActionType = {
     type:
-        | TokenActionTypes.TOKEN_SUCCESS;
+        | TokenActionTypes.TOKEN_SUCCESS
+        | TokenActionTypes.LOGOUT_USER;
     payload: {
         actionType?: string;
         data?: TokenData | {};
@@ -30,6 +31,11 @@ const Token = (state: State = INIT_STATE, action: TokenActionType): any => {
                 ...state,
                 token: action.payload.data,
             };
+            case TokenActionTypes.LOGOUT_USER:
+                return {
+                    ...state,
+                    token: action.payload.data,
+                };
         default:
             return state;
     }

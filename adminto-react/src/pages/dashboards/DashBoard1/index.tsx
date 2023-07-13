@@ -2,7 +2,7 @@ import { Col, Row } from 'react-bootstrap';
 
 // hooks
 import { usePageTitle } from '../../../hooks';
-
+import { useRedux } from '../../../hooks';
 // component
 import Statistics from './Statistics';
 import SalesChart from './SalesChart';
@@ -26,6 +26,11 @@ const DashBoard1 = () => {
             },
         ],
     });
+    const { dispatch, appSelector } = useRedux();
+
+    const getToken = appSelector((state) => state);
+
+    console.log(getToken);
 
     return (
         <>

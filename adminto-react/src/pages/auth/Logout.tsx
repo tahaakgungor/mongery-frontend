@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 import { useRedux } from '../../hooks/';
 
 //actions
-import { logoutUser, resetAuth } from '../../redux/actions';
 
 // components
 import AuthLayout from './AuthLayout';
@@ -15,6 +14,7 @@ import AuthLayout from './AuthLayout';
 // images
 import LogoDark from '../../assets/images/logo-dark.png';
 import LogoLight from '../../assets/images/logo-light.png';
+import { getToken, logoutUser } from '../../redux/token/actions';
 
 const LogoutIcon = () => {
     return (
@@ -61,11 +61,7 @@ const BottomLink = () => {
 
 const Logout = () => {
     const { t } = useTranslation();
-    const { dispatch } = useRedux();
-
-    useEffect(() => {
-        dispatch(resetAuth());
-    }, [dispatch]);
+    const { dispatch, appSelector } = useRedux();
 
     useEffect(() => {
         dispatch(logoutUser());

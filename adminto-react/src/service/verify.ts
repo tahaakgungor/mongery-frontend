@@ -1,8 +1,4 @@
-import axios from 'axios';
 import { Constants } from '../links';
-import { getToken } from '../redux/token/actions';
-
-
 
 export type Response = {
     success: boolean;
@@ -10,9 +6,7 @@ export type Response = {
 
   export type SuccessfullResponse = {
     success: true;
-    data: {
-        access_token: string
-    };
+    data: boolean;
   }
 
   export type FailedResponse = {
@@ -20,13 +14,12 @@ export type Response = {
     error: string;
   }
 
-export const login = async (email:string, password:string) => {
+export const verifyToken = async (token:string) => {
     var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Content-Type", "application/json");
 
 var raw = JSON.stringify({
-  "email": email,
-  "password": password
+  "token": "Bearer " + token
 });
 
 var requestOptions = {
@@ -36,7 +29,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-let response = await fetch(Constants.login, {
+let response = await fetch(Constants.verify, {
   method: requestOptions.method,
   headers: requestOptions.headers,
   body: requestOptions.body,
@@ -45,7 +38,7 @@ let response = await fetch(Constants.login, {
 let data = await response.json() as Response
 console.log(data)
 if (data.success) {
-  return data.data.access_token
+  return data.data
 } else {
 throw new Error(data.error)
 }

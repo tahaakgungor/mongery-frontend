@@ -22,18 +22,19 @@ const PrivateRoute = ({ component: RouteComponent, roles, ...rest }: PrivateRout
 
     const api = new APICore();
 
+
     /**
      * not logged in so redirect to login page with the return url
      */
-    if (api.isUserAuthenticated() === false) {
-        return <Navigate to={'/auth/login'} state={{ from: location }} replace />;
-    }
+    // if (api.isUserAuthenticated() === false) {
+    //     return <Navigate to={'/auth/login'} state={{ from: location }} replace />;
+    // }
 
-    // check if route is restricted by role
-    if (roles && roles.indexOf(loggedInUser.role) === -1) {
-        // role not authorised so redirect to home page
-        return <Navigate to={{ pathname: '/' }} />;
-    }
+    // // check if route is restricted by role
+    // if (roles && roles.indexOf(loggedInUser.role) === -1) {
+    //     // role not authorised so redirect to home page
+    //     return <Navigate to={{ pathname: '/' }} />;
+    // }
 
     return <RouteComponent />;
 };
