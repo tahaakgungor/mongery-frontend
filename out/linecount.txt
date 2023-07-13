@@ -1,0 +1,1726 @@
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2023-07-13 17:41:49
+count workspace : /Users/tahatakgungor/Documents/GitHub/mongery-frontend
+total files : 1714
+total code lines : 322830
+total comment lines : 22575
+total blank lines : 38774
+
+adminto-react/.gitignore, code is 1, comment is 0, blank is 0.
+adminto-react/.prettierrc, code is 7, comment is 0, blank is 0.
+adminto-react/package-lock.json, code is 17587, comment is 0, blank is 2.
+adminto-react/package.json, code is 100, comment is 0, blank is 3.
+adminto-react/public/favicon.ico, it is a binary file.
+adminto-react/public/index.html, code is 16, comment is 23, blank is 3.
+adminto-react/public/manifest.json, code is 15, comment is 0, blank is 0.
+adminto-react/public/mongery_logo_favicon.png, it is a binary file.
+adminto-react/public/robots.txt, code is 3, comment is 1, blank is 0.
+adminto-react/README.md, code is 26, comment is 6, blank is 20.
+adminto-react/src/App.tsx, code is 8, comment is 3, blank is 4.
+adminto-react/src/assets/fonts/cerebrisans-bold.eot, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-bold.svg, code is 464, comment is 0, blank is 0.
+adminto-react/src/assets/fonts/cerebrisans-bold.ttf, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-bold.woff, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-bold.woff2, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-light.eot, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-light.svg, code is 467, comment is 0, blank is 0.
+adminto-react/src/assets/fonts/cerebrisans-light.ttf, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-light.woff, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-light.woff2, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-medium.eot, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-medium.svg, code is 469, comment is 0, blank is 0.
+adminto-react/src/assets/fonts/cerebrisans-medium.ttf, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-medium.woff, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-medium.woff2, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-regular.eot, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-regular.svg, code is 473, comment is 0, blank is 0.
+adminto-react/src/assets/fonts/cerebrisans-regular.ttf, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-regular.woff, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-regular.woff2, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-semibold.eot, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-semibold.svg, code is 465, comment is 0, blank is 0.
+adminto-react/src/assets/fonts/cerebrisans-semibold.ttf, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-semibold.woff, it is a binary file.
+adminto-react/src/assets/fonts/cerebrisans-semibold.woff2, it is a binary file.
+adminto-react/src/assets/fonts/dripicons-v2.eot, it is a binary file.
+adminto-react/src/assets/fonts/dripicons-v2.svg, code is 209, comment is 0, blank is 1.
+adminto-react/src/assets/fonts/dripicons-v2.ttf, it is a binary file.
+adminto-react/src/assets/fonts/dripicons-v2.woff, it is a binary file.
+adminto-react/src/assets/fonts/dropify.eot, it is a binary file.
+adminto-react/src/assets/fonts/dropify.svg, code is 13, comment is 0, blank is 0.
+adminto-react/src/assets/fonts/dropify.ttf, it is a binary file.
+adminto-react/src/assets/fonts/dropify.woff, it is a binary file.
+adminto-react/src/assets/fonts/fa-brands-400.eot, it is a binary file.
+adminto-react/src/assets/fonts/fa-brands-400.svg, code is 914, comment is 2, blank is 0.
+adminto-react/src/assets/fonts/fa-brands-400.ttf, it is a binary file.
+adminto-react/src/assets/fonts/fa-brands-400.woff, it is a binary file.
+adminto-react/src/assets/fonts/fa-brands-400.woff2, it is a binary file.
+adminto-react/src/assets/fonts/fa-regular-400.eot, it is a binary file.
+adminto-react/src/assets/fonts/fa-regular-400.svg, code is 332, comment is 2, blank is 0.
+adminto-react/src/assets/fonts/fa-regular-400.ttf, it is a binary file.
+adminto-react/src/assets/fonts/fa-regular-400.woff, it is a binary file.
+adminto-react/src/assets/fonts/fa-regular-400.woff2, it is a binary file.
+adminto-react/src/assets/fonts/fa-solid-900.eot, it is a binary file.
+adminto-react/src/assets/fonts/fa-solid-900.svg, code is 2020, comment is 2, blank is 0.
+adminto-react/src/assets/fonts/fa-solid-900.ttf, it is a binary file.
+adminto-react/src/assets/fonts/fa-solid-900.woff, it is a binary file.
+adminto-react/src/assets/fonts/fa-solid-900.woff2, it is a binary file.
+adminto-react/src/assets/fonts/feather.eot, it is a binary file.
+adminto-react/src/assets/fonts/feather.svg, code is 296, comment is 0, blank is 551.
+adminto-react/src/assets/fonts/feather.ttf, it is a binary file.
+adminto-react/src/assets/fonts/feather.woff, it is a binary file.
+adminto-react/src/assets/fonts/footable.eot, it is a binary file.
+adminto-react/src/assets/fonts/footable.svg, code is 49, comment is 0, blank is 0.
+adminto-react/src/assets/fonts/footable.ttf, it is a binary file.
+adminto-react/src/assets/fonts/footable.woff, it is a binary file.
+adminto-react/src/assets/fonts/materialdesignicons-webfont.eot, it is a binary file.
+adminto-react/src/assets/fonts/materialdesignicons-webfont.ttf, it is a binary file.
+adminto-react/src/assets/fonts/materialdesignicons-webfont.woff, it is a binary file.
+adminto-react/src/assets/fonts/materialdesignicons-webfont.woff2, it is a binary file.
+adminto-react/src/assets/fonts/Pe-icon-7-stroke.eot, it is a binary file.
+adminto-react/src/assets/fonts/Pe-icon-7-stroke.svg, code is 212, comment is 0, blank is 0.
+adminto-react/src/assets/fonts/Pe-icon-7-stroke.ttf, it is a binary file.
+adminto-react/src/assets/fonts/Pe-icon-7-stroke.woff, it is a binary file.
+adminto-react/src/assets/fonts/simple-Line-Icons.eot, it is a binary file.
+adminto-react/src/assets/fonts/simple-Line-Icons.svg, code is 211, comment is 0, blank is 0.
+adminto-react/src/assets/fonts/simple-Line-Icons.ttf, it is a binary file.
+adminto-react/src/assets/fonts/simple-Line-Icons.woff, it is a binary file.
+adminto-react/src/assets/fonts/simple-Line-Icons.woff2, it is a binary file.
+adminto-react/src/assets/fonts/summernote.eot, it is a binary file.
+adminto-react/src/assets/fonts/summernote.ttf, it is a binary file.
+adminto-react/src/assets/fonts/summernote.woff, it is a binary file.
+adminto-react/src/assets/fonts/summernote.woff2, it is a binary file.
+adminto-react/src/assets/fonts/themify.eot, it is a binary file.
+adminto-react/src/assets/fonts/themify.svg, code is 362, comment is 0, blank is 0.
+adminto-react/src/assets/fonts/themify.ttf, it is a binary file.
+adminto-react/src/assets/fonts/themify.woff, it is a binary file.
+adminto-react/src/assets/fonts/weathericons-regular-webfont.eot, it is a binary file.
+adminto-react/src/assets/fonts/weathericons-regular-webfont.svg, code is 257, comment is 0, blank is 0.
+adminto-react/src/assets/fonts/weathericons-regular-webfont.ttf, it is a binary file.
+adminto-react/src/assets/fonts/weathericons-regular-webfont.woff, it is a binary file.
+adminto-react/src/assets/fonts/weathericons-regular-webfont.woff2, it is a binary file.
+adminto-react/src/assets/images/attached-files/img-1.jpg, it is a binary file.
+adminto-react/src/assets/images/attached-files/img-2.jpg, it is a binary file.
+adminto-react/src/assets/images/attached-files/img-3.jpg, it is a binary file.
+adminto-react/src/assets/images/bg-auth-dark.jpg, it is a binary file.
+adminto-react/src/assets/images/bg-auth3.png, it is a binary file.
+adminto-react/src/assets/images/bg-pattern-2.png, it is a binary file.
+adminto-react/src/assets/images/bg-pattern.png, it is a binary file.
+adminto-react/src/assets/images/brands/bitbucket.png, it is a binary file.
+adminto-react/src/assets/images/brands/dribbble.png, it is a binary file.
+adminto-react/src/assets/images/brands/dropbox.png, it is a binary file.
+adminto-react/src/assets/images/brands/g-suite.png, it is a binary file.
+adminto-react/src/assets/images/brands/github.png, it is a binary file.
+adminto-react/src/assets/images/brands/slack.png, it is a binary file.
+adminto-react/src/assets/images/clear.png, it is a binary file.
+adminto-react/src/assets/images/companies/airbnb.png, it is a binary file.
+adminto-react/src/assets/images/companies/amazon.png, it is a binary file.
+adminto-react/src/assets/images/companies/apple.png, it is a binary file.
+adminto-react/src/assets/images/companies/cisco.png, it is a binary file.
+adminto-react/src/assets/images/companies/facebook.png, it is a binary file.
+adminto-react/src/assets/images/companies/google.png, it is a binary file.
+adminto-react/src/assets/images/email/1.png, it is a binary file.
+adminto-react/src/assets/images/email/2.png, it is a binary file.
+adminto-react/src/assets/images/email/3.png, it is a binary file.
+adminto-react/src/assets/images/flags/french.jpg, it is a binary file.
+adminto-react/src/assets/images/flags/germany.jpg, it is a binary file.
+adminto-react/src/assets/images/flags/italy.jpg, it is a binary file.
+adminto-react/src/assets/images/flags/russia.jpg, it is a binary file.
+adminto-react/src/assets/images/flags/spain.jpg, it is a binary file.
+adminto-react/src/assets/images/flags/us.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/1.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/10.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/11.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/12.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/2.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/3.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/4.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/5.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/6.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/7.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/8.jpg, it is a binary file.
+adminto-react/src/assets/images/gallery/9.jpg, it is a binary file.
+adminto-react/src/assets/images/jsgrid.png, it is a binary file.
+adminto-react/src/assets/images/jstree.png, it is a binary file.
+adminto-react/src/assets/images/landing/clients/1.png, it is a binary file.
+adminto-react/src/assets/images/landing/clients/2.png, it is a binary file.
+adminto-react/src/assets/images/landing/clients/3.png, it is a binary file.
+adminto-react/src/assets/images/landing/clients/4.png, it is a binary file.
+adminto-react/src/assets/images/landing/clients/5.png, it is a binary file.
+adminto-react/src/assets/images/landing/clients/6.png, it is a binary file.
+adminto-react/src/assets/images/landing/demo/demo-1.jpg, it is a binary file.
+adminto-react/src/assets/images/landing/demo/demo-2.jpg, it is a binary file.
+adminto-react/src/assets/images/landing/demo/demo-3.jpg, it is a binary file.
+adminto-react/src/assets/images/landing/demo/demo-4.jpg, it is a binary file.
+adminto-react/src/assets/images/landing/demo/demo-5.jpg, it is a binary file.
+adminto-react/src/assets/images/landing/demo/demo-6.jpg, it is a binary file.
+adminto-react/src/assets/images/landing/features-img/img-1.png, it is a binary file.
+adminto-react/src/assets/images/landing/features-img/img-2.png, it is a binary file.
+adminto-react/src/assets/images/landing/features-img/img-3.png, it is a binary file.
+adminto-react/src/assets/images/landing/home-img.png, it is a binary file.
+adminto-react/src/assets/images/landing/icons/browserscript.png, it is a binary file.
+adminto-react/src/assets/images/landing/icons/core.png, it is a binary file.
+adminto-react/src/assets/images/landing/icons/datatext.png, it is a binary file.
+adminto-react/src/assets/images/landing/icons/layers.png, it is a binary file.
+adminto-react/src/assets/images/landing/icons/paperdesk.png, it is a binary file.
+adminto-react/src/assets/images/landing/icons/solarsystem.png, it is a binary file.
+adminto-react/src/assets/images/landing/testi/img-1.png, it is a binary file.
+adminto-react/src/assets/images/landing/testi/img-2.png, it is a binary file.
+adminto-react/src/assets/images/landing/testi/img-3.png, it is a binary file.
+adminto-react/src/assets/images/loading.gif, it is a binary file.
+adminto-react/src/assets/images/logo-dark-2.png, it is a binary file.
+adminto-react/src/assets/images/logo-dark.png, it is a binary file.
+adminto-react/src/assets/images/logo-light-2.png, it is a binary file.
+adminto-react/src/assets/images/logo-light.png, it is a binary file.
+adminto-react/src/assets/images/logo-sm-light.png, it is a binary file.
+adminto-react/src/assets/images/logo-sm.png, it is a binary file.
+adminto-react/src/assets/images/macbook.png, it is a binary file.
+adminto-react/src/assets/images/mail_confirm.png, it is a binary file.
+adminto-react/src/assets/images/megamenu-bg.png, it is a binary file.
+adminto-react/src/assets/images/mongery_logo_STANDART_BEYAZ.png, it is a binary file.
+adminto-react/src/assets/images/multiple-arrow.png, it is a binary file.
+adminto-react/src/assets/images/small/img-1.jpg, it is a binary file.
+adminto-react/src/assets/images/small/img-2.jpg, it is a binary file.
+adminto-react/src/assets/images/small/img-3.jpg, it is a binary file.
+adminto-react/src/assets/images/small/img-4.jpg, it is a binary file.
+adminto-react/src/assets/images/users/profile.jpg, it is a binary file.
+adminto-react/src/assets/images/users/user-1.jpg, it is a binary file.
+adminto-react/src/assets/images/users/user-10.jpg, it is a binary file.
+adminto-react/src/assets/images/users/user-2.jpg, it is a binary file.
+adminto-react/src/assets/images/users/user-3.jpg, it is a binary file.
+adminto-react/src/assets/images/users/user-4.jpg, it is a binary file.
+adminto-react/src/assets/images/users/user-5.jpg, it is a binary file.
+adminto-react/src/assets/images/users/user-6.jpg, it is a binary file.
+adminto-react/src/assets/images/users/user-7.jpg, it is a binary file.
+adminto-react/src/assets/images/users/user-8.jpg, it is a binary file.
+adminto-react/src/assets/images/users/user-9.jpg, it is a binary file.
+adminto-react/src/assets/scss/_custom-variables.scss, code is 62, comment is 37, blank is 34.
+adminto-react/src/assets/scss/_dark-mode.scss, code is 239, comment is 67, blank is 62.
+adminto-react/src/assets/scss/_light-mode.scss, code is 213, comment is 63, blank is 58.
+adminto-react/src/assets/scss/_variables.scss, code is 1087, comment is 242, blank is 287.
+adminto-react/src/assets/scss/app.scss, code is 104, comment is 23, blank is 10.
+adminto-react/src/assets/scss/custom/components/_accordions.scss, code is 22, comment is 3, blank is 2.
+adminto-react/src/assets/scss/custom/components/_alert.scss, code is 22, comment is 4, blank is 6.
+adminto-react/src/assets/scss/custom/components/_avatar.scss, code is 41, comment is 3, blank is 9.
+adminto-react/src/assets/scss/custom/components/_badge.scss, code is 33, comment is 11, blank is 9.
+adminto-react/src/assets/scss/custom/components/_breadcrumb.scss, code is 17, comment is 5, blank is 5.
+adminto-react/src/assets/scss/custom/components/_buttons.scss, code is 182, comment is 44, blank is 31.
+adminto-react/src/assets/scss/custom/components/_card.scss, code is 57, comment is 6, blank is 17.
+adminto-react/src/assets/scss/custom/components/_custom-checkbox.scss, code is 22, comment is 5, blank is 4.
+adminto-react/src/assets/scss/custom/components/_dropdown.scss, code is 102, comment is 7, blank is 25.
+adminto-react/src/assets/scss/custom/components/_forms.scss, code is 89, comment is 10, blank is 21.
+adminto-react/src/assets/scss/custom/components/_helper.scss, code is 92, comment is 10, blank is 25.
+adminto-react/src/assets/scss/custom/components/_modal.scss, code is 51, comment is 9, blank is 9.
+adminto-react/src/assets/scss/custom/components/_nav.scss, code is 62, comment is 6, blank is 14.
+adminto-react/src/assets/scss/custom/components/_pagination.scss, code is 19, comment is 4, blank is 3.
+adminto-react/src/assets/scss/custom/components/_popover.scss, code is 3, comment is 3, blank is 1.
+adminto-react/src/assets/scss/custom/components/_preloader.scss, code is 50, comment is 4, blank is 6.
+adminto-react/src/assets/scss/custom/components/_print.scss, code is 17, comment is 4, blank is 1.
+adminto-react/src/assets/scss/custom/components/_progress.scss, code is 44, comment is 11, blank is 17.
+adminto-react/src/assets/scss/custom/components/_reboot.scss, code is 51, comment is 6, blank is 13.
+adminto-react/src/assets/scss/custom/components/_social.scss, code is 16, comment is 4, blank is 6.
+adminto-react/src/assets/scss/custom/components/_tables.scss, code is 106, comment is 14, blank is 15.
+adminto-react/src/assets/scss/custom/components/_type.scss, code is 81, comment is 6, blank is 20.
+adminto-react/src/assets/scss/custom/components/_utilities.scss, code is 28, comment is 4, blank is 6.
+adminto-react/src/assets/scss/custom/components/_widgets.scss, code is 146, comment is 7, blank is 10.
+adminto-react/src/assets/scss/custom/fonts/_fonts.scss, code is 2, comment is 37, blank is 6.
+adminto-react/src/assets/scss/custom/pages/_authentication.scss, code is 32, comment is 6, blank is 5.
+adminto-react/src/assets/scss/custom/pages/_chat.scss, code is 194, comment is 4, blank is 22.
+adminto-react/src/assets/scss/custom/pages/_coming-soon.scss, code is 23, comment is 4, blank is 4.
+adminto-react/src/assets/scss/custom/pages/_components-demo.scss, code is 91, comment is 9, blank is 13.
+adminto-react/src/assets/scss/custom/pages/_ecommerce.scss, code is 54, comment is 5, blank is 10.
+adminto-react/src/assets/scss/custom/pages/_email.scss, code is 984, comment is 9, blank is 29.
+adminto-react/src/assets/scss/custom/pages/_error.scss, code is 57, comment is 5, blank is 10.
+adminto-react/src/assets/scss/custom/pages/_faq.scss, code is 21, comment is 3, blank is 3.
+adminto-react/src/assets/scss/custom/pages/_gallery.scss, code is 56, comment is 5, blank is 6.
+adminto-react/src/assets/scss/custom/pages/_kanbanboard.scss, code is 31, comment is 3, blank is 3.
+adminto-react/src/assets/scss/custom/pages/_landing.scss, code is 494, comment is 49, blank is 61.
+adminto-react/src/assets/scss/custom/pages/_logout.scss, code is 38, comment is 3, blank is 6.
+adminto-react/src/assets/scss/custom/pages/_maintenance.scss, code is 23, comment is 3, blank is 3.
+adminto-react/src/assets/scss/custom/pages/_pricing.scss, code is 92, comment is 4, blank is 2.
+adminto-react/src/assets/scss/custom/pages/_profile.scss, code is 39, comment is 4, blank is 10.
+adminto-react/src/assets/scss/custom/pages/_search-results.scss, code is 25, comment is 4, blank is 3.
+adminto-react/src/assets/scss/custom/pages/_sitemap.scss, code is 51, comment is 3, blank is 9.
+adminto-react/src/assets/scss/custom/pages/_task.scss, code is 82, comment is 5, blank is 13.
+adminto-react/src/assets/scss/custom/pages/_timeline.scss, code is 217, comment is 4, blank is 5.
+adminto-react/src/assets/scss/custom/plugins/_apexcharts.scss, code is 111, comment is 4, blank is 15.
+adminto-react/src/assets/scss/custom/plugins/_autocomplete.scss, code is 49, comment is 4, blank is 10.
+adminto-react/src/assets/scss/custom/plugins/_bootstrap-taginput.scss, code is 22, comment is 4, blank is 4.
+adminto-react/src/assets/scss/custom/plugins/_bootstrap-touchspin.scss, code is 10, comment is 3, blank is 1.
+adminto-react/src/assets/scss/custom/plugins/_calendar.scss, code is 286, comment is 6, blank is 41.
+adminto-react/src/assets/scss/custom/plugins/_chartist.scss, code is 153, comment is 4, blank is 14.
+adminto-react/src/assets/scss/custom/plugins/_chartjs.scss, code is 5, comment is 3, blank is 1.
+adminto-react/src/assets/scss/custom/plugins/_clockpicker.scss, code is 107, comment is 4, blank is 25.
+adminto-react/src/assets/scss/custom/plugins/_colorpicker.scss, code is 11, comment is 3, blank is 2.
+adminto-react/src/assets/scss/custom/plugins/_datatable.scss, code is 115, comment is 8, blank is 14.
+adminto-react/src/assets/scss/custom/plugins/_datepicker.scss, code is 715, comment is 8, blank is 134.
+adminto-react/src/assets/scss/custom/plugins/_daterange.scss, code is 8, comment is 3, blank is 2.
+adminto-react/src/assets/scss/custom/plugins/_deni-react-tree-view.scss, code is 13, comment is 3, blank is 3.
+adminto-react/src/assets/scss/custom/plugins/_dragula.scss, code is 32, comment is 3, blank is 6.
+adminto-react/src/assets/scss/custom/plugins/_dropify.scss, code is 37, comment is 4, blank is 5.
+adminto-react/src/assets/scss/custom/plugins/_dropzone.scss, code is 18, comment is 3, blank is 2.
+adminto-react/src/assets/scss/custom/plugins/_flatpickr.scss, code is 133, comment is 4, blank is 16.
+adminto-react/src/assets/scss/custom/plugins/_flot.scss, code is 49, comment is 4, blank is 11.
+adminto-react/src/assets/scss/custom/plugins/_form-wizard.scss, code is 4, comment is 3, blank is 1.
+adminto-react/src/assets/scss/custom/plugins/_google-maps.scss, code is 41, comment is 4, blank is 8.
+adminto-react/src/assets/scss/custom/plugins/_hopscotch.scss, code is 77, comment is 4, blank is 13.
+adminto-react/src/assets/scss/custom/plugins/_icons.scss, code is 8, comment is 3, blank is 1.
+adminto-react/src/assets/scss/custom/plugins/_jstree.scss, code is 44, comment is 3, blank is 9.
+adminto-react/src/assets/scss/custom/plugins/_lightbox.scss, code is 312, comment is 3, blank is 31.
+adminto-react/src/assets/scss/custom/plugins/_mapeal-maps.scss, code is 56, comment is 4, blank is 7.
+adminto-react/src/assets/scss/custom/plugins/_morris.scss, code is 46, comment is 4, blank is 6.
+adminto-react/src/assets/scss/custom/plugins/_multiple-select.scss, code is 57, comment is 4, blank is 7.
+adminto-react/src/assets/scss/custom/plugins/_parsley.scss, code is 24, comment is 3, blank is 5.
+adminto-react/src/assets/scss/custom/plugins/_quilljs-editor.scss, code is 211, comment is 7, blank is 22.
+adminto-react/src/assets/scss/custom/plugins/_rangeslider.scss, code is 54, comment is 3, blank is 9.
+adminto-react/src/assets/scss/custom/plugins/_react-select.scss, code is 183, comment is 7, blank is 19.
+adminto-react/src/assets/scss/custom/plugins/_react-typeahead.scss, code is 179, comment is 23, blank is 10.
+adminto-react/src/assets/scss/custom/plugins/_responsive-table.scss, code is 186, comment is 4, blank is 28.
+adminto-react/src/assets/scss/custom/plugins/_ricksaw.scss, code is 40, comment is 4, blank is 7.
+adminto-react/src/assets/scss/custom/plugins/_select2.scss, code is 127, comment is 4, blank is 12.
+adminto-react/src/assets/scss/custom/plugins/_selectize.scss, code is 157, comment is 6, blank is 23.
+adminto-react/src/assets/scss/custom/plugins/_slimscroll.scss, code is 188, comment is 6, blank is 24.
+adminto-react/src/assets/scss/custom/plugins/_sparkline-chart.scss, code is 17, comment is 3, blank is 2.
+adminto-react/src/assets/scss/custom/plugins/_sweetalert.scss, code is 110, comment is 4, blank is 23.
+adminto-react/src/assets/scss/custom/plugins/_tablesaw.scss, code is 100, comment is 4, blank is 19.
+adminto-react/src/assets/scss/custom/plugins/_tippy.scss, code is 68, comment is 3, blank is 6.
+adminto-react/src/assets/scss/custom/plugins/_toaster.scss, code is 23, comment is 7, blank is 8.
+adminto-react/src/assets/scss/custom/plugins/_tour-page.scss, code is 0, comment is 6, blank is 1.
+adminto-react/src/assets/scss/custom/plugins/_vector-maps.scss, code is 150, comment is 21, blank is 28.
+adminto-react/src/assets/scss/custom/plugins/_waves.scss, code is 97, comment is 7, blank is 16.
+adminto-react/src/assets/scss/custom/plugins/_x-editable.scss, code is 24, comment is 3, blank is 6.
+adminto-react/src/assets/scss/custom/plugins/icons/_dripicons.scss, code is 636, comment is 0, blank is 4.
+adminto-react/src/assets/scss/custom/plugins/icons/_feather.scss, code is 836, comment is 5, blank is 274.
+adminto-react/src/assets/scss/custom/plugins/icons/_fontawesome-all.scss, code is 4573, comment is 6, blank is 1480.
+adminto-react/src/assets/scss/custom/plugins/icons/_materialdesignicons.scss, code is 18002, comment is 114, blank is 5985.
+adminto-react/src/assets/scss/custom/plugins/icons/_pe-icon-7-stroke.scss, code is 628, comment is 1, blank is 3.
+adminto-react/src/assets/scss/custom/plugins/icons/_simple-line-icons.scss, code is 760, comment is 3, blank is 186.
+adminto-react/src/assets/scss/custom/plugins/icons/_themify-icons.scss, code is 1078, comment is 1, blank is 3.
+adminto-react/src/assets/scss/custom/plugins/icons/_weather-icons.scss, code is 1768, comment is 22, blank is 576.
+adminto-react/src/assets/scss/custom/structure/_footer.scss, code is 51, comment is 3, blank is 7.
+adminto-react/src/assets/scss/custom/structure/_general.scss, code is 7, comment is 3, blank is 3.
+adminto-react/src/assets/scss/custom/structure/_horizontal-nav.scss, code is 245, comment is 5, blank is 46.
+adminto-react/src/assets/scss/custom/structure/_layouts.scss, code is 55, comment is 5, blank is 11.
+adminto-react/src/assets/scss/custom/structure/_left-menu.scss, code is 766, comment is 32, blank is 141.
+adminto-react/src/assets/scss/custom/structure/_page-head.scss, code is 53, comment is 4, blank is 10.
+adminto-react/src/assets/scss/custom/structure/_right-sidebar.scss, code is 105, comment is 5, blank is 7.
+adminto-react/src/assets/scss/custom/structure/_topbar.scss, code is 466, comment is 32, blank is 74.
+adminto-react/src/assets/scss/icons.scss, code is 1, comment is 8, blank is 1.
+adminto-react/src/assets/scss/Theme.scss, code is 2, comment is 3, blank is 3.
+adminto-react/src/components/ContactDetails.tsx, code is 74, comment is 2, blank is 9.
+adminto-react/src/components/Datepicker.tsx, code is 92, comment is 3, blank is 7.
+adminto-react/src/components/FileUploader.tsx, code is 113, comment is 9, blank is 13.
+adminto-react/src/components/form/FormInput.tsx, code is 294, comment is 5, blank is 17.
+adminto-react/src/components/form/index.tsx, code is 3, comment is 0, blank is 1.
+adminto-react/src/components/form/VerticalForm.tsx, code is 44, comment is 3, blank is 4.
+adminto-react/src/components/Loader.tsx, code is 14, comment is 0, blank is 1.
+adminto-react/src/components/Pagination.tsx, code is 165, comment is 14, blank is 16.
+adminto-react/src/components/PricingCard.tsx, code is 51, comment is 1, blank is 5.
+adminto-react/src/components/Reminders.tsx, code is 50, comment is 1, blank is 4.
+adminto-react/src/components/Scrollbar.tsx, code is 14, comment is 0, blank is 3.
+adminto-react/src/components/Spinner.tsx, code is 36, comment is 1, blank is 5.
+adminto-react/src/components/StatisticsWidget1.tsx, code is 95, comment is 0, blank is 5.
+adminto-react/src/components/StatisticsWidget2.tsx, code is 54, comment is 0, blank is 3.
+adminto-react/src/components/StatisticsWidget3.tsx, code is 30, comment is 0, blank is 3.
+adminto-react/src/components/Table.tsx, code is 225, comment is 15, blank is 18.
+adminto-react/src/components/TeamMembers.tsx, code is 44, comment is 1, blank is 4.
+adminto-react/src/components/ThemeCustomizer/index.tsx, code is 225, comment is 34, blank is 31.
+adminto-react/src/components/ThemeCustomizer/LayoutColor.tsx, code is 37, comment is 0, blank is 5.
+adminto-react/src/components/ThemeCustomizer/LayoutTypes.tsx, code is 37, comment is 0, blank is 5.
+adminto-react/src/components/ThemeCustomizer/LayoutWidth.tsx, code is 37, comment is 0, blank is 5.
+adminto-react/src/components/ThemeCustomizer/LeftSideBarTheme.tsx, code is 59, comment is 0, blank is 7.
+adminto-react/src/components/ThemeCustomizer/LeftSideBarType.tsx, code is 52, comment is 0, blank is 6.
+adminto-react/src/components/ThemeCustomizer/MenuPositions.tsx, code is 37, comment is 0, blank is 5.
+adminto-react/src/components/ThemeCustomizer/SidebarUserInfo.tsx, code is 23, comment is 0, blank is 4.
+adminto-react/src/components/ThemeCustomizer/TopbarTheme.tsx, code is 37, comment is 0, blank is 5.
+adminto-react/src/components/topbar/NotificationDropdown.tsx, code is 71, comment is 6, blank is 10.
+adminto-react/src/components/topbar/ProfileDropdown.tsx, code is 56, comment is 5, blank is 9.
+adminto-react/src/components/topbar/SearchDropdown.tsx, code is 29, comment is 3, blank is 4.
+adminto-react/src/components/topbar/ThemeSetting.tsx, code is 14, comment is 0, blank is 3.
+adminto-react/src/components/topbar/TopbarSearch.tsx, code is 129, comment is 11, blank is 14.
+adminto-react/src/components/VectorMap/BaseVectorMap.tsx, code is 23, comment is 1, blank is 6.
+adminto-react/src/components/VectorMap/CanadaMap.tsx, code is 13, comment is 1, blank is 4.
+adminto-react/src/components/VectorMap/index.tsx, code is 16, comment is 0, blank is 1.
+adminto-react/src/components/VectorMap/IraqVectorMap.tsx, code is 13, comment is 1, blank is 4.
+adminto-react/src/components/VectorMap/ItalyVectorMap.tsx, code is 13, comment is 1, blank is 4.
+adminto-react/src/components/VectorMap/RussiaMap.tsx, code is 13, comment is 1, blank is 4.
+adminto-react/src/components/VectorMap/SpainMap.tsx, code is 13, comment is 1, blank is 4.
+adminto-react/src/components/VectorMap/UsaVectorMap.tsx, code is 13, comment is 1, blank is 4.
+adminto-react/src/components/VectorMap/WorldMap.tsx, code is 13, comment is 1, blank is 4.
+adminto-react/src/config.ts, code is 4, comment is 0, blank is 1.
+adminto-react/src/constants/index.ts, code is 1, comment is 0, blank is 0.
+adminto-react/src/constants/layout.ts, code is 31, comment is 1, blank is 7.
+adminto-react/src/constants/menu.ts, code is 968, comment is 0, blank is 6.
+adminto-react/src/global.d.ts, code is 3, comment is 0, blank is 0.
+adminto-react/src/helpers/api/apiCore.ts, code is 164, comment is 35, blank is 24.
+adminto-react/src/helpers/api/auth.ts, code is 19, comment is 1, blank is 6.
+adminto-react/src/helpers/api/index.ts, code is 2, comment is 0, blank is 1.
+adminto-react/src/helpers/api/utils.ts, code is 28, comment is 5, blank is 6.
+adminto-react/src/helpers/fake-backend.ts, code is 85, comment is 10, blank is 12.
+adminto-react/src/helpers/index.ts, code is 2, comment is 0, blank is 0.
+adminto-react/src/helpers/menu.ts, code is 32, comment is 2, blank is 7.
+adminto-react/src/hooks/index.ts, code is 7, comment is 0, blank is 1.
+adminto-react/src/hooks/usePageTitle.ts, code is 17, comment is 3, blank is 5.
+adminto-react/src/hooks/useQuery.ts, code is 5, comment is 0, blank is 2.
+adminto-react/src/hooks/useRedux.ts, code is 8, comment is 0, blank is 2.
+adminto-react/src/hooks/useToggle.ts, code is 7, comment is 0, blank is 4.
+adminto-react/src/hooks/useUser.ts, code is 6, comment is 0, blank is 2.
+adminto-react/src/hooks/useViewPort.ts, code is 15, comment is 0, blank is 4.
+adminto-react/src/i18n.ts, code is 21, comment is 5, blank is 6.
+adminto-react/src/index.tsx, code is 14, comment is 3, blank is 5.
+adminto-react/src/layouts/Default.tsx, code is 21, comment is 2, blank is 8.
+adminto-react/src/layouts/Footer.tsx, code is 23, comment is 0, blank is 2.
+adminto-react/src/layouts/Horizontal/index.tsx, code is 115, comment is 12, blank is 23.
+adminto-react/src/layouts/Horizontal/Menu.tsx, code is 222, comment is 16, blank is 30.
+adminto-react/src/layouts/Horizontal/Navbar.tsx, code is 24, comment is 2, blank is 5.
+adminto-react/src/layouts/LeftSidebar.tsx, code is 124, comment is 13, blank is 21.
+adminto-react/src/layouts/Menu.tsx, code is 184, comment is 11, blank is 20.
+adminto-react/src/layouts/RightSidebar.tsx, code is 57, comment is 9, blank is 11.
+adminto-react/src/layouts/Topbar/data.ts, code is 102, comment is 3, blank is 5.
+adminto-react/src/layouts/Topbar/index.tsx, code is 116, comment is 12, blank is 19.
+adminto-react/src/layouts/types.ts, code is 34, comment is 0, blank is 4.
+adminto-react/src/layouts/Vertical.tsx, code is 93, comment is 11, blank is 23.
+adminto-react/src/links.ts, code is 6, comment is 0, blank is 1.
+adminto-react/src/locales/es/translation.json, code is 29, comment is 0, blank is 0.
+adminto-react/src/myRedux/hooks.ts, code is 4, comment is 1, blank is 1.
+adminto-react/src/myRedux/Musteriler/slice.ts, code is 39, comment is 2, blank is 8.
+adminto-react/src/myRedux/Musteriler/types.ts, code is 10, comment is 0, blank is 1.
+adminto-react/src/myRedux/store.ts, code is 9, comment is 6, blank is 3.
+adminto-react/src/pages/apps/Chat/ChatArea.tsx, code is 171, comment is 9, blank is 19.
+adminto-react/src/pages/apps/Chat/ChatUsers.tsx, code is 138, comment is 8, blank is 14.
+adminto-react/src/pages/apps/Chat/data.ts, code is 125, comment is 2, blank is 6.
+adminto-react/src/pages/apps/Chat/index.tsx, code is 38, comment is 6, blank is 9.
+adminto-react/src/pages/apps/Chat/types.ts, code is 18, comment is 0, blank is 1.
+adminto-react/src/pages/apps/Contacts/List/data.ts, code is 76, comment is 2, blank is 3.
+adminto-react/src/pages/apps/Contacts/List/index.tsx, code is 144, comment is 7, blank is 16.
+adminto-react/src/pages/apps/Contacts/List/types.ts, code is 10, comment is 0, blank is 0.
+adminto-react/src/pages/apps/Contacts/Profile/CommentBox.tsx, code is 147, comment is 1, blank is 4.
+adminto-react/src/pages/apps/Contacts/Profile/data.ts, code is 126, comment is 2, blank is 6.
+adminto-react/src/pages/apps/Contacts/Profile/index.tsx, code is 38, comment is 4, blank is 7.
+adminto-react/src/pages/apps/Contacts/Profile/NewPost.tsx, code is 43, comment is 0, blank is 3.
+adminto-react/src/pages/apps/Contacts/Profile/types.ts, code is 31, comment is 0, blank is 3.
+adminto-react/src/pages/apps/Contacts/Profile/UserBox.tsx, code is 53, comment is 1, blank is 4.
+adminto-react/src/pages/apps/Email/Compose.tsx, code is 121, comment is 12, blank is 16.
+adminto-react/src/pages/apps/Email/data.ts, code is 1125, comment is 1, blank is 1.
+adminto-react/src/pages/apps/Email/Inbox.tsx, code is 247, comment is 10, blank is 25.
+adminto-react/src/pages/apps/Email/LeftBar.tsx, code is 95, comment is 0, blank is 8.
+adminto-react/src/pages/apps/Email/Message.tsx, code is 95, comment is 0, blank is 3.
+adminto-react/src/pages/apps/Email/types.ts, code is 12, comment is 0, blank is 0.
+adminto-react/src/pages/apps/Projects/data.ts, code is 83, comment is 2, blank is 2.
+adminto-react/src/pages/apps/Projects/index.tsx, code is 308, comment is 5, blank is 25.
+adminto-react/src/pages/apps/Projects/types.ts, code is 29, comment is 0, blank is 2.
+adminto-react/src/pages/apps/Siparisler/index.tsx, code is 225, comment is 3, blank is 18.
+adminto-react/src/pages/apps/Siparisler/types.ts, code is 12, comment is 0, blank is 1.
+adminto-react/src/pages/apps/Tasks/Board/data.ts, code is 121, comment is 2, blank is 3.
+adminto-react/src/pages/apps/Tasks/Board/index.tsx, code is 389, comment is 36, blank is 40.
+adminto-react/src/pages/apps/Tasks/Board/Task.tsx, code is 50, comment is 2, blank is 6.
+adminto-react/src/pages/apps/Tasks/Board/types.ts, code is 10, comment is 0, blank is 0.
+adminto-react/src/pages/apps/Tasks/Detail/index.tsx, code is 314, comment is 3, blank is 12.
+adminto-react/src/pages/auth/AuthLayout.tsx, code is 60, comment is 1, blank is 9.
+adminto-react/src/pages/auth/Confirm.tsx, code is 27, comment is 2, blank is 7.
+adminto-react/src/pages/auth/ForgetPassword.tsx, code is 84, comment is 10, blank is 19.
+adminto-react/src/pages/auth/LockScreen.tsx, code is 58, comment is 6, blank is 10.
+adminto-react/src/pages/auth/Login.tsx, code is 125, comment is 10, blank is 24.
+adminto-react/src/pages/auth/Logout.tsx, code is 87, comment is 5, blank is 14.
+adminto-react/src/pages/auth/Register.tsx, code is 105, comment is 10, blank is 18.
+adminto-react/src/pages/chart/ApexChart/BarChart.tsx, code is 82, comment is 3, blank is 5.
+adminto-react/src/pages/chart/ApexChart/DonutChart.tsx, code is 62, comment is 3, blank is 4.
+adminto-react/src/pages/chart/ApexChart/index.tsx, code is 69, comment is 3, blank is 5.
+adminto-react/src/pages/chart/ApexChart/LineAnomationChart.tsx, code is 169, comment is 4, blank is 5.
+adminto-react/src/pages/chart/ApexChart/LineChart.tsx, code is 112, comment is 4, blank is 4.
+adminto-react/src/pages/chart/ApexChart/MixedChart.tsx, code is 121, comment is 3, blank is 4.
+adminto-react/src/pages/chart/ApexChart/PieChart.tsx, code is 56, comment is 3, blank is 4.
+adminto-react/src/pages/chart/ApexChart/SplineChart.tsx, code is 68, comment is 4, blank is 4.
+adminto-react/src/pages/chart/ApexChart/StackedAreaChart.tsx, code is 112, comment is 7, blank is 7.
+adminto-react/src/pages/chart/ApexChart/StackedBarChart.tsx, code is 108, comment is 3, blank is 4.
+adminto-react/src/pages/chart/ChartJs/BarChart.tsx, code is 77, comment is 3, blank is 5.
+adminto-react/src/pages/chart/ChartJs/DonutChart.tsx, code is 57, comment is 2, blank is 5.
+adminto-react/src/pages/chart/ChartJs/index.tsx, code is 53, comment is 3, blank is 7.
+adminto-react/src/pages/chart/ChartJs/LineChart.tsx, code is 89, comment is 2, blank is 5.
+adminto-react/src/pages/chart/ChartJs/PieChart.tsx, code is 57, comment is 2, blank is 5.
+adminto-react/src/pages/chart/ChartJs/PolarChart.tsx, code is 63, comment is 3, blank is 5.
+adminto-react/src/pages/chart/ChartJs/RadarChart.tsx, code is 78, comment is 2, blank is 5.
+adminto-react/src/pages/dashboards/DashBoard1/data.ts, code is 86, comment is 3, blank is 5.
+adminto-react/src/pages/dashboards/DashBoard1/Inbox.tsx, code is 32, comment is 1, blank is 7.
+adminto-react/src/pages/dashboards/DashBoard1/index.tsx, code is 46, comment is 4, blank is 7.
+adminto-react/src/pages/dashboards/DashBoard1/Projects.tsx, code is 43, comment is 1, blank is 8.
+adminto-react/src/pages/dashboards/DashBoard1/RevenueChart.tsx, code is 90, comment is 0, blank is 7.
+adminto-react/src/pages/dashboards/DashBoard1/SalesChart.tsx, code is 69, comment is 0, blank is 7.
+adminto-react/src/pages/dashboards/DashBoard1/Statistics.tsx, code is 50, comment is 1, blank is 4.
+adminto-react/src/pages/dashboards/DashBoard1/StatisticsChart.tsx, code is 78, comment is 0, blank is 7.
+adminto-react/src/pages/dashboards/DashBoard1/types.ts, code is 16, comment is 0, blank is 1.
+adminto-react/src/pages/forms/Advanced.tsx, code is 329, comment is 6, blank is 24.
+adminto-react/src/pages/forms/Basic.tsx, code is 494, comment is 5, blank is 46.
+adminto-react/src/pages/forms/Editors.tsx, code is 46, comment is 3, blank is 7.
+adminto-react/src/pages/forms/FileUpload.tsx, code is 41, comment is 3, blank is 7.
+adminto-react/src/pages/forms/Validation.tsx, code is 626, comment is 21, blank is 30.
+adminto-react/src/pages/icons/DripiIcons/data.ts, code is 605, comment is 0, blank is 200.
+adminto-react/src/pages/icons/DripiIcons/index.tsx, code is 39, comment is 3, blank is 5.
+adminto-react/src/pages/icons/FeatherIcons/data.ts, code is 821, comment is 0, blank is 1.
+adminto-react/src/pages/icons/FeatherIcons/index.tsx, code is 40, comment is 3, blank is 5.
+adminto-react/src/pages/icons/FontAwesomeIcons/data.ts, code is 38972, comment is 0, blank is 1.
+adminto-react/src/pages/icons/FontAwesomeIcons/index.tsx, code is 96, comment is 3, blank is 13.
+adminto-react/src/pages/icons/MDIIcons/AllIcons.tsx, code is 21, comment is 1, blank is 4.
+adminto-react/src/pages/icons/MDIIcons/data.ts, code is 29289, comment is 1, blank is 2.
+adminto-react/src/pages/icons/MDIIcons/index.tsx, code is 102, comment is 5, blank is 15.
+adminto-react/src/pages/icons/MDIIcons/NewIcons.tsx, code is 21, comment is 1, blank is 4.
+adminto-react/src/pages/icons/MDIIcons/types.ts, code is 6, comment is 0, blank is 0.
+adminto-react/src/pages/icons/ThemifyIcons/data.ts, code is 1406, comment is 0, blank is 0.
+adminto-react/src/pages/icons/ThemifyIcons/index.tsx, code is 106, comment is 3, blank is 11.
+adminto-react/src/pages/Landing/Clients.tsx, code is 57, comment is 2, blank is 8.
+adminto-react/src/pages/Landing/Contact.tsx, code is 160, comment is 4, blank is 11.
+adminto-react/src/pages/Landing/data.ts, code is 156, comment is 2, blank is 9.
+adminto-react/src/pages/Landing/Demos.tsx, code is 62, comment is 1, blank is 5.
+adminto-react/src/pages/Landing/Feature.tsx, code is 220, comment is 1, blank is 3.
+adminto-react/src/pages/Landing/Footer.tsx, code is 69, comment is 1, blank is 3.
+adminto-react/src/pages/Landing/Hero.tsx, code is 43, comment is 1, blank is 3.
+adminto-react/src/pages/Landing/index.tsx, code is 61, comment is 4, blank is 17.
+adminto-react/src/pages/Landing/NavBar.tsx, code is 80, comment is 3, blank is 8.
+adminto-react/src/pages/Landing/Pricing.tsx, code is 57, comment is 1, blank is 9.
+adminto-react/src/pages/Landing/Services.tsx, code is 44, comment is 1, blank is 4.
+adminto-react/src/pages/Landing/Statistics.tsx, code is 35, comment is 1, blank is 4.
+adminto-react/src/pages/Landing/types.ts, code is 30, comment is 0, blank is 4.
+adminto-react/src/pages/other/ComingSoon.tsx, code is 67, comment is 4, blank is 6.
+adminto-react/src/pages/other/data.ts, code is 108, comment is 1, blank is 5.
+adminto-react/src/pages/other/Error404.tsx, code is 11, comment is 1, blank is 2.
+adminto-react/src/pages/other/Error500.tsx, code is 22, comment is 1, blank is 4.
+adminto-react/src/pages/other/FAQ.tsx, code is 152, comment is 2, blank is 10.
+adminto-react/src/pages/other/Gallery/data.tsx, code is 124, comment is 2, blank is 3.
+adminto-react/src/pages/other/Gallery/index.tsx, code is 162, comment is 12, blank is 15.
+adminto-react/src/pages/other/Gallery/LightBox.tsx, code is 27, comment is 1, blank is 4.
+adminto-react/src/pages/other/Gallery/types.ts, code is 13, comment is 0, blank is 1.
+adminto-react/src/pages/other/Invoice.tsx, code is 182, comment is 5, blank is 14.
+adminto-react/src/pages/other/Maintenance.tsx, code is 132, comment is 0, blank is 4.
+adminto-react/src/pages/other/Pricing.tsx, code is 38, comment is 4, blank is 6.
+adminto-react/src/pages/other/Starter.tsx, code is 19, comment is 2, blank is 3.
+adminto-react/src/pages/other/Timeline.tsx, code is 268, comment is 3, blank is 9.
+adminto-react/src/pages/other/types.ts, code is 38, comment is 0, blank is 3.
+adminto-react/src/pages/tables/AdvancedTable/data.ts, code is 1066, comment is 1, blank is 2.
+adminto-react/src/pages/tables/AdvancedTable/index.tsx, code is 147, comment is 4, blank is 14.
+adminto-react/src/pages/tables/AdvancedTable/types.ts, code is 15, comment is 0, blank is 1.
+adminto-react/src/pages/tables/BasicTable/BorderedTable.tsx, code is 50, comment is 1, blank is 4.
+adminto-react/src/pages/tables/BasicTable/BorderlessInverseTable.tsx, code is 48, comment is 1, blank is 4.
+adminto-react/src/pages/tables/BasicTable/BorderlessTable.tsx, code is 51, comment is 1, blank is 4.
+adminto-react/src/pages/tables/BasicTable/ContexualBackgroundTable.tsx, code is 61, comment is 1, blank is 4.
+adminto-react/src/pages/tables/BasicTable/ContexualTable.tsx, code is 51, comment is 1, blank is 4.
+adminto-react/src/pages/tables/BasicTable/data.ts, code is 17, comment is 1, blank is 2.
+adminto-react/src/pages/tables/BasicTable/DefaultTable.tsx, code is 50, comment is 1, blank is 4.
+adminto-react/src/pages/tables/BasicTable/HoverableTable.tsx, code is 48, comment is 1, blank is 4.
+adminto-react/src/pages/tables/BasicTable/index.tsx, code is 82, comment is 3, blank is 5.
+adminto-react/src/pages/tables/BasicTable/InverseTable.tsx, code is 51, comment is 1, blank is 4.
+adminto-react/src/pages/tables/BasicTable/SmallTable.tsx, code is 54, comment is 1, blank is 4.
+adminto-react/src/pages/tables/BasicTable/StripedRowsTable.tsx, code is 50, comment is 1, blank is 4.
+adminto-react/src/pages/tables/BasicTable/TableHeadOption.tsx, code is 51, comment is 1, blank is 3.
+adminto-react/src/pages/tables/BasicTable/types.ts, code is 13, comment is 0, blank is 1.
+adminto-react/src/pages/uikit/Avatars/BackGroundSizing.tsx, code is 55, comment is 0, blank is 11.
+adminto-react/src/pages/uikit/Avatars/ImageShapes.tsx, code is 49, comment is 1, blank is 5.
+adminto-react/src/pages/uikit/Avatars/ImageSizing.tsx, code is 13, comment is 1, blank is 2.
+adminto-react/src/pages/uikit/Avatars/index.tsx, code is 49, comment is 3, blank is 6.
+adminto-react/src/pages/uikit/Avatars/RoundedCircle.tsx, code is 38, comment is 1, blank is 4.
+adminto-react/src/pages/uikit/Avatars/RoundedCircleBackGround.tsx, code is 43, comment is 0, blank is 6.
+adminto-react/src/pages/uikit/Buttons/BlockButton.tsx, code is 23, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Buttons/ButtonGroups.tsx, code is 72, comment is 0, blank is 8.
+adminto-react/src/pages/uikit/Buttons/ButtonSize.tsx, code is 26, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Buttons/ButtonsWithLabels.tsx, code is 43, comment is 1, blank is 5.
+adminto-react/src/pages/uikit/Buttons/ButtonWidth.tsx, code is 28, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Buttons/data.ts, code is 19, comment is 1, blank is 1.
+adminto-react/src/pages/uikit/Buttons/DefaultButton.tsx, code is 28, comment is 1, blank is 7.
+adminto-react/src/pages/uikit/Buttons/DisabledButton.tsx, code is 24, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Buttons/IconsButton.tsx, code is 42, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Buttons/index.tsx, code is 118, comment is 5, blank is 8.
+adminto-react/src/pages/uikit/Buttons/OutlineButton.tsx, code is 27, comment is 1, blank is 7.
+adminto-react/src/pages/uikit/Buttons/OutlineRoundedButton.tsx, code is 31, comment is 1, blank is 7.
+adminto-react/src/pages/uikit/Buttons/RoundedButton.tsx, code is 27, comment is 1, blank is 7.
+adminto-react/src/pages/uikit/Buttons/RoundedButtonsWithLabels.tsx, code is 49, comment is 1, blank is 5.
+adminto-react/src/pages/uikit/Buttons/SoftButton.tsx, code is 27, comment is 1, blank is 7.
+adminto-react/src/pages/uikit/Buttons/SoftRoundedButton.tsx, code is 31, comment is 1, blank is 7.
+adminto-react/src/pages/uikit/Buttons/types.ts, code is 5, comment is 0, blank is 1.
+adminto-react/src/pages/uikit/Cards/CardGroup.tsx, code is 26, comment is 1, blank is 4.
+adminto-react/src/pages/uikit/Cards/CardWithHeader.tsx, code is 17, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Cards/CardWithHeaderAndFooter.tsx, code is 20, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Cards/CardWithHeaderAndQuote.tsx, code is 17, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Cards/CardWithImage1.tsx, code is 11, comment is 1, blank is 2.
+adminto-react/src/pages/uikit/Cards/CardWithImage2.tsx, code is 10, comment is 1, blank is 2.
+adminto-react/src/pages/uikit/Cards/CardWithImage3.tsx, code is 9, comment is 1, blank is 2.
+adminto-react/src/pages/uikit/Cards/CardWithImageCaps.tsx, code is 20, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Cards/CardWithImageOverlay.tsx, code is 20, comment is 1, blank is 3.
+adminto-react/src/pages/uikit/Cards/CardWithNavigation.tsx, code is 32, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Cards/CardWithSpecialTitle.tsx, code is 18, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Cards/CardWithTitleAndImage.tsx, code is 15, comment is 1, blank is 2.
+adminto-react/src/pages/uikit/Cards/ColoredCard.tsx, code is 49, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Cards/ColoredTextCard.tsx, code is 17, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Cards/data.ts, code is 28, comment is 2, blank is 3.
+adminto-react/src/pages/uikit/Cards/GridCards.tsx, code is 91, comment is 1, blank is 5.
+adminto-react/src/pages/uikit/Cards/index.tsx, code is 127, comment is 5, blank is 7.
+adminto-react/src/pages/uikit/Cards/types.ts, code is 7, comment is 0, blank is 0.
+adminto-react/src/pages/uikit/Carousel/Crossfade.tsx, code is 29, comment is 1, blank is 3.
+adminto-react/src/pages/uikit/Carousel/DefaultSlides.tsx, code is 29, comment is 1, blank is 4.
+adminto-react/src/pages/uikit/Carousel/index.tsx, code is 53, comment is 3, blank is 5.
+adminto-react/src/pages/uikit/Carousel/IndividualInterval.tsx, code is 29, comment is 1, blank is 3.
+adminto-react/src/pages/uikit/Carousel/SlideWithCaptions.tsx, code is 41, comment is 1, blank is 2.
+adminto-react/src/pages/uikit/Carousel/SlideWithControls.tsx, code is 26, comment is 1, blank is 3.
+adminto-react/src/pages/uikit/Carousel/SlideWithIndicators.tsx, code is 33, comment is 1, blank is 5.
+adminto-react/src/pages/uikit/Dropdowns/ActiveItemDropdown.tsx, code is 22, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Dropdowns/ColorVariantDropdown.tsx, code is 33, comment is 1, blank is 6.
+adminto-react/src/pages/uikit/Dropdowns/CustomDropdown.tsx, code is 58, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Dropdowns/DisabledItemDropdown.tsx, code is 22, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Dropdowns/DropdownMenuAlignment.tsx, code is 23, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Dropdowns/DropdownSizes.tsx, code is 54, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Dropdowns/DropdownWithHeader.tsx, code is 20, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Dropdowns/DropdownWithText.tsx, code is 15, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Dropdowns/DropEndVariationDropdown.tsx, code is 35, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Dropdowns/DropStartVariationDropdown.tsx, code is 35, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Dropdowns/DropUpVariationDropdown.tsx, code is 37, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Dropdowns/index.tsx, code is 68, comment is 4, blank is 8.
+adminto-react/src/pages/uikit/Dropdowns/SingleButtonDropdown.tsx, code is 39, comment is 0, blank is 4.
+adminto-react/src/pages/uikit/Dropdowns/SpiltButtonDropdown.tsx, code is 35, comment is 1, blank is 8.
+adminto-react/src/pages/uikit/Dropdowns/types.ts, code is 1, comment is 0, blank is 0.
+adminto-react/src/pages/uikit/EmbedVideo/index.tsx, code is 85, comment is 2, blank is 10.
+adminto-react/src/pages/uikit/GeneralUI/BreadcrumbExample.tsx, code is 30, comment is 0, blank is 5.
+adminto-react/src/pages/uikit/GeneralUI/ContextualBadges.tsx, code is 61, comment is 1, blank is 11.
+adminto-react/src/pages/uikit/GeneralUI/DefaultBadges.tsx, code is 37, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/GeneralUI/DefaultPagination.tsx, code is 25, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/GeneralUI/index.tsx, code is 79, comment is 4, blank is 8.
+adminto-react/src/pages/uikit/GeneralUI/PaginationAlignment.tsx, code is 28, comment is 0, blank is 4.
+adminto-react/src/pages/uikit/GeneralUI/PaginationSizes.tsx, code is 26, comment is 0, blank is 4.
+adminto-react/src/pages/uikit/GeneralUI/PillBadges.tsx, code is 60, comment is 1, blank is 11.
+adminto-react/src/pages/uikit/GeneralUI/PositionedBadges.tsx, code is 44, comment is 0, blank is 5.
+adminto-react/src/pages/uikit/GeneralUI/RoundedPagination.tsx, code is 25, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/GeneralUI/types.ts, code is 11, comment is 0, blank is 0.
+adminto-react/src/pages/uikit/Grid/index.tsx, code is 261, comment is 2, blank is 22.
+adminto-react/src/pages/uikit/Images/ImageShape.tsx, code is 35, comment is 1, blank is 6.
+adminto-react/src/pages/uikit/Images/ImageSizes.tsx, code is 43, comment is 1, blank is 7.
+adminto-react/src/pages/uikit/Images/index.tsx, code is 39, comment is 3, blank is 5.
+adminto-react/src/pages/uikit/Modals/CustomModals.tsx, code is 191, comment is 1, blank is 11.
+adminto-react/src/pages/uikit/Modals/index.tsx, code is 63, comment is 3, blank is 5.
+adminto-react/src/pages/uikit/Modals/ModalPositions.tsx, code is 53, comment is 2, blank is 8.
+adminto-react/src/pages/uikit/Modals/ModalSizes.tsx, code is 128, comment is 5, blank is 11.
+adminto-react/src/pages/uikit/Modals/ModalWithAlerts.tsx, code is 79, comment is 3, blank is 12.
+adminto-react/src/pages/uikit/Modals/ModalWithPages.tsx, code is 158, comment is 2, blank is 20.
+adminto-react/src/pages/uikit/Modals/MultipleModal.tsx, code is 54, comment is 1, blank is 9.
+adminto-react/src/pages/uikit/Modals/StaticBackDropModal.tsx, code is 42, comment is 1, blank is 7.
+adminto-react/src/pages/uikit/Modals/ToggleBetwenModals.tsx, code is 48, comment is 1, blank is 8.
+adminto-react/src/pages/uikit/NestableList/index.tsx, code is 128, comment is 3, blank is 11.
+adminto-react/src/pages/uikit/Notifications/CustomBackgroundAlerts.tsx, code is 32, comment is 0, blank is 4.
+adminto-react/src/pages/uikit/Notifications/CustomDismissibleAlerts.tsx, code is 48, comment is 3, blank is 5.
+adminto-react/src/pages/uikit/Notifications/CustomToast.tsx, code is 77, comment is 0, blank is 4.
+adminto-react/src/pages/uikit/Notifications/DefaultAlerts.tsx, code is 23, comment is 0, blank is 4.
+adminto-react/src/pages/uikit/Notifications/DefaultToasts.tsx, code is 139, comment is 4, blank is 12.
+adminto-react/src/pages/uikit/Notifications/DismissibleAlerts.tsx, code is 37, comment is 3, blank is 5.
+adminto-react/src/pages/uikit/Notifications/index.tsx, code is 65, comment is 3, blank is 9.
+adminto-react/src/pages/uikit/Notifications/LiveAlert.tsx, code is 30, comment is 3, blank is 5.
+adminto-react/src/pages/uikit/Notifications/PlacementToast.tsx, code is 72, comment is 1, blank is 7.
+adminto-react/src/pages/uikit/Offcanvases/data.ts, code is 37, comment is 1, blank is 3.
+adminto-react/src/pages/uikit/Offcanvases/DefaultOffcanvas.tsx, code is 44, comment is 3, blank is 6.
+adminto-react/src/pages/uikit/Offcanvases/index.tsx, code is 34, comment is 4, blank is 7.
+adminto-react/src/pages/uikit/Offcanvases/OffcanvasPlacement.tsx, code is 66, comment is 4, blank is 8.
+adminto-react/src/pages/uikit/Offcanvases/OffCanvasWithBackdrop.tsx, code is 59, comment is 4, blank is 8.
+adminto-react/src/pages/uikit/Offcanvases/types.ts, code is 9, comment is 0, blank is 1.
+adminto-react/src/pages/uikit/Placeholders/BasicPlaceholders.tsx, code is 21, comment is 1, blank is 3.
+adminto-react/src/pages/uikit/Placeholders/index.tsx, code is 39, comment is 3, blank is 5.
+adminto-react/src/pages/uikit/Placeholders/PlaceholdersAnimation.tsx, code is 21, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Placeholders/PlaceholdersConcept.tsx, code is 20, comment is 0, blank is 4.
+adminto-react/src/pages/uikit/Placeholders/PlaceholdersWidth.tsx, code is 18, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Placeholders/PlaceholdersWithSizes.tsx, code is 19, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Placeholders/PlaceholdersWithVariants.tsx, code is 24, comment is 0, blank is 4.
+adminto-react/src/pages/uikit/PopoversAndTooltips/DefaultPopovers.tsx, code is 52, comment is 0, blank is 6.
+adminto-react/src/pages/uikit/PopoversAndTooltips/DefaultTooltips.tsx, code is 38, comment is 0, blank is 5.
+adminto-react/src/pages/uikit/PopoversAndTooltips/index.tsx, code is 35, comment is 3, blank is 5.
+adminto-react/src/pages/uikit/Progress/ContextualAlternatives.tsx, code is 23, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Progress/DefaultProgress.tsx, code is 17, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Progress/index.tsx, code is 43, comment is 3, blank is 5.
+adminto-react/src/pages/uikit/Progress/Sizes.tsx, code is 21, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/Progress/Striped.tsx, code is 18, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/RangeSlider/index.tsx, code is 139, comment is 3, blank is 16.
+adminto-react/src/pages/uikit/Spinners/AlignmentSpinners.tsx, code is 18, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Spinners/BorderSpinners.tsx, code is 13, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Spinners/ButtonSpinners.tsx, code is 42, comment is 1, blank is 5.
+adminto-react/src/pages/uikit/Spinners/ColorBorderSpinners.tsx, code is 19, comment is 0, blank is 4.
+adminto-react/src/pages/uikit/Spinners/ColorGrowingSpinners copy.tsx, code is 19, comment is 0, blank is 4.
+adminto-react/src/pages/uikit/Spinners/GrowingSpinners.tsx, code is 16, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Spinners/index.tsx, code is 63, comment is 3, blank is 5.
+adminto-react/src/pages/uikit/Spinners/SpinnersPlacement.tsx, code is 19, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/Spinners/SpinnersSize.tsx, code is 30, comment is 1, blank is 4.
+adminto-react/src/pages/uikit/TabsAccordions/Accordion1.tsx, code is 55, comment is 1, blank is 9.
+adminto-react/src/pages/uikit/TabsAccordions/Accordion2.tsx, code is 59, comment is 1, blank is 9.
+adminto-react/src/pages/uikit/TabsAccordions/CustomCollapse.tsx, code is 31, comment is 0, blank is 4.
+adminto-react/src/pages/uikit/TabsAccordions/data.ts, code is 63, comment is 1, blank is 4.
+adminto-react/src/pages/uikit/TabsAccordions/DefaultTabs.tsx, code is 38, comment is 1, blank is 6.
+adminto-react/src/pages/uikit/TabsAccordions/HorizontalCollapse.tsx, code is 15, comment is 0, blank is 2.
+adminto-react/src/pages/uikit/TabsAccordions/index.tsx, code is 71, comment is 4, blank is 7.
+adminto-react/src/pages/uikit/TabsAccordions/TabsBordered.tsx, code is 39, comment is 1, blank is 6.
+adminto-react/src/pages/uikit/TabsAccordions/TabsJustified.tsx, code is 38, comment is 1, blank is 6.
+adminto-react/src/pages/uikit/TabsAccordions/TabsVerticalLeft.tsx, code is 44, comment is 1, blank is 6.
+adminto-react/src/pages/uikit/TabsAccordions/TabsVerticalRight.tsx, code is 44, comment is 1, blank is 5.
+adminto-react/src/pages/uikit/TabsAccordions/types.ts, code is 5, comment is 0, blank is 0.
+adminto-react/src/pages/uikit/TourPage/index.tsx, code is 147, comment is 3, blank is 22.
+adminto-react/src/pages/uikit/TreeView/data.ts, code is 138, comment is 0, blank is 3.
+adminto-react/src/pages/uikit/TreeView/index.tsx, code is 63, comment is 3, blank is 5.
+adminto-react/src/pages/uikit/TreeView/types.ts, code is 5, comment is 0, blank is 0.
+adminto-react/src/pages/uikit/Typography/index.tsx, code is 341, comment is 2, blank is 45.
+adminto-react/src/pages/uikit/Widgets/data.ts, code is 37, comment is 2, blank is 5.
+adminto-react/src/pages/uikit/Widgets/index.tsx, code is 174, comment is 5, blank is 12.
+adminto-react/src/pages/uikit/Widgets/Progressbar.tsx, code is 58, comment is 0, blank is 8.
+adminto-react/src/pages/uikit/Widgets/StatisticsWidget.tsx, code is 34, comment is 1, blank is 4.
+adminto-react/src/pages/uikit/Widgets/types.ts, code is 5, comment is 0, blank is 0.
+adminto-react/src/react-app-env.d.ts, code is 0, comment is 1, blank is 0.
+adminto-react/src/react-table-config.d.ts, code is 107, comment is 4, blank is 9.
+adminto-react/src/redux/actions.ts, code is 3, comment is 0, blank is 0.
+adminto-react/src/redux/auth/actions.ts, code is 51, comment is 3, blank is 8.
+adminto-react/src/redux/auth/constants.ts, code is 10, comment is 0, blank is 2.
+adminto-react/src/redux/auth/reducers.ts, code is 125, comment is 2, blank is 10.
+adminto-react/src/redux/auth/saga.ts, code is 79, comment is 14, blank is 15.
+adminto-react/src/redux/layout/actions.ts, code is 53, comment is 1, blank is 11.
+adminto-react/src/redux/layout/constants.ts, code is 41, comment is 1, blank is 4.
+adminto-react/src/redux/layout/reducers.ts, code is 82, comment is 4, blank is 6.
+adminto-react/src/redux/layout/saga.ts, code is 36, comment is 17, blank is 10.
+adminto-react/src/redux/musteriler/actions.ts, code is 45, comment is 0, blank is 10.
+adminto-react/src/redux/musteriler/constants.ts, code is 8, comment is 0, blank is 1.
+adminto-react/src/redux/musteriler/reducers.ts, code is 68, comment is 0, blank is 11.
+adminto-react/src/redux/pageTitle/actions.ts, code is 12, comment is 1, blank is 1.
+adminto-react/src/redux/pageTitle/constants.ts, code is 14, comment is 0, blank is 2.
+adminto-react/src/redux/pageTitle/reducers.ts, code is 37, comment is 1, blank is 3.
+adminto-react/src/redux/reducers.ts, code is 15, comment is 0, blank is 2.
+adminto-react/src/redux/sagas.ts, code is 6, comment is 0, blank is 2.
+adminto-react/src/redux/sepet/actions.ts, code is 27, comment is 0, blank is 5.
+adminto-react/src/redux/sepet/constants.ts, code is 3, comment is 0, blank is 0.
+adminto-react/src/redux/sepet/reducers.ts, code is 70, comment is 0, blank is 12.
+adminto-react/src/redux/store.ts, code is 21, comment is 1, blank is 6.
+adminto-react/src/redux/token/actions.ts, code is 13, comment is 0, blank is 7.
+adminto-react/src/redux/token/constants.ts, code is 3, comment is 0, blank is 0.
+adminto-react/src/redux/token/reducers.ts, code is 30, comment is 0, blank is 11.
+adminto-react/src/reportWebVitals.ts, code is 13, comment is 0, blank is 2.
+adminto-react/src/routes/index.tsx, code is 395, comment is 20, blank is 26.
+adminto-react/src/routes/PrivateRoute.tsx, code is 20, comment is 12, blank is 9.
+adminto-react/src/routes/Root.tsx, code is 10, comment is 2, blank is 6.
+adminto-react/src/routes/Routes.tsx, code is 10, comment is 1, blank is 3.
+adminto-react/src/service/login.ts, code is 31, comment is 0, blank is 10.
+adminto-react/src/setupTests.ts, code is 1, comment is 4, blank is 0.
+adminto-react/src/utils/array.ts, code is 19, comment is 14, blank is 3.
+adminto-react/src/utils/index.ts, code is 2, comment is 0, blank is 0.
+adminto-react/src/utils/layout.ts, code is 52, comment is 6, blank is 7.
+adminto-react/tsconfig.json, code is 24, comment is 0, blank is 2.
+adminto-react/webpack.config.js, code is 5, comment is 0, blank is 0.
+adminto-react/yarn.lock, code is 8897, comment is 31, blank is 2272.
+docs/assets/css/demo.css, code is 29, comment is 0, blank is 6.
+docs/assets/css/layout.css, code is 1247, comment is 113, blank is 244.
+docs/assets/css/theme.css, code is 9435, comment is 119, blank is 1166.
+docs/assets/img/layout-1.png, it is a binary file.
+docs/assets/img/layout-2.png, it is a binary file.
+docs/assets/img/layout-3.png, it is a binary file.
+docs/assets/img/layout-4.png, it is a binary file.
+docs/assets/img/layout-5.png, it is a binary file.
+docs/assets/img/layout-6.png, it is a binary file.
+docs/assets/img/logo-dark.png, it is a binary file.
+docs/assets/img/logo-light.png, it is a binary file.
+docs/assets/include/css/demo.css, code is 28, comment is 0, blank is 6.
+docs/assets/include/css/demo.min.css, code is 1, comment is 0, blank is 0.
+docs/assets/include/css/layout.css, code is 1226, comment is 113, blank is 243.
+docs/assets/include/css/layout.min.css, code is 1, comment is 0, blank is 0.
+docs/assets/include/css/theme.css, code is 11581, comment is 119, blank is 1615.
+docs/assets/include/css/theme.min.css, code is 1, comment is 6, blank is 0.
+docs/assets/include/json/autocomplete-data-for-documentation-search.json, code is 2939, comment is 0, blank is 2.
+docs/assets/include/scss/_user-variables.scss, code is 0, comment is 3, blank is 0.
+docs/assets/include/scss/_user.scss, code is 0, comment is 3, blank is 0.
+docs/assets/include/scss/demo.scss, code is 33, comment is 2, blank is 7.
+docs/assets/include/scss/docs/_docs.scss, code is 33, comment is 26, blank is 21.
+docs/assets/include/scss/docs/_mixins.scss, code is 2, comment is 1, blank is 0.
+docs/assets/include/scss/docs/_variables.scss, code is 225, comment is 72, blank is 133.
+docs/assets/include/scss/docs/accordion/_accordion.scss, code is 12, comment is 3, blank is 3.
+docs/assets/include/scss/docs/anchor/_anchor.scss, code is 19, comment is 3, blank is 1.
+docs/assets/include/scss/docs/breadcrumb/_breadcrumb.scss, code is 16, comment is 3, blank is 4.
+docs/assets/include/scss/docs/button/_button.scss, code is 34, comment is 6, blank is 7.
+docs/assets/include/scss/docs/callout/_callout.scss, code is 16, comment is 3, blank is 2.
+docs/assets/include/scss/docs/dropdown/_dropdown.scss, code is 3, comment is 3, blank is 1.
+docs/assets/include/scss/docs/forms/_forms.scss, code is 140, comment is 9, blank is 28.
+docs/assets/include/scss/docs/go-to/_go-to.scss, code is 25, comment is 3, blank is 4.
+docs/assets/include/scss/docs/icons/_icon-block.scss, code is 16, comment is 3, blank is 3.
+docs/assets/include/scss/docs/icons/_icon-svg.scss, code is 11, comment is 5, blank is 2.
+docs/assets/include/scss/docs/layout/_layout.scss, code is 126, comment is 7, blank is 26.
+docs/assets/include/scss/docs/list/_list.scss, code is 43, comment is 5, blank is 8.
+docs/assets/include/scss/docs/mixins/_callout.scss, code is 3, comment is 0, blank is 0.
+docs/assets/include/scss/docs/mixins/_content-centered.scss, code is 14, comment is 4, blank is 1.
+docs/assets/include/scss/docs/paginations/_paginations.scss, code is 20, comment is 3, blank is 3.
+docs/assets/include/scss/docs/progress/_progress.scss, code is 5, comment is 3, blank is 1.
+docs/assets/include/scss/docs/promo/_promo.scss, code is 8, comment is 0, blank is 1.
+docs/assets/include/scss/docs/reboot/_style.scss, code is 44, comment is 6, blank is 13.
+docs/assets/include/scss/docs/tabs/_tabs.scss, code is 10, comment is 3, blank is 1.
+docs/assets/include/scss/docs/utilities/_backgrounds.scss, code is 19, comment is 3, blank is 4.
+docs/assets/include/scss/docs/utilities/_borders.scss, code is 34, comment is 3, blank is 2.
+docs/assets/include/scss/docs/utilities/_colors.scss, code is 6, comment is 3, blank is 2.
+docs/assets/include/scss/docs/utilities/_content-centered.scss, code is 6, comment is 3, blank is 1.
+docs/assets/include/scss/docs/utilities/_gradients.scss, code is 20, comment is 3, blank is 3.
+docs/assets/include/scss/docs/utilities/_links.scss, code is 53, comment is 3, blank is 14.
+docs/assets/include/scss/docs/utilities/_opacity.scss, code is 8, comment is 3, blank is 0.
+docs/assets/include/scss/docs/utilities/_position-spaces.scss, code is 12, comment is 3, blank is 1.
+docs/assets/include/scss/docs/utilities/_sizing.scss, code is 24, comment is 3, blank is 6.
+docs/assets/include/scss/docs/utilities/_text.scss, code is 15, comment is 9, blank is 7.
+docs/assets/include/scss/docs/utilities/_transitions.scss, code is 3, comment is 3, blank is 1.
+docs/assets/include/scss/docs/utilities/_z-index.scss, code is 11, comment is 3, blank is 1.
+docs/assets/include/scss/docs/vendor/_markup.scss, code is 54, comment is 3, blank is 4.
+docs/assets/include/scss/docs/vendor/_scrollbar.scss, code is 4, comment is 3, blank is 0.
+docs/assets/include/scss/docs/vendor/_ui-autocomplete.scss, code is 86, comment is 3, blank is 17.
+docs/assets/include/scss/layout.scss, code is 91, comment is 16, blank is 18.
+docs/assets/include/scss/theme.scss, code is 6, comment is 9, blank is 6.
+docs/assets/js/autocomplete.js, code is 36, comment is 2, blank is 4.
+docs/assets/js/custom-scrollbar.js, code is 10, comment is 2, blank is 2.
+docs/assets/js/header-fixing.js, code is 22, comment is 3, blank is 4.
+docs/assets/js/main.js, code is 53, comment is 4, blank is 11.
+docs/assets/js/sticky-sidebar.js, code is 9, comment is 0, blank is 1.
+docs/assets/js/theme-custom.js, code is 0, comment is 1, blank is 0.
+docs/assets/vendor/bootstrap/dist/css/bootstrap-grid.css, code is 3511, comment is 7, blank is 201.
+docs/assets/vendor/bootstrap/dist/css/bootstrap-grid.css.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/dist/css/bootstrap-grid.min.css, code is 1, comment is 7, blank is 0.
+docs/assets/vendor/bootstrap/dist/css/bootstrap-grid.min.css.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/dist/css/bootstrap-reboot.css, code is 267, comment is 8, blank is 56.
+docs/assets/vendor/bootstrap/dist/css/bootstrap-reboot.css.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/dist/css/bootstrap-reboot.min.css, code is 1, comment is 8, blank is 0.
+docs/assets/vendor/bootstrap/dist/css/bootstrap-reboot.min.css.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/dist/css/bootstrap.css, code is 8832, comment is 7, blank is 1199.
+docs/assets/vendor/bootstrap/dist/css/bootstrap.css.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/dist/css/bootstrap.min.css, code is 1, comment is 7, blank is 0.
+docs/assets/vendor/bootstrap/dist/css/bootstrap.min.css.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/dist/js/bootstrap.bundle.js, code is 4493, comment is 1439, blank is 1161.
+docs/assets/vendor/bootstrap/dist/js/bootstrap.bundle.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js, code is 1, comment is 6, blank is 0.
+docs/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/dist/js/bootstrap.js, code is 3262, comment is 410, blank is 841.
+docs/assets/vendor/bootstrap/dist/js/bootstrap.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/dist/js/bootstrap.min.js, code is 1, comment is 6, blank is 0.
+docs/assets/vendor/bootstrap/dist/js/bootstrap.min.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/README.md, code is 76, comment is 16, blank is 28.
+docs/assets/vendor/bootstrap/scss/_alert.scss, code is 28, comment is 13, blank is 10.
+docs/assets/vendor/bootstrap/scss/_badge.scss, code is 34, comment is 12, blank is 8.
+docs/assets/vendor/bootstrap/scss/_buttons.scss, code is 87, comment is 22, blank is 28.
+docs/assets/vendor/bootstrap/scss/_code.scss, code is 36, comment is 6, blank is 6.
+docs/assets/vendor/bootstrap/scss/_functions.scss, code is 54, comment is 19, blank is 13.
+docs/assets/vendor/bootstrap/scss/_grid.scss, code is 28, comment is 15, blank is 9.
+docs/assets/vendor/bootstrap/scss/_images.scss, code is 22, comment is 13, blank is 7.
+docs/assets/vendor/bootstrap/scss/_mixins.scss, code is 32, comment is 9, blank is 6.
+docs/assets/vendor/bootstrap/scss/_nav.scss, code is 78, comment is 19, blank is 23.
+docs/assets/vendor/bootstrap/scss/_navbar.scss, code is 194, comment is 52, blank is 54.
+docs/assets/vendor/bootstrap/scss/_print.scss, code is 84, comment is 34, blank is 24.
+docs/assets/vendor/bootstrap/scss/_reboot.scss, code is 265, comment is 175, blank is 84.
+docs/assets/vendor/bootstrap/scss/_root.scss, code is 13, comment is 3, blank is 3.
+docs/assets/vendor/bootstrap/scss/_tables.scss, code is 121, comment is 29, blank is 36.
+docs/assets/vendor/bootstrap/scss/_transitions.scss, code is 17, comment is 0, blank is 3.
+docs/assets/vendor/bootstrap/scss/_type.scss, code is 82, comment is 21, blank is 23.
+docs/assets/vendor/bootstrap/scss/_utilities.scss, code is 17, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/scss/_variables.scss, code is 756, comment is 108, blank is 267.
+docs/assets/vendor/bootstrap/scss/bootstrap-grid.scss, code is 18, comment is 6, blank is 5.
+docs/assets/vendor/bootstrap/scss/bootstrap-reboot.scss, code is 4, comment is 7, blank is 1.
+docs/assets/vendor/bootstrap/scss/bootstrap.scss, code is 18, comment is 6, blank is 1.
+docs/assets/vendor/bootstrap/scss/mixins/_alert.scss, code is 11, comment is 0, blank is 2.
+docs/assets/vendor/bootstrap/scss/mixins/_background-variant.scss, code is 16, comment is 2, blank is 3.
+docs/assets/vendor/bootstrap/scss/mixins/_badge.scss, code is 15, comment is 0, blank is 2.
+docs/assets/vendor/bootstrap/scss/mixins/_border-radius.scss, code is 52, comment is 2, blank is 9.
+docs/assets/vendor/bootstrap/scss/mixins/_box-shadow.scss, code is 17, comment is 2, blank is 1.
+docs/assets/vendor/bootstrap/scss/mixins/_breakpoints.scss, code is 69, comment is 44, blank is 10.
+docs/assets/vendor/bootstrap/scss/mixins/_buttons.scss, code is 83, comment is 12, blank is 13.
+docs/assets/vendor/bootstrap/scss/mixins/_caret.scss, code is 55, comment is 0, blank is 7.
+docs/assets/vendor/bootstrap/scss/mixins/_clearfix.scss, code is 7, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/scss/mixins/_deprecate.scss, code is 5, comment is 5, blank is 0.
+docs/assets/vendor/bootstrap/scss/mixins/_float.scss, code is 12, comment is 1, blank is 1.
+docs/assets/vendor/bootstrap/scss/mixins/_forms.scss, code is 152, comment is 16, blank is 25.
+docs/assets/vendor/bootstrap/scss/mixins/_gradients.scss, code is 34, comment is 7, blank is 4.
+docs/assets/vendor/bootstrap/scss/mixins/_grid-framework.scss, code is 49, comment is 10, blank is 9.
+docs/assets/vendor/bootstrap/scss/mixins/_grid.scss, code is 34, comment is 10, blank is 7.
+docs/assets/vendor/bootstrap/scss/mixins/_hover.scss, code is 23, comment is 10, blank is 4.
+docs/assets/vendor/bootstrap/scss/mixins/_image.scss, code is 13, comment is 18, blank is 7.
+docs/assets/vendor/bootstrap/scss/mixins/_list-group.scss, code is 17, comment is 1, blank is 3.
+docs/assets/vendor/bootstrap/scss/mixins/_lists.scss, code is 4, comment is 2, blank is 1.
+docs/assets/vendor/bootstrap/scss/mixins/_nav-divider.scss, code is 6, comment is 3, blank is 1.
+docs/assets/vendor/bootstrap/scss/mixins/_pagination.scss, code is 19, comment is 1, blank is 2.
+docs/assets/vendor/bootstrap/scss/mixins/_reset-text.scss, code is 16, comment is 2, blank is 0.
+docs/assets/vendor/bootstrap/scss/mixins/_resize.scss, code is 4, comment is 3, blank is 1.
+docs/assets/vendor/bootstrap/scss/mixins/_screen-reader.scss, code is 21, comment is 9, blank is 3.
+docs/assets/vendor/bootstrap/scss/mixins/_size.scss, code is 5, comment is 1, blank is 1.
+docs/assets/vendor/bootstrap/scss/mixins/_table-row.scss, code is 29, comment is 5, blank is 5.
+docs/assets/vendor/bootstrap/scss/mixins/_text-emphasis.scss, code is 12, comment is 2, blank is 2.
+docs/assets/vendor/bootstrap/scss/mixins/_text-hide.scss, code is 8, comment is 2, blank is 1.
+docs/assets/vendor/bootstrap/scss/mixins/_text-truncate.scss, code is 5, comment is 2, blank is 1.
+docs/assets/vendor/bootstrap/scss/mixins/_transition.scss, code is 14, comment is 1, blank is 1.
+docs/assets/vendor/bootstrap/scss/mixins/_visibility.scss, code is 4, comment is 2, blank is 2.
+docs/assets/vendor/bootstrap/scss/utilities/_align.scss, code is 6, comment is 2, blank is 1.
+docs/assets/vendor/bootstrap/scss/utilities/_background.scss, code is 14, comment is 1, blank is 4.
+docs/assets/vendor/bootstrap/scss/utilities/_borders.scss, code is 52, comment is 7, blank is 16.
+docs/assets/vendor/bootstrap/scss/utilities/_clearfix.scss, code is 3, comment is 0, blank is 0.
+docs/assets/vendor/bootstrap/scss/utilities/_display.scss, code is 13, comment is 7, blank is 6.
+docs/assets/vendor/bootstrap/scss/utilities/_embed.scss, code is 33, comment is 1, blank is 5.
+docs/assets/vendor/bootstrap/scss/utilities/_flex.scss, code is 39, comment is 4, blank is 8.
+docs/assets/vendor/bootstrap/scss/utilities/_float.scss, code is 8, comment is 1, blank is 2.
+docs/assets/vendor/bootstrap/scss/utilities/_overflow.scss, code is 3, comment is 1, blank is 1.
+docs/assets/vendor/bootstrap/scss/utilities/_position.scss, code is 24, comment is 3, blank is 5.
+docs/assets/vendor/bootstrap/scss/utilities/_screenreaders.scss, code is 6, comment is 3, blank is 2.
+docs/assets/vendor/bootstrap/scss/utilities/_shadows.scss, code is 4, comment is 1, blank is 1.
+docs/assets/vendor/bootstrap/scss/utilities/_sizing.scss, code is 11, comment is 3, blank is 6.
+docs/assets/vendor/bootstrap/scss/utilities/_spacing.scss, code is 64, comment is 4, blank is 5.
+docs/assets/vendor/bootstrap/scss/utilities/_stretched-link.scss, code is 13, comment is 5, blank is 1.
+docs/assets/vendor/bootstrap/scss/utilities/_text.scss, code is 39, comment is 12, blank is 22.
+docs/assets/vendor/bootstrap/scss/utilities/_visibility.scss, code is 6, comment is 4, blank is 3.
+docs/assets/vendor/bootstrap/scss/vendor/_rfs.scss, code is 126, comment is 43, blank is 35.
+docs/assets/vendor/font-awesome/css/fontawesome-all.min.css, code is 1, comment is 4, blank is 0.
+docs/assets/vendor/font-awesome/webfonts/fa-brands-400.eot, it is a binary file.
+docs/assets/vendor/font-awesome/webfonts/fa-brands-400.svg, code is 882, comment is 2, blank is 0.
+docs/assets/vendor/font-awesome/webfonts/fa-brands-400.ttf, it is a binary file.
+docs/assets/vendor/font-awesome/webfonts/fa-brands-400.woff, it is a binary file.
+docs/assets/vendor/font-awesome/webfonts/fa-brands-400.woff2, it is a binary file.
+docs/assets/vendor/font-awesome/webfonts/fa-regular-400.eot, it is a binary file.
+docs/assets/vendor/font-awesome/webfonts/fa-regular-400.svg, code is 332, comment is 2, blank is 0.
+docs/assets/vendor/font-awesome/webfonts/fa-regular-400.ttf, it is a binary file.
+docs/assets/vendor/font-awesome/webfonts/fa-regular-400.woff, it is a binary file.
+docs/assets/vendor/font-awesome/webfonts/fa-regular-400.woff2, it is a binary file.
+docs/assets/vendor/font-awesome/webfonts/fa-solid-900.eot, it is a binary file.
+docs/assets/vendor/font-awesome/webfonts/fa-solid-900.svg, code is 1902, comment is 2, blank is 0.
+docs/assets/vendor/font-awesome/webfonts/fa-solid-900.ttf, it is a binary file.
+docs/assets/vendor/font-awesome/webfonts/fa-solid-900.woff, it is a binary file.
+docs/assets/vendor/font-awesome/webfonts/fa-solid-900.woff2, it is a binary file.
+docs/assets/vendor/jquery-migrate/AUTHORS.txt, code is 17, comment is 0, blank is 1.
+docs/assets/vendor/jquery-migrate/build/copygit.sh, code is 4, comment is 1, blank is 2.
+docs/assets/vendor/jquery-migrate/build/release.js, code is 245, comment is 21, blank is 45.
+docs/assets/vendor/jquery-migrate/build/tasks/testswarm.js, code is 50, comment is 2, blank is 6.
+docs/assets/vendor/jquery-migrate/CONTRIBUTING.md, code is 103, comment is 13, blank is 80.
+docs/assets/vendor/jquery-migrate/dist/jquery-migrate.js, code is 432, comment is 60, blank is 134.
+docs/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js, code is 213, comment is 1, blank is 1.
+docs/assets/vendor/jquery-migrate/Gruntfile.js, code is 104, comment is 12, blank is 17.
+docs/assets/vendor/jquery-migrate/LICENSE.txt, code is 28, comment is 2, blank is 8.
+docs/assets/vendor/jquery-migrate/README.md, code is 15, comment is 6, blank is 14.
+docs/assets/vendor/jquery-migrate/src/ajax.js, code is 13, comment is 1, blank is 4.
+docs/assets/vendor/jquery-migrate/src/attributes.js, code is 32, comment is 6, blank is 10.
+docs/assets/vendor/jquery-migrate/src/core.js, code is 68, comment is 12, blank is 22.
+docs/assets/vendor/jquery-migrate/src/css.js, code is 31, comment is 3, blank is 10.
+docs/assets/vendor/jquery-migrate/src/data.js, code is 29, comment is 2, blank is 6.
+docs/assets/vendor/jquery-migrate/src/deferred.js, code is 42, comment is 5, blank is 11.
+docs/assets/vendor/jquery-migrate/src/effects.js, code is 18, comment is 2, blank is 5.
+docs/assets/vendor/jquery-migrate/src/event.js, code is 96, comment is 11, blank is 22.
+docs/assets/vendor/jquery-migrate/src/intro.js, code is 10, comment is 4, blank is 3.
+docs/assets/vendor/jquery-migrate/src/migrate.js, code is 60, comment is 10, blank is 15.
+docs/assets/vendor/jquery-migrate/src/migratemute.js, code is 3, comment is 2, blank is 0.
+docs/assets/vendor/jquery-migrate/src/offset.js, code is 16, comment is 0, blank is 5.
+docs/assets/vendor/jquery-migrate/src/outro.js, code is 2, comment is 0, blank is 0.
+docs/assets/vendor/jquery-migrate/src/serialize.js, code is 9, comment is 0, blank is 5.
+docs/assets/vendor/jquery-migrate/src/traversing.js, code is 5, comment is 0, blank is 1.
+docs/assets/vendor/jquery-migrate/src/version.js, code is 1, comment is 0, blank is 1.
+docs/assets/vendor/jquery-migrate/warnings.md, code is 82, comment is 6, blank is 70.
+docs/assets/vendor/jquery-ui/.bower.json, code is 22, comment is 0, blank is 1.
+docs/assets/vendor/jquery-ui/bower.json, code is 12, comment is 0, blank is 1.
+docs/assets/vendor/jquery-ui/component.json, code is 12, comment is 0, blank is 1.
+docs/assets/vendor/jquery-ui/composer.json, code is 66, comment is 0, blank is 3.
+docs/assets/vendor/jquery-ui/jquery-ui.core.min.js, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/jquery-ui/jquery-ui.js, code is 5278, comment is 1132, blank is 1118.
+docs/assets/vendor/jquery-ui/jquery-ui.min.js, code is 2, comment is 4, blank is 1.
+docs/assets/vendor/jquery-ui/README.md, code is 9, comment is 5, blank is 3.
+docs/assets/vendor/jquery-ui/themes/base/accordion.css, code is 13, comment is 10, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/all.css, code is 2, comment is 10, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/autocomplete.css, code is 6, comment is 10, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/base.css, code is 19, comment is 10, blank is 1.
+docs/assets/vendor/jquery-ui/themes/base/button.css, code is 57, comment is 16, blank is 9.
+docs/assets/vendor/jquery-ui/themes/base/checkboxradio.css, code is 23, comment is 10, blank is 1.
+docs/assets/vendor/jquery-ui/themes/base/controlgroup.css, code is 49, comment is 12, blank is 4.
+docs/assets/vendor/jquery-ui/themes/base/core.css, code is 69, comment is 19, blank is 9.
+docs/assets/vendor/jquery-ui/themes/base/datepicker.css, code is 169, comment is 13, blank is 3.
+docs/assets/vendor/jquery-ui/themes/base/dialog.css, code is 91, comment is 10, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/draggable.css, code is 4, comment is 8, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/base/images/ui-icons_444444_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/base/images/ui-icons_555555_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/base/images/ui-icons_777620_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/base/images/ui-icons_777777_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/base/images/ui-icons_cc0000_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/base/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/base/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/base/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/base/menu.css, code is 47, comment is 14, blank is 3.
+docs/assets/vendor/jquery-ui/themes/base/progressbar.css, code is 18, comment is 10, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/resizable.css, code is 70, comment is 8, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/selectable.css, code is 9, comment is 8, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/selectmenu.css, code is 40, comment is 10, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/slider.css, code is 61, comment is 11, blank is 3.
+docs/assets/vendor/jquery-ui/themes/base/sortable.css, code is 4, comment is 8, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/spinner.css, code is 41, comment is 11, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/tabs.css, code is 41, comment is 10, blank is 0.
+docs/assets/vendor/jquery-ui/themes/base/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/base/tooltip.css, code is 9, comment is 10, blank is 0.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-bg_diagonals-thick_8_333333_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-bg_glass_40_111111_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-bg_glass_55_1c1c1c_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-bg_highlight-hard_100_f9f9f9_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-bg_highlight-hard_40_aaaaaa_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-bg_highlight-soft_50_aaaaaa_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-bg_inset-hard_45_cd0a0a_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-bg_inset-hard_55_ffeb80_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-icons_222222_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-icons_4ca300_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-icons_bbbbbb_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-icons_ededed_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-icons_ffcf29_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/black-tie/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/black-tie/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/black-tie/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/blitzer/images/ui-bg_diagonals-thick_75_f3d8d8_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/blitzer/images/ui-bg_dots-small_65_a6a6a6_2x2.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/blitzer/images/ui-bg_glass_55_fbf8ee_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/blitzer/images/ui-bg_highlight-hard_100_eeeeee_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/blitzer/images/ui-bg_highlight-hard_100_f6f6f6_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/blitzer/images/ui-bg_highlight-soft_15_cc0000_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/blitzer/images/ui-icons_004276_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/blitzer/images/ui-icons_cc0000_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/blitzer/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/blitzer/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/blitzer/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/blitzer/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-bg_glass_50_3baae3_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-icons_2694e8_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-icons_2e83ff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-icons_3d80b3_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-icons_72a7cf_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/cupertino/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/cupertino/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/cupertino/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-bg_glass_40_ffc73d_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-bg_highlight-hard_20_0972a5_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-bg_highlight-soft_33_003147_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-bg_highlight-soft_35_222222_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-bg_highlight-soft_44_444444_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-bg_highlight-soft_80_eeeeee_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-bg_loop_25_000000_21x21.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-icons_222222_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-icons_4b8e0b_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-icons_a83300_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-icons_cccccc_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dark-hive/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/dark-hive/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/dark-hive/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/dot-luv/images/ui-bg_diagonals-thick_15_0b3e6f_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dot-luv/images/ui-bg_dots-medium_30_0b58a2_4x4.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dot-luv/images/ui-bg_dots-small_20_333333_2x2.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dot-luv/images/ui-bg_dots-small_30_a32d00_2x2.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dot-luv/images/ui-bg_dots-small_40_00498f_2x2.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dot-luv/images/ui-bg_gloss-wave_20_111111_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dot-luv/images/ui-icons_00498f_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dot-luv/images/ui-icons_98d2fb_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dot-luv/images/ui-icons_9ccdfc_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dot-luv/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/dot-luv/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/dot-luv/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/dot-luv/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/eggplant/images/ui-bg_gloss-wave_30_3d3644_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/eggplant/images/ui-bg_highlight-soft_100_dcd9de_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/eggplant/images/ui-bg_highlight-soft_100_eae6ea_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/eggplant/images/ui-bg_highlight-soft_25_30273a_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/eggplant/images/ui-bg_highlight-soft_45_5f5964_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/eggplant/images/ui-icons_454545_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/eggplant/images/ui-icons_734d99_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/eggplant/images/ui-icons_8d78a5_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/eggplant/images/ui-icons_a8a3ae_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/eggplant/images/ui-icons_ebccce_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/eggplant/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/eggplant/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/eggplant/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/eggplant/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/excite-bike/images/ui-bg_diagonals-small_25_c5ddfc_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/excite-bike/images/ui-bg_diagonals-thick_20_e69700_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/excite-bike/images/ui-bg_diagonals-thick_22_1484e6_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/excite-bike/images/ui-bg_diagonals-thick_26_2293f7_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/excite-bike/images/ui-bg_highlight-soft_100_f9f9f9_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/excite-bike/images/ui-bg_inset-hard_100_eeeeee_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/excite-bike/images/ui-icons_0a82eb_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/excite-bike/images/ui-icons_0b54d5_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/excite-bike/images/ui-icons_5fa5e3_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/excite-bike/images/ui-icons_fcdd4a_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/excite-bike/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/excite-bike/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/excite-bike/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/excite-bike/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/flick/images/ui-bg_glass_65_ffffff_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/flick/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/flick/images/ui-bg_highlight-soft_25_0073ea_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/flick/images/ui-bg_highlight-soft_50_dddddd_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/flick/images/ui-icons_0073ea_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/flick/images/ui-icons_454545_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/flick/images/ui-icons_666666_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/flick/images/ui-icons_ff0084_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/flick/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/flick/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/flick/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/flick/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-bg_diagonals-small_40_db4865_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-bg_diagonals-small_50_93c3cd_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-bg_diagonals-small_50_ff3853_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-bg_diagonals-small_75_ccd232_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-bg_dots-medium_80_ffff38_4x4.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-bg_dots-small_35_35414f_2x2.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-bg_white-lines_85_f7f7ba_40x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-icons_454545_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-icons_88a206_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-icons_c02669_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-icons_e1e463_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-icons_ffeb33_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/hot-sneaks/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-bg_glass_100_f5f0e5_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-bg_glass_25_cb842e_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-bg_glass_70_ede4d4_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-bg_highlight-hard_100_f4f0ec_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-bg_highlight-hard_65_fee4bd_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-bg_highlight-hard_75_f5f5b5_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-bg_inset-soft_100_f4f0ec_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-icons_c47a23_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-icons_cb672b_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-icons_f08000_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-icons_f35f07_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-icons_ff7519_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/humanity/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/humanity/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/humanity/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-bg_diagonals-small_0_aaaaaa_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-bg_diagonals-thick_15_444444_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-bg_diagonals-thick_95_ffdc2e_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-bg_glass_55_fbf5d0_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-bg_highlight-hard_30_285c00_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-bg_highlight-soft_33_3a8104_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-bg_highlight-soft_50_4eb305_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-bg_highlight-soft_60_4ca20b_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-bg_inset-soft_10_285c00_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-icons_4eb305_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-icons_72b42d_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-icons_cd0a0a_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/le-frog/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/le-frog/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/le-frog/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-bg_glass_15_5f391b_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-bg_gloss-wave_20_1c160d_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-bg_gloss-wave_25_453326_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-bg_gloss-wave_30_44372c_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-bg_highlight-soft_20_201913_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-bg_highlight-soft_20_619226_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-bg_inset-soft_10_201913_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-icons_222222_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-icons_9bcc60_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-icons_add978_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-icons_e3ddc9_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-icons_f1fd86_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/mint-choc/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/mint-choc/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/mint-choc/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/overcast/images/ui-bg_glass_100_f8f8f8_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/overcast/images/ui-bg_glass_35_dddddd_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/overcast/images/ui-bg_glass_60_eeeeee_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/overcast/images/ui-bg_inset-hard_75_999999_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/overcast/images/ui-bg_inset-soft_50_c9c9c9_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/overcast/images/ui-icons_3383bb_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/overcast/images/ui-icons_454545_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/overcast/images/ui-icons_70b2e1_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/overcast/images/ui-icons_999999_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/overcast/images/ui-icons_fbc856_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/overcast/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/overcast/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/overcast/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-bg_diagonal-maze_20_6e4f1c_10x10.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-bg_diagonal-maze_40_000000_10x10.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_10_eceadf_60x60.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_10_f8f7f6_60x60.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_15_eceadf_60x60.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_15_f7f3de_60x60.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_15_ffffff_60x60.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_65_654b24_60x60.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_68_b83400_60x60.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-icons_222222_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-icons_3572ac_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-icons_8c291d_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-icons_b83400_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-icons_fbdb93_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/pepper-grinder/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-bg_glass_85_dfeffc_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-bg_glass_95_fef1ec_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-icons_217bc0_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-icons_2e83ff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-icons_469bdd_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-icons_6da8d5_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-icons_cd0a0a_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-icons_d8e7f3_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/images/ui-icons_f9bd01_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/redmond/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/redmond/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/redmond/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/smoothness/images/ui-bg_glass_75_dadada_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/smoothness/images/ui-icons_222222_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/smoothness/images/ui-icons_2e83ff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/smoothness/images/ui-icons_454545_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/smoothness/images/ui-icons_888888_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/smoothness/images/ui-icons_cd0a0a_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/smoothness/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/smoothness/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/smoothness/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-bg_glass_55_fcf0ba_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-bg_gloss-wave_100_ece8da_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-bg_highlight-hard_100_fafaf4_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-bg_highlight-hard_15_459e00_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-bg_highlight-hard_95_cccccc_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-bg_highlight-soft_25_67b021_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-bg_highlight-soft_95_ffedad_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-bg_inset-soft_15_2b2922_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-icons_808080_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-icons_847e71_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-icons_8DC262_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-icons_cd0a0a_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-icons_eeeeee_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/south-street/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/south-street/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/south-street/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-bg_glass_45_0078ae_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-bg_glass_55_f8da4e_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-bg_glass_75_79c9ec_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-icons_0078ae_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-icons_056b93_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-icons_d8e7f3_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-icons_e0fdff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-icons_f5e175_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-icons_f7a50d_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/images/ui-icons_fcd113_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/start/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/start/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/start/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-bg_diagonals-medium_20_d34d17_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-bg_gloss-wave_45_817865_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-bg_gloss-wave_60_fece2f_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-bg_gloss-wave_70_ffdd57_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-bg_gloss-wave_90_fff9e5_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-bg_highlight-soft_100_feeebd_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-bg_inset-soft_30_ffffff_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-icons_3d3d3d_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-icons_bd7b00_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-icons_d19405_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-icons_eb990f_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-icons_ed9f26_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-icons_fadc7a_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/images/ui-icons_ffe180_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/sunny/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/sunny/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/sunny/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_10_4f4221_10x8.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_20_372806_10x8.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_25_675423_10x8.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_25_d5ac5d_10x8.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_8_261803_10x8.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_8_443113_10x8.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-bg_highlight-hard_65_fee4bd_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-icons_070603_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-icons_e8e2b5_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-icons_e9cd86_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-icons_efec9f_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-icons_f2ec64_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-icons_f9f2bd_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/images/ui-icons_ff7519_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/swanky-purse/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-bg_diagonals-small_50_262626_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-bg_glass_40_0a0a0a_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-bg_glass_55_f1fbe5_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-bg_glass_60_000000_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-bg_gloss-wave_55_000000_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-bg_gloss-wave_85_9fda58_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-bg_gloss-wave_95_f6ecd5_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-icons_000000_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-icons_1f1f1f_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-icons_9fda58_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-icons_b8ec79_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-icons_cd0a0a_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/trontastic/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/trontastic/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/trontastic/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-bg_glass_20_555555_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-bg_glass_40_0078a3_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-bg_glass_40_ffc73d_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-bg_gloss-wave_25_333333_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-bg_highlight-soft_80_eeeeee_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-bg_inset-soft_25_000000_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-bg_inset-soft_30_f58400_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-icons_222222_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-icons_4b8e0b_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-icons_a83300_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-icons_cccccc_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/ui-darkness/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-icons_222222_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-icons_228ef1_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-icons_ef8c08_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-icons_ffd27a_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/images/ui-icons_ffffff_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/ui-lightness/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-bg_glass_95_fef1ec_1x400.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-bg_gloss-wave_16_121212_500x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-bg_highlight-hard_15_888888_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-bg_highlight-hard_55_555555_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-bg_highlight-soft_35_adadad_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-bg_highlight-soft_60_dddddd_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-bg_inset-soft_15_121212_1x100.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-icons_666666_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-icons_aaaaaa_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-icons_bbbbbb_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-icons_c98000_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-icons_cccccc_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-icons_cd0a0a_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/images/ui-icons_f29a00_256x240.png, it is a binary file.
+docs/assets/vendor/jquery-ui/themes/vader/jquery-ui.css, code is 1222, comment is 48, blank is 41.
+docs/assets/vendor/jquery-ui/themes/vader/jquery-ui.min.css, code is 1, comment is 5, blank is 1.
+docs/assets/vendor/jquery-ui/themes/vader/theme.css, code is 401, comment is 29, blank is 13.
+docs/assets/vendor/jquery-ui/ui/.jshintrc, code is 22, comment is 0, blank is 2.
+docs/assets/vendor/jquery-ui/ui/core.js, code is 19, comment is 1, blank is 1.
+docs/assets/vendor/jquery-ui/ui/data.js, code is 19, comment is 15, blank is 5.
+docs/assets/vendor/jquery-ui/ui/disable-selection.js, code is 23, comment is 15, blank is 8.
+docs/assets/vendor/jquery-ui/ui/effect.js, code is 1240, comment is 160, blank is 235.
+docs/assets/vendor/jquery-ui/ui/effects/effect-blind.js, code is 43, comment is 15, blank is 12.
+docs/assets/vendor/jquery-ui/ui/effects/effect-bounce.js, code is 61, comment is 24, blank is 25.
+docs/assets/vendor/jquery-ui/ui/effects/effect-clip.js, code is 38, comment is 15, blank is 12.
+docs/assets/vendor/jquery-ui/ui/effects/effect-drop.js, code is 39, comment is 16, blank is 14.
+docs/assets/vendor/jquery-ui/ui/effects/effect-explode.js, code is 70, comment is 27, blank is 16.
+docs/assets/vendor/jquery-ui/ui/effects/effect-fade.js, code is 24, comment is 15, blank is 8.
+docs/assets/vendor/jquery-ui/ui/effects/effect-fold.js, code is 54, comment is 17, blank is 18.
+docs/assets/vendor/jquery-ui/ui/effects/effect-highlight.js, code is 32, comment is 15, blank is 10.
+docs/assets/vendor/jquery-ui/ui/effects/effect-puff.js, code is 19, comment is 15, blank is 8.
+docs/assets/vendor/jquery-ui/ui/effects/effect-pulsate.js, code is 34, comment is 17, blank is 13.
+docs/assets/vendor/jquery-ui/ui/effects/effect-scale.js, code is 28, comment is 17, blank is 11.
+docs/assets/vendor/jquery-ui/ui/effects/effect-shake.js, code is 41, comment is 18, blank is 15.
+docs/assets/vendor/jquery-ui/ui/effects/effect-size.js, code is 122, comment is 35, blank is 34.
+docs/assets/vendor/jquery-ui/ui/effects/effect-slide.js, code is 46, comment is 18, blank is 12.
+docs/assets/vendor/jquery-ui/ui/effects/effect-transfer.js, code is 18, comment is 15, blank is 7.
+docs/assets/vendor/jquery-ui/ui/escape-selector.js, code is 9, comment is 3, blank is 3.
+docs/assets/vendor/jquery-ui/ui/focusable.js, code is 49, comment is 21, blank is 14.
+docs/assets/vendor/jquery-ui/ui/form-reset-mixin.js, code is 48, comment is 16, blank is 13.
+docs/assets/vendor/jquery-ui/ui/form.js, code is 11, comment is 5, blank is 4.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-af.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ar-DZ.js, code is 27, comment is 6, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ar.js, code is 27, comment is 6, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-az.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-be.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-bg.js, code is 29, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-bs.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ca.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-cs.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-cy-GB.js, code is 35, comment is 4, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-da.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-de.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-el.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-en-AU.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-en-GB.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-en-NZ.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-eo.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-es.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-et.js, code is 35, comment is 4, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-eu.js, code is 28, comment is 3, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-fa.js, code is 59, comment is 5, blank is 9.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-fi.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-fo.js, code is 35, comment is 4, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-fr-CA.js, code is 29, comment is 3, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-fr-CH.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-fr.js, code is 28, comment is 6, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-gl.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-he.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-hi.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-hr.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-hu.js, code is 28, comment is 3, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-hy.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-id.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-is.js, code is 35, comment is 4, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-it-CH.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-it.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ja.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ka.js, code is 38, comment is 4, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-kk.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-km.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ko.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ky.js, code is 29, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-lb.js, code is 35, comment is 4, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-lt.js, code is 35, comment is 4, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-lv.js, code is 35, comment is 4, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-mk.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ml.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ms.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-nb.js, code is 39, comment is 4, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-nl-BE.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-nl.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-nn.js, code is 39, comment is 4, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-no.js, code is 39, comment is 4, blank is 7.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-pl.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-pt-BR.js, code is 35, comment is 4, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-pt.js, code is 35, comment is 3, blank is 6.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-rm.js, code is 50, comment is 4, blank is 7.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ro.js, code is 28, comment is 7, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ru.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-sk.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-sl.js, code is 28, comment is 5, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-sq.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-sr-SR.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-sr.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-sv.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-ta.js, code is 42, comment is 4, blank is 7.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-th.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-tj.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-tr.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-uk.js, code is 28, comment is 5, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-vi.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-zh-CN.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-zh-HK.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/i18n/datepicker-zh-TW.js, code is 28, comment is 4, blank is 5.
+docs/assets/vendor/jquery-ui/ui/ie.js, code is 9, comment is 3, blank is 3.
+docs/assets/vendor/jquery-ui/ui/jquery-1-7.js, code is 53, comment is 23, blank is 13.
+docs/assets/vendor/jquery-ui/ui/keycode.js, code is 26, comment is 14, blank is 5.
+docs/assets/vendor/jquery-ui/ui/labels.js, code is 23, comment is 24, blank is 15.
+docs/assets/vendor/jquery-ui/ui/minified/core.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/data.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/disable-selection.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/effect.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/escape-selector.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/focusable.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/form-reset-mixin.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/form.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-af.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ar-DZ.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ar.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-az.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-be.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-bg.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-bs.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ca.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-cs.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-cy-GB.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-da.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-de.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-el.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-en-AU.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-en-GB.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-en-NZ.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-eo.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-es.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-et.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-eu.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-fa.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-fi.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-fo.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-fr-CA.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-fr-CH.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-fr.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-gl.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-he.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-hi.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-hr.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-hu.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-hy.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-id.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-is.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-it-CH.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-it.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ja.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ka.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-kk.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-km.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ko.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ky.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-lb.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-lt.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-lv.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-mk.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ml.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ms.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-nb.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-nl-BE.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-nl.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-nn.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-no.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-pl.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-pt-BR.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-pt.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-rm.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ro.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ru.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-sk.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-sl.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-sq.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-sr-SR.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-sr.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-sv.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-ta.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-th.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-tj.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-tr.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-uk.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-vi.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-zh-CN.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-zh-HK.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/i18n/datepicker-zh-TW.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/ie.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/jquery-1-7.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/keycode.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/labels.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/plugin.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/position.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/safe-active-element.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/safe-blur.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/scroll-parent.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/tabbable.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/unique-id.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/version.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/minified/widget.js, code is 1, comment is 3, blank is 0.
+docs/assets/vendor/jquery-ui/ui/plugin.js, code is 34, comment is 3, blank is 7.
+docs/assets/vendor/jquery-ui/ui/position.js, code is 403, comment is 40, blank is 55.
+docs/assets/vendor/jquery-ui/ui/safe-active-element.js, code is 23, comment is 10, blank is 7.
+docs/assets/vendor/jquery-ui/ui/safe-blur.js, code is 13, comment is 4, blank is 4.
+docs/assets/vendor/jquery-ui/ui/scroll-parent.js, code is 24, comment is 14, blank is 7.
+docs/assets/vendor/jquery-ui/ui/tabbable.js, code is 15, comment is 14, blank is 6.
+docs/assets/vendor/jquery-ui/ui/unique-id.js, code is 27, comment is 14, blank is 8.
+docs/assets/vendor/jquery-ui/ui/version.js, code is 10, comment is 2, blank is 5.
+docs/assets/vendor/jquery-ui/ui/widget.js, code is 527, comment is 75, blank is 131.
+docs/assets/vendor/jquery-ui/ui/widgets/accordion.js, code is 464, comment is 54, blank is 95.
+docs/assets/vendor/jquery-ui/ui/widgets/autocomplete.js, code is 505, comment is 78, blank is 99.
+docs/assets/vendor/jquery-ui/ui/widgets/button.js, code is 285, comment is 43, blank is 58.
+docs/assets/vendor/jquery-ui/ui/widgets/checkboxradio.js, code is 198, comment is 33, blank is 55.
+docs/assets/vendor/jquery-ui/ui/widgets/controlgroup.js, code is 214, comment is 36, blank is 48.
+docs/assets/vendor/jquery-ui/ui/widgets/datepicker.js, code is 1395, comment is 358, blank is 186.
+docs/assets/vendor/jquery-ui/ui/widgets/dialog.js, code is 714, comment is 81, blank is 145.
+docs/assets/vendor/jquery-ui/ui/widgets/draggable.js, code is 898, comment is 130, blank is 222.
+docs/assets/vendor/jquery-ui/ui/widgets/droppable.js, code is 363, comment is 55, blank is 90.
+docs/assets/vendor/jquery-ui/ui/widgets/menu.js, code is 504, comment is 63, blank is 106.
+docs/assets/vendor/jquery-ui/ui/widgets/mouse.js, code is 151, comment is 32, blank is 43.
+docs/assets/vendor/jquery-ui/ui/widgets/progressbar.js, code is 116, comment is 26, blank is 36.
+docs/assets/vendor/jquery-ui/ui/widgets/resizable.js, code is 945, comment is 41, blank is 216.
+docs/assets/vendor/jquery-ui/ui/widgets/selectable.js, code is 233, comment is 27, blank is 50.
+docs/assets/vendor/jquery-ui/ui/widgets/selectmenu.js, code is 505, comment is 57, blank is 125.
+docs/assets/vendor/jquery-ui/ui/widgets/slider.js, code is 602, comment is 39, blank is 111.
+docs/assets/vendor/jquery-ui/ui/widgets/sortable.js, code is 1113, comment is 164, blank is 286.
+docs/assets/vendor/jquery-ui/ui/widgets/spinner.js, code is 419, comment is 62, blank is 94.
+docs/assets/vendor/jquery-ui/ui/widgets/tabs.js, code is 220, comment is 40, blank is 55.
+docs/assets/vendor/jquery-ui/ui/widgets/tooltip.js, code is 352, comment is 80, blank is 88.
+docs/assets/vendor/jquery/AUTHORS.txt, code is 251, comment is 0, blank is 1.
+docs/assets/vendor/jquery/bower.json, code is 12, comment is 0, blank is 2.
+docs/assets/vendor/jquery/dist/core.js, code is 253, comment is 60, blank is 86.
+docs/assets/vendor/jquery/dist/jquery.js, code is 6686, comment is 1727, blank is 1953.
+docs/assets/vendor/jquery/dist/jquery.min.js, code is 1, comment is 2, blank is 0.
+docs/assets/vendor/jquery/dist/jquery.min.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/jquery/dist/jquery.slim.js, code is 5305, comment is 1397, blank is 1568.
+docs/assets/vendor/jquery/dist/jquery.slim.min.js, code is 1, comment is 1, blank is 0.
+docs/assets/vendor/jquery/dist/jquery.slim.min.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/jquery/external/sizzle/dist/sizzle.js, code is 1468, comment is 459, blank is 345.
+docs/assets/vendor/jquery/external/sizzle/dist/sizzle.min.js, code is 1, comment is 2, blank is 0.
+docs/assets/vendor/jquery/external/sizzle/dist/sizzle.min.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/jquery/external/sizzle/LICENSE.txt, code is 28, comment is 2, blank is 8.
+docs/assets/vendor/jquery/LICENSE.txt, code is 28, comment is 2, blank is 8.
+docs/assets/vendor/jquery/README.md, code is 8, comment is 0, blank is 5.
+docs/assets/vendor/jquery/src/ajax.js, code is 507, comment is 182, blank is 168.
+docs/assets/vendor/jquery/src/ajax/jsonp.js, code is 65, comment is 16, blank is 22.
+docs/assets/vendor/jquery/src/ajax/load.js, code is 44, comment is 17, blank is 16.
+docs/assets/vendor/jquery/src/ajax/parseXML.js, code is 20, comment is 3, blank is 7.
+docs/assets/vendor/jquery/src/ajax/script.js, code is 61, comment is 6, blank is 10.
+docs/assets/vendor/jquery/src/ajax/var/location.js, code is 4, comment is 0, blank is 1.
+docs/assets/vendor/jquery/src/ajax/var/nonce.js, code is 4, comment is 0, blank is 1.
+docs/assets/vendor/jquery/src/ajax/var/rquery.js, code is 4, comment is 0, blank is 1.
+docs/assets/vendor/jquery/src/ajax/xhr.js, code is 109, comment is 32, blank is 29.
+docs/assets/vendor/jquery/src/attributes.js, code is 9, comment is 1, blank is 3.
+docs/assets/vendor/jquery/src/attributes/attr.js, code is 105, comment is 10, blank is 26.
+docs/assets/vendor/jquery/src/attributes/classes.js, code is 138, comment is 12, blank is 36.
+docs/assets/vendor/jquery/src/attributes/prop.js, code is 98, comment is 17, blank is 28.
+docs/assets/vendor/jquery/src/attributes/support.js, code is 18, comment is 6, blank is 9.
+docs/assets/vendor/jquery/src/attributes/val.js, code is 132, comment is 19, blank is 40.
+docs/assets/vendor/jquery/src/callbacks.js, code is 138, comment is 60, blank is 39.
+docs/assets/vendor/jquery/src/core.js, code is 253, comment is 60, blank is 86.
+docs/assets/vendor/jquery/src/core/access.js, code is 50, comment is 7, blank is 15.
+docs/assets/vendor/jquery/src/core/camelCase.js, code is 12, comment is 5, blank is 6.
+docs/assets/vendor/jquery/src/core/DOMEval.js, code is 24, comment is 0, blank is 6.
+docs/assets/vendor/jquery/src/core/init.js, code is 69, comment is 29, blank is 31.
+docs/assets/vendor/jquery/src/core/nodeName.js, code is 7, comment is 0, blank is 6.
+docs/assets/vendor/jquery/src/core/parseHTML.js, code is 39, comment is 11, blank is 15.
+docs/assets/vendor/jquery/src/core/ready-no-deferred.js, code is 55, comment is 19, blank is 23.
+docs/assets/vendor/jquery/src/core/ready.js, code is 43, comment is 20, blank is 23.
+docs/assets/vendor/jquery/src/core/readyException.js, code is 9, comment is 0, blank is 4.
+docs/assets/vendor/jquery/src/core/stripAndCollapse.js, code is 9, comment is 2, blank is 3.
+docs/assets/vendor/jquery/src/core/support.js, code is 11, comment is 5, blank is 4.
+docs/assets/vendor/jquery/src/core/toType.js, code is 14, comment is 1, blank is 5.
+docs/assets/vendor/jquery/src/core/var/rsingleTag.js, code is 4, comment is 1, blank is 1.
+docs/assets/vendor/jquery/src/css.js, code is 313, comment is 81, blank is 87.
+docs/assets/vendor/jquery/src/css/addGetHookIf.js, code is 15, comment is 4, blank is 7.
+docs/assets/vendor/jquery/src/css/adjustCSS.js, code is 48, comment is 9, blank is 16.
+docs/assets/vendor/jquery/src/css/curCSS.js, code is 34, comment is 18, blank is 13.
+docs/assets/vendor/jquery/src/css/hiddenVisibleSelectors.js, code is 11, comment is 0, blank is 4.
+docs/assets/vendor/jquery/src/css/showHide.js, code is 80, comment is 6, blank is 19.
+docs/assets/vendor/jquery/src/css/support.js, code is 67, comment is 15, blank is 20.
+docs/assets/vendor/jquery/src/css/var/cssExpand.js, code is 4, comment is 0, blank is 1.
+docs/assets/vendor/jquery/src/css/var/getStyles.js, code is 10, comment is 3, blank is 4.
+docs/assets/vendor/jquery/src/css/var/isHiddenWithinTree.js, code is 12, comment is 15, blank is 7.
+docs/assets/vendor/jquery/src/css/var/rboxStyle.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/css/var/rnumnonpx.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/css/var/swap.js, code is 16, comment is 3, blank is 7.
+docs/assets/vendor/jquery/src/data.js, code is 115, comment is 31, blank is 34.
+docs/assets/vendor/jquery/src/data/Data.js, code is 88, comment is 44, blank is 30.
+docs/assets/vendor/jquery/src/data/var/acceptData.js, code is 6, comment is 9, blank is 4.
+docs/assets/vendor/jquery/src/data/var/dataPriv.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/data/var/dataUser.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/deferred.js, code is 240, comment is 90, blank is 69.
+docs/assets/vendor/jquery/src/deferred/exceptionHook.js, code is 11, comment is 4, blank is 6.
+docs/assets/vendor/jquery/src/deprecated.js, code is 64, comment is 15, blank is 19.
+docs/assets/vendor/jquery/src/dimensions.js, code is 36, comment is 8, blank is 13.
+docs/assets/vendor/jquery/src/effects.js, code is 535, comment is 60, blank is 107.
+docs/assets/vendor/jquery/src/effects/animatedSelector.js, code is 11, comment is 0, blank is 4.
+docs/assets/vendor/jquery/src/effects/Tween.js, code is 91, comment is 13, blank is 19.
+docs/assets/vendor/jquery/src/event.js, code is 521, comment is 96, blank is 131.
+docs/assets/vendor/jquery/src/event/ajax.js, code is 16, comment is 1, blank is 5.
+docs/assets/vendor/jquery/src/event/alias.js, code is 21, comment is 1, blank is 7.
+docs/assets/vendor/jquery/src/event/focusin.js, code is 36, comment is 9, blank is 10.
+docs/assets/vendor/jquery/src/event/support.js, code is 6, comment is 0, blank is 5.
+docs/assets/vendor/jquery/src/event/trigger.js, code is 138, comment is 21, blank is 40.
+docs/assets/vendor/jquery/src/exports/amd.js, code is 9, comment is 11, blank is 6.
+docs/assets/vendor/jquery/src/exports/global.js, code is 19, comment is 5, blank is 10.
+docs/assets/vendor/jquery/src/jquery.js, code is 36, comment is 0, blank is 4.
+docs/assets/vendor/jquery/src/manipulation.js, code is 348, comment is 45, blank is 93.
+docs/assets/vendor/jquery/src/manipulation/_evalUrl.js, code is 16, comment is 1, blank is 6.
+docs/assets/vendor/jquery/src/manipulation/buildFragment.js, code is 65, comment is 16, blank is 24.
+docs/assets/vendor/jquery/src/manipulation/getAll.js, code is 20, comment is 2, blank is 10.
+docs/assets/vendor/jquery/src/manipulation/setGlobalEval.js, code is 16, comment is 1, blank is 5.
+docs/assets/vendor/jquery/src/manipulation/support.js, code is 18, comment is 8, blank is 9.
+docs/assets/vendor/jquery/src/manipulation/var/rcheckableType.js, code is 4, comment is 0, blank is 1.
+docs/assets/vendor/jquery/src/manipulation/var/rscriptType.js, code is 4, comment is 0, blank is 1.
+docs/assets/vendor/jquery/src/manipulation/var/rtagName.js, code is 4, comment is 0, blank is 1.
+docs/assets/vendor/jquery/src/manipulation/wrapMap.js, code is 15, comment is 6, blank is 8.
+docs/assets/vendor/jquery/src/offset.js, code is 155, comment is 39, blank is 39.
+docs/assets/vendor/jquery/src/queue.js, code is 113, comment is 9, blank is 23.
+docs/assets/vendor/jquery/src/queue/delay.js, code is 17, comment is 3, blank is 4.
+docs/assets/vendor/jquery/src/selector-native.js, code is 151, comment is 47, blank is 39.
+docs/assets/vendor/jquery/src/selector-sizzle.js, code is 13, comment is 1, blank is 5.
+docs/assets/vendor/jquery/src/selector.js, code is 3, comment is 0, blank is 0.
+docs/assets/vendor/jquery/src/serialize.js, code is 89, comment is 16, blank is 28.
+docs/assets/vendor/jquery/src/traversing.js, code is 146, comment is 14, blank is 31.
+docs/assets/vendor/jquery/src/traversing/findFilter.js, code is 74, comment is 6, blank is 17.
+docs/assets/vendor/jquery/src/traversing/var/dir.js, code is 17, comment is 0, blank is 5.
+docs/assets/vendor/jquery/src/traversing/var/rneedsContext.js, code is 6, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/traversing/var/siblings.js, code is 12, comment is 0, blank is 5.
+docs/assets/vendor/jquery/src/var/arr.js, code is 4, comment is 0, blank is 1.
+docs/assets/vendor/jquery/src/var/class2type.js, code is 4, comment is 1, blank is 1.
+docs/assets/vendor/jquery/src/var/concat.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/var/document.js, code is 4, comment is 0, blank is 1.
+docs/assets/vendor/jquery/src/var/documentElement.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/var/fnToString.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/var/getProto.js, code is 4, comment is 0, blank is 1.
+docs/assets/vendor/jquery/src/var/hasOwn.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/var/indexOf.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/var/isFunction.js, code is 6, comment is 4, blank is 3.
+docs/assets/vendor/jquery/src/var/isWindow.js, code is 6, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/var/ObjectFunctionString.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/var/pnum.js, code is 4, comment is 0, blank is 1.
+docs/assets/vendor/jquery/src/var/push.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/var/rcssNum.js, code is 5, comment is 0, blank is 4.
+docs/assets/vendor/jquery/src/var/rnothtmlwhite.js, code is 4, comment is 3, blank is 1.
+docs/assets/vendor/jquery/src/var/slice.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/var/support.js, code is 4, comment is 1, blank is 1.
+docs/assets/vendor/jquery/src/var/toString.js, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/jquery/src/wrap.js, code is 59, comment is 3, blank is 17.
+docs/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css, code is 812, comment is 113, blank is 342.
+docs/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js, code is 1629, comment is 597, blank is 242.
+docs/assets/vendor/malihu-custom-scrollbar-plugin/mCSB_buttons.png, it is a binary file.
+docs/assets/vendor/malihu-custom-scrollbar-plugin/readme.md, code is 57, comment is 7, blank is 25.
+docs/assets/vendor/popper.js/dist/esm/popper-utils.js, code is 606, comment is 354, blank is 136.
+docs/assets/vendor/popper.js/dist/esm/popper-utils.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/dist/esm/popper-utils.min.js, code is 1, comment is 5, blank is 0.
+docs/assets/vendor/popper.js/dist/esm/popper-utils.min.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/dist/esm/popper.js, code is 1207, comment is 1014, blank is 313.
+docs/assets/vendor/popper.js/dist/esm/popper.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/dist/esm/popper.min.js, code is 1, comment is 5, blank is 0.
+docs/assets/vendor/popper.js/dist/esm/popper.min.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/dist/esm/poppper.js.flow, code is 126, comment is 0, blank is 18.
+docs/assets/vendor/popper.js/dist/popper-utils.js, code is 569, comment is 354, blank is 122.
+docs/assets/vendor/popper.js/dist/popper-utils.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/dist/popper-utils.min.js, code is 1, comment is 5, blank is 0.
+docs/assets/vendor/popper.js/dist/popper-utils.min.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/dist/popper.js, code is 1096, comment is 1015, blank is 276.
+docs/assets/vendor/popper.js/dist/popper.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/dist/popper.min.js, code is 1, comment is 5, blank is 0.
+docs/assets/vendor/popper.js/dist/popper.min.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/dist/umd/popper-utils.js, code is 641, comment is 354, blank is 139.
+docs/assets/vendor/popper.js/dist/umd/popper-utils.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/dist/umd/popper-utils.min.js, code is 1, comment is 5, blank is 0.
+docs/assets/vendor/popper.js/dist/umd/popper-utils.min.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/dist/umd/popper.js, code is 1213, comment is 1014, blank is 315.
+docs/assets/vendor/popper.js/dist/umd/popper.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/dist/umd/popper.min.js, code is 1, comment is 5, blank is 0.
+docs/assets/vendor/popper.js/dist/umd/popper.min.js.map, code is 1, comment is 0, blank is 0.
+docs/assets/vendor/popper.js/index.d.ts, code is 122, comment is 13, blank is 25.
+docs/assets/vendor/popper.js/index.js.flow, code is 126, comment is 0, blank is 18.
+docs/assets/vendor/popper.js/README.md, code is 108, comment is 10, blank is 45.
+docs/assets/vendor/prism/prism.css, code is 162, comment is 9, blank is 29.
+docs/assets/vendor/prism/prism.js, code is 4, comment is 4, blank is 0.
+docs/assets/vendor/sticky-sidebar/.babelrc, code is 11, comment is 0, blank is 1.
+docs/assets/vendor/sticky-sidebar/.gitignore, code is 5, comment is 0, blank is 2.
+docs/assets/vendor/sticky-sidebar/.travis.yml, code is 11, comment is 0, blank is 5.
+docs/assets/vendor/sticky-sidebar/bower.json, code is 22, comment is 0, blank is 3.
+docs/assets/vendor/sticky-sidebar/Gulpfile.js, code is 51, comment is 2, blank is 7.
+docs/assets/vendor/sticky-sidebar/LICENSE.md, code is 5, comment is 0, blank is 4.
+docs/assets/vendor/sticky-sidebar/package.json, code is 62, comment is 0, blank is 2.
+docs/assets/vendor/sticky-sidebar/README.md, code is 61, comment is 8, blank is 34.
+docs/assets/vendor/sticky-sidebar/src/jquery.sticky-sidebar.js, code is 30, comment is 8, blank is 9.
+docs/assets/vendor/sticky-sidebar/src/sticky-sidebar.js, code is 413, comment is 208, blank is 121.
+docs/assets/vendor/sticky-sidebar/test/index.html, code is 57, comment is 0, blank is 7.
+docs/assets/vendor/sticky-sidebar/test/mockraf.js, code is 38, comment is 0, blank is 12.
+docs/assets/vendor/sticky-sidebar/test/test.js, code is 660, comment is 14, blank is 178.
+docs/favicon.ico, it is a binary file.
+docs/gulpfile.js, code is 101, comment is 28, blank is 25.
+docs/index.html, code is 324, comment is 26, blank is 25.
+docs/npm-shrinkwrap.json, code is 7, comment is 0, blank is 0.
+docs/package.json, code is 31, comment is 0, blank is 0.
+docs/pages-changelog.html, code is 128, comment is 26, blank is 20.
+docs/pages-customization.html, code is 249, comment is 28, blank is 23.
+docs/pages-installation.html, code is 201, comment is 28, blank is 22.
+docs/pages-routing.html, code is 133, comment is 14, blank is 15.
+docs/pages-spliting.html, code is 144, comment is 26, blank is 24.
+docs/pages-strcuture.html, code is 154, comment is 26, blank is 24.
+docs/pages-themes.html, code is 174, comment is 26, blank is 22.
+README.md, it is a binary file.
+===============================================================================

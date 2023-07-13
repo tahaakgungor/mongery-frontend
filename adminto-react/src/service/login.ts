@@ -20,22 +20,33 @@ export type Response = {
     error: string;
   }
 
-export const login = async (email:string, password:string, dispatch:Function) => {
-    console.log(Constants.login)
-    console.log(email)
-    console.log(password)
-    var token = await axios.post<Response>(Constants.login, { email, password }, { headers: { 'Content-Type': 'application/json' },data: { email, password }  })
-    console.log(token)
+export const login = async (email:string, password:string) => {
+    var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
 
-    if (token.data.success) {
-        console.log(token.data)
-        dispatch(getToken(token.data.data.access_token))
+var raw = JSON.stringify({
+  "email": email,
+  "password": password
+});
 
-        return token.data.data.access_token
-    }
-    else {
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
 
-        throw new Error(token.data.error)
-
-    }
+let response = await fetch(Constants.login, {
+  method: requestOptions.method,
+  headers: requestOptions.headers,
+  body: requestOptions.body,
+  redirect: "follow"
+})
+let data = await response.json()
+console.log(data)
+if (data.success) {
+  return data.data.access_token
+} else {
+  return false
+}
 }

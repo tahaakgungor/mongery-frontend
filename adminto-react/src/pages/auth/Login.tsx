@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Alert, Row, Col } from 'react-bootstrap';
 import { Navigate, Link, useLocation } from 'react-router-dom';
 import * as yup from 'yup';
@@ -19,6 +19,8 @@ import { login } from '../../service/login';
 import Loader from '../../components/Loader';
 
 import AuthLayout from './AuthLayout';
+import { getToken } from '../../redux/token/actions';
+import React from 'react';
 
 type LocationState = {
     from?: Location;
@@ -57,12 +59,18 @@ const Login = () => {
     const { t } = useTranslation();
     const { dispatch, appSelector } = useRedux();
 
-    const { user, userLoggedIn, loading, error } = appSelector((state) => ({
-        user: state.Auth.user,
-        loading: state.Auth.loading,
-        error: state.Auth.error,
-        userLoggedIn: state.Auth.userLoggedIn,
-    }));
+    // const { user, userLoggedIn, loading, error } = appSelector((state) => ({
+    //     user: state.Auth.user,
+    //     loading: state.Auth.loading,
+    //     error: state.Auth.error,
+    //     userLoggedIn: state.Auth.userLoggedIn,
+    // }));
+
+    const [user, setUser] = useState(null);
+    const [userLoggedIn, setUserLoggedIn] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+
 
     useEffect(() => {
         dispatch(resetAuth());
@@ -82,13 +90,21 @@ const Login = () => {
     handle form submission
     */
     const onSubmit = (formData: UserData) => {
-        dispatch(loginUser(formData['email'], formData['password']));
+        setLoading(true);
+        setError('');
         handleLogin(formData['email'], formData['password']);
-    };
+
+    }
+
+    
+
 
     const handleLogin = async (email: string, password: string) => {
         try {
-            await login(email, password, dispatch);
+            let token = await login(email, password);
+            console.log(token);
+            dispatch(getToken(token));
+
             console.log('login oldu');
         } catch (error) {
             console.log(error);
