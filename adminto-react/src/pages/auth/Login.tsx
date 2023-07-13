@@ -4,6 +4,7 @@ import { Navigate, Link, useLocation } from 'react-router-dom';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 // hooks
 import { useRedux } from '../../hooks/';
@@ -13,6 +14,8 @@ import { resetAuth, loginUser } from '../../redux/actions';
 
 // components
 import { VerticalForm, FormInput } from '../../components/form/';
+
+import { login } from '../../service/login';
 import Loader from '../../components/Loader';
 
 import AuthLayout from './AuthLayout';
@@ -80,6 +83,16 @@ const Login = () => {
     */
     const onSubmit = (formData: UserData) => {
         dispatch(loginUser(formData['email'], formData['password']));
+        handleLogin(formData['email'], formData['password']);
+    };
+
+    const handleLogin = async (email: string, password: string) => {
+        try {
+            await login(email, password, dispatch);
+            console.log('login oldu');
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const location = useLocation();
@@ -109,8 +122,7 @@ const Login = () => {
                 <VerticalForm<UserData>
                     onSubmit={onSubmit}
                     resolver={schemaResolver}
-                    defaultValues={{ email: 'adminto@coderthemes.com', password: 'test' }}
-                >
+                    defaultValues={{ email: 'adminto@coderthemes.com', password: 'test' }}>
                     <FormInput
                         type="email"
                         name="email"
@@ -123,8 +135,7 @@ const Login = () => {
                         type="password"
                         name="password"
                         placeholder="Enter your password"
-                        containerClass={'mb-3'}
-                    ></FormInput>
+                        containerClass={'mb-3'}></FormInput>
 
                     <FormInput
                         type="checkbox"

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import LogoDark from '../../assets/images/logo-dark.png';
@@ -7,6 +8,7 @@ import { usePageTitle } from '../../hooks';
 
 // data
 import { invoiceDetails } from './data';
+import { useRedux } from '../../hooks';
 
 const Invoice = () => {
     // set pagetitle
@@ -25,6 +27,48 @@ const Invoice = () => {
         ],
     });
 
+    const { dispatch, appSelector } = useRedux();
+
+    const musteri = appSelector((state) => state.Musteriler.musteriler);
+
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const monthNames = [
+        'Ocak',
+        'Şubat',
+        'Mart',
+        'Nisan',
+        'Mayıs',
+        'Haziran',
+        'Temmuz',
+        'Ağustos',
+        'Eylül',
+        'Ekim',
+        'Kasım',
+        'Aralık',
+    ];
+    const monthIndex = currentDate.getMonth();
+    const month = monthNames[monthIndex];
+    const year = currentDate.getFullYear();
+    const formattedDate = `${day} ${month} ${year}`;
+
+    const [proformaNumber, setProformaNumber] = useState(1);
+    const proformaDate = `${day} ${monthIndex + 1} ${year} ${proformaNumber}`;
+
+    console.log(formattedDate);
+
+    console.log(formattedDate);
+
+    const sepet = appSelector((state) => state.Sepet.sepet);
+    console.log(sepet);
+    console.log(musteri);
+
+    useEffect(() => {
+        // Proforma numarasını artırmak için gerekli işlemler
+        // Örneğin, proforma onaylandığında bu kodu çağırabilirsiniz:
+        setProformaNumber((prevNumber) => prevNumber + 1);
+    }, []);
+
     return (
         <Row>
             <Col md={12}>
@@ -39,8 +83,9 @@ const Invoice = () => {
                                 </div>
                                 <div className="float-end">
                                     <h4>
-                                        Proforma # <br />
-                                        <strong>{invoiceDetails.invoice_id}</strong>
+                                        Proforma #
+                                        <br />
+                                        <strong>{proformaDate}</strong>
                                     </h4>
                                 </div>
                             </div>
@@ -49,19 +94,18 @@ const Invoice = () => {
                                 <Col md={12}>
                                     <div className="float-start mt-3">
                                         <address>
-                                            <strong>{invoiceDetails.address.owner}</strong>
+                                            <strong>{musteri.firmaAdi}</strong>
                                             <br />
-                                            {invoiceDetails.address.line_1}
+                                            {musteri.adres}
                                             <br />
-                                            {invoiceDetails.address.city}, {invoiceDetails.address.state}{' '}
-                                            {invoiceDetails.address.zip}
+                                            <abbr title="Phone">Phone:</abbr> {musteri.mobile}
                                             <br />
-                                            <abbr title="Phone">P:</abbr> {invoiceDetails.address.phone}
+                                            <abbr title="Email">Email:</abbr> {musteri.email}
                                         </address>
                                     </div>
                                     <div className="float-end mt-3">
                                         <p>
-                                            <strong>Sipariş Oluşturulma Tarihi: </strong> {invoiceDetails.order_date}
+                                            <strong>Sipariş Oluşturulma Tarihi: </strong> {formattedDate}
                                         </p>
                                         <p className="m-t-10">
                                             <strong>Sipariş Durumu: </strong>{' '}

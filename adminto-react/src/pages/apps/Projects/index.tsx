@@ -25,12 +25,14 @@ import { usePageTitle } from '../../../hooks';
 import { FormInput } from '../../../components/form';
 
 // types
-import { CustomInput, ProjectsList } from './types';
+import { CustomInput, ProjectsList, SepetData } from './types';
 
 // dummy data
 import { projects } from './data';
 import { ChangeEvent, useState } from 'react';
 import { useRedux } from '../../../hooks';
+import { selectedSepet } from '../../../redux/sepet/actions';
+
 
 type SingleProjectProps = {
     projects: ProjectsList[];
@@ -56,10 +58,12 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
     const handleSelectQuantity = (value: string) => {
         setSelectedQuantity(Number(value));
     };
+    const handleSelectSepet = (sepet: ProjectsList[]) => {
+
+        dispatch(selectedSepet('sepet',cartItems));
+      };
 
     const musteri = appSelector((state) => state.Musteriler.musteriler);
-
-    console.log(musteri);
 
     return (
         <Row>
@@ -196,8 +200,11 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
                                             to={{
                                                 pathname: `/pages/invoice/`,
                                             }}>
-                                            <Button variant="success" className="waves-effect waves-light">
-                                                Onayla
+                                            <Button
+                                                variant="success"
+                                                className="waves-effect waves-light"
+                                                onClick={() => handleSelectSepet(cartItems)}>
+                                                <i className="mdi mdi-cash-multiple me-1"></i> Onayla
                                             </Button>
                                         </Link>
                                     </div>
