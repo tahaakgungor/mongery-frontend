@@ -47,6 +47,6 @@ console.log(data)
 if (data.success) {
   return data.data.access_token
 } else {
-  return false
+throw new Error(data.error)
 }
 }

@@ -58,6 +58,8 @@ const BottomLink = () => {
 const Login = () => {
     const { t } = useTranslation();
     const { dispatch, appSelector } = useRedux();
+    const location = useLocation();
+    let redirectUrl = '/';
 
     // const { user, userLoggedIn, loading, error } = appSelector((state) => ({
     //     user: state.Auth.user,
@@ -99,20 +101,17 @@ const Login = () => {
             let token = await login(email, password);
             console.log(token);
             dispatch(getToken(token));
-
+            setLoading(false);
             console.log('login oldu');
+
+            if (location.state) {
+                const { from } = location.state as LocationState;
+                redirectUrl = from ? from.pathname : '/';
+            }
         } catch (error) {
             console.log(error);
         }
     };
-
-    const location = useLocation();
-    let redirectUrl = '/';
-
-    if (location.state) {
-        const { from } = location.state as LocationState;
-        redirectUrl = from ? from.pathname : '/';
-    }
 
     return (
         <>
