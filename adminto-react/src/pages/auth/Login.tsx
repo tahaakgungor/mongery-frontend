@@ -71,7 +71,6 @@ const Login = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-
     useEffect(() => {
         dispatch(resetAuth());
     }, [dispatch]);
@@ -86,18 +85,14 @@ const Login = () => {
         })
     );
 
-    /*
+    /*a
     handle form submission
     */
     const onSubmit = (formData: UserData) => {
         setLoading(true);
         setError('');
         handleLogin(formData['email'], formData['password']);
-
-    }
-
-    
-
+    };
 
     const handleLogin = async (email: string, password: string) => {
         try {
