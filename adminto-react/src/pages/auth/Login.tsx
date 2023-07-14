@@ -21,6 +21,7 @@ import Loader from '../../components/Loader';
 import AuthLayout from './AuthLayout';
 import { getToken } from '../../redux/token/actions';
 import React from 'react';
+import { verifyToken } from '../../service/verify';
 
 type LocationState = {
     from?: Location;
@@ -69,8 +70,6 @@ const Login = () => {
 
     const tok = appSelector((state) => state);
 
-
-
     useEffect(() => {
         if (userLoggedIn) {
             navigate('/dashboard'); // Kullanıcıyı dashboard sayfasına yönlendir
@@ -99,7 +98,11 @@ const Login = () => {
     const handleLogin = async (email: string, password: string) => {
         try {
             let token = await login(email, password);
+            localStorage.setItem('token', token);
             dispatch(getToken('token', token));
+
+            let verifiedToken = await verifyToken(token);
+            console.log(verifiedToken);
 
             console.log(token);
             setLoading(true);

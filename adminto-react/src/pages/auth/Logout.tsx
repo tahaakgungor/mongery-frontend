@@ -15,6 +15,7 @@ import AuthLayout from './AuthLayout';
 import LogoDark from '../../assets/images/logo-dark.png';
 import LogoLight from '../../assets/images/logo-light.png';
 import { getToken, logoutUser } from '../../redux/token/actions';
+import { verifyToken } from '../../service/verify';
 
 const LogoutIcon = () => {
     return (
@@ -66,6 +67,8 @@ const Logout = () => {
     useEffect(() => {
         dispatch(logoutUser());
     }, [dispatch]);
+
+
 
     return (
         <AuthLayout hasLogo={false} bottomLinks={<BottomLink />}>

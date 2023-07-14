@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Card, Col, Modal, Row } from 'react-bootstrap';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 // hooks
 import { usePageTitle } from '../../../../hooks';
+import { CustomerData, createCustomer, getCustomers } from '../../../../service/musteri';
+import { useRedux } from '../../../../hooks';
 
 // component
 import { VerticalForm, FormInput } from '../../../../components/form';
@@ -17,10 +19,14 @@ import { contacts } from './data';
 // dummy data
 
 type MemberData = {
+    id: string;
     name: string;
     position: string;
     company: string;
     email: string;
+    avatar: File | null;
+    description: string;
+    address: string;
 };
 
 const List = () => {
@@ -41,6 +47,9 @@ const List = () => {
     });
 
     const [modal, setModal] = useState<boolean>(false);
+    const [avatar, setAvatar] = useState<File | null>(null);
+
+    const token = localStorage.getItem('token') || '';
 
     // Show/hide the modal
     const toggle = () => {
@@ -54,12 +63,40 @@ const List = () => {
             position: yup.string().required('Please enter your position'),
             company: yup.string().required('Please enter your company name'),
             email: yup.string().required('Please enter Email address').email('Enter valid email'),
+            description: yup.string().required('Please enter description'),
+            adres: yup.string().required('Please enter adres'),
         })
     );
 
-    const handleSave=()=>{
-                
+    const handleSave = async (data: MemberData) => {
+        try {
+            const { id, name, position, company, email, description, address } = data;
+            const customerData: CustomerData = {
+                id,
+                name,
+                email,
+                phone: position,
+                firmName: company,
+                avatar: '',
+                description,
+                address,
+            };
+
+            const response = await createCustomer(customerData, token);
+            console.log('Müşteri oluşturuldu:', response);
+
+            // Handle any additional logic or state updates here
+        } catch (error) {
+            console.error('Müşteri oluşturma hatası:', error);
+        }
     };
+    const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files && e.target.files[0];
+        if (file) {
+            setAvatar(file);
+        }
+    };
+
     return (
         <>
             <Row>
@@ -99,24 +136,20 @@ const List = () => {
                 </Col>
             </Row>
             <Row>
-                {(contacts || []).map((contact, index) => {
-                    return (
-                        <Col xl={4} md={6} key={index.toString()}>
-                            <ContactDetails contact={contact} />
-                        </Col>
-                    );
-                })}
+                <Col xl={4} md={12}>
+                    <ContactDetails contact={contacts[0]} />
+                </Col>
             </Row>
             <Modal show={modal} onHide={toggle} centered>
                 <Modal.Header closeButton>
                     <Modal.Title as="h4">Müşteri Ekle</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <VerticalForm<MemberData> onSubmit={() => {}} resolver={schemaResolver} defaultValues={{}}>
+                    <VerticalForm<MemberData> onSubmit={handleSave} resolver={schemaResolver} defaultValues={{}}>
                         <FormInput
                             label={'İsim Soyisim'}
                             type="text"
-                            name="isim"
+                            name="name"
                             placeholder="İsim Giriniz"
                             containerClass={'mb-3'}
                         />
@@ -124,7 +157,7 @@ const List = () => {
                         <FormInput
                             label={'Firma'}
                             type="text"
-                            name="firma"
+                            name="company"
                             placeholder="Firma Adı"
                             containerClass={'mb-3'}
                         />
@@ -132,7 +165,7 @@ const List = () => {
                         <FormInput
                             label={'Telefon'}
                             type="text"
-                            name="telefon"
+                            name="position"
                             placeholder="Telefon Numarası"
                             containerClass={'mb-3'}
                         />
@@ -144,14 +177,33 @@ const List = () => {
                             placeholder="Enter email"
                             containerClass={'mb-3'}
                         />
-                         <FormInput
+
+                        <FormInput
                             label={'Adres'}
                             type="text"
                             name="adres"
                             placeholder="Firma Adresi"
                             containerClass={'mb-3'}
                         />
-                        <Button variant="light" className="waves-effect waves-light me-1" type="submit" onClick={handleSave}>
+
+                        <FormInput
+                            label={'Açıklama'}
+                            type="text"
+                            name="description"
+                            placeholder="Açıklama"
+                            containerClass={'mb-3'}
+                        />
+
+                        <FormInput
+                            label={'Avatar'}
+                            type="file"
+                            name="avatar"
+                            accept="image/*"
+                            onChange={handleAvatarChange}
+                            containerClass={'mb-3'}
+                        />
+
+                        <Button variant="light" className="waves-effect waves-light me-1" type="submit">
                             Save
                         </Button>
                         <Button variant="danger" className="waves-effect waves-light" onClick={toggle}>
