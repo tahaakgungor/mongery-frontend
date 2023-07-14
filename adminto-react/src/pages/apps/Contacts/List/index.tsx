@@ -99,12 +99,24 @@ const List = () => {
             console.error('Müşteri oluşturma hatası:', error);
         }
     };
+    console.log(contacts)
     const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files && e.target.files[0];
         if (file) {
             setAvatar(file);
         }
     };
+    const chunkArray = (array: any[], size: number) => {
+        const chunkedArray = [];
+        for (let i = 0; i < array.length; i += size) {
+          const chunk = array.slice(i, i + size);
+          chunkedArray.push(chunk);
+        }
+        return chunkedArray;
+      };
+    
+      const chunkedContacts = chunkArray(contacts, contacts.length);
+
 
     const handleGetCustomers = async () => {
         try {
@@ -156,10 +168,14 @@ const List = () => {
                 </Col>
             </Row>
             <Row>
-                <Col xl={4} md={12}>
-                    <ContactDetails contact={contacts[0]} />
-                </Col>
+               
+                <ContactDetails contact={contacts[1]} />
+
+                
             </Row>
+              {/* Displaying contacts horizontally in a 3x5 grid */}
+      
+
             <Modal show={modal} onHide={toggle} centered>
                 <Modal.Header closeButton>
                     <Modal.Title as="h4">Müşteri Ekle</Modal.Title>
