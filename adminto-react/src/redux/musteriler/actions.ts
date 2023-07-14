@@ -12,15 +12,15 @@ export type MusterilerActionType = {
     payload: any;
 };
 
-type MusterilerData = {
+export type MusterilerData = {
     id: number;
     avatar: string;
-    shortDesc: string;
+    description: string;
     name: string;
-    mobile: string;
+    phone: string;
     email: string;
-    adres: string;
-    firmaAdi: string;
+    address: string;
+    firmName: string;
 };
 
 export const getMusteriler = (data: any): MusterilerActionType => ({
