@@ -64,7 +64,7 @@ const List = () => {
             company: yup.string().required('Please enter your company name'),
             email: yup.string().required('Please enter Email address').email('Enter valid email'),
             description: yup.string().required('Please enter description'),
-            adres: yup.string().required('Please enter adres'),
+            address: yup.string().required('Please enter adres'),
         })
     );
 
@@ -84,6 +84,7 @@ const List = () => {
 
             const response = await createCustomer(customerData, token);
             console.log('Müşteri oluşturuldu:', response);
+            toggle();
 
             // Handle any additional logic or state updates here
         } catch (error) {
@@ -181,7 +182,7 @@ const List = () => {
                         <FormInput
                             label={'Adres'}
                             type="text"
-                            name="adres"
+                            name="address"
                             placeholder="Firma Adresi"
                             containerClass={'mb-3'}
                         />
