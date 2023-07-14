@@ -1,5 +1,4 @@
-
-import { Button, Card, Dropdown, Form, Modal } from 'react-bootstrap';
+import { Button, Card, Col, Dropdown, Form, Modal, Row } from 'react-bootstrap';
 import { VerticalForm, FormInput } from '../components/form';
 // types
 import { Contact } from '../pages/apps/Contacts/List/types';
@@ -111,66 +110,71 @@ const ContactDetails = ({ contact }: ContactDetailsProps) => {
 
     return (
         <>
-          <Row>
-            {customers.map((customer) => (
-              <Col xs={12} md={6} lg={4} key={customer.id}>
-                <Card>
-                <Card.Body className="text-center">
-                            <Dropdown className="float-end" align="end">
-                                <Dropdown.Toggle as="a" className="cursor-pointer card-drop">
-                                    <i className="mdi mdi-dots-vertical"></i>
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    <Dropdown.Item>Action</Dropdown.Item>
-                                    <Dropdown.Item>Anothther Action</Dropdown.Item>
-                                    <Dropdown.Item>Something Else</Dropdown.Item>
-                                    <Dropdown.Item>Separated link</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
-                            <div>
-                                <img
-                                    src={customer.avatar}
-                                    alt="profileImage"
-                                    className="rounded-circle avatar-xl img-thumbnail mb-2"
-                                />
-                                <p className="text-muted font-13 mb-3">{customer.description}</p>
-                                <div className="text-start">
-                                    <p className="text-muted font-13">
-                                        <strong>Full Name :</strong> <span className="ms-2">{customer.name}</span>
-                                    </p>
-    
-                                    <p className="text-muted font-13">
-                                        <strong>Mobile :</strong>
-                                        <span className="ms-2">{customer.phone}</span>
-                                    </p>
-    
-                                    <p className="text-muted font-13">
-                                        <strong>Email :</strong> <span className="ms-2">{customer.email}</span>
-                                    </p>
-    
-                                    <p className="text-muted font-13">
-                                        <strong>Adress :</strong> <span className="ms-2">{customer.address}</span>
-                                    </p>
-                                    <p className="text-muted font-13">
-                                        <strong>Firma Adı : </strong> <span className="ms-2">{customer.firmName}</span>
-                                    </p>
+            <Row>
+                {customers.map((customer) => (
+                    <Col xs={12} md={6} lg={4} key={customer.id}>
+                        <Card>
+                            <Card.Body className="text-center">
+                                <Dropdown className="float-end" align="end">
+                                    <Dropdown.Toggle as="a" className="cursor-pointer card-drop">
+                                        <i className="mdi mdi-dots-vertical"></i>
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item onClick={() => handleOpenEditModal(customer)}>
+                                            {' '}
+                                            Düzenle
+                                        </Dropdown.Item>
+                                        <Dropdown.Item onClick={() => handleDeleteCustomer(customer.id)}>
+                                            {' '}
+                                            Sil
+                                        </Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                                <div>
+                                    <img
+                                        src={customer.avatar}
+                                        alt="profileImage"
+                                        className="rounded-circle avatar-xl img-thumbnail mb-2"
+                                    />
+                                    <p className="text-muted font-13 mb-3">{customer.description}</p>
+                                    <div className="text-start">
+                                        <p className="text-muted font-13">
+                                            <strong>Full Name :</strong> <span className="ms-2">{customer.name}</span>
+                                        </p>
+
+                                        <p className="text-muted font-13">
+                                            <strong>Mobile :</strong>
+                                            <span className="ms-2">{customer.phone}</span>
+                                        </p>
+
+                                        <p className="text-muted font-13">
+                                            <strong>Email :</strong> <span className="ms-2">{customer.email}</span>
+                                        </p>
+
+                                        <p className="text-muted font-13">
+                                            <strong>Adress :</strong> <span className="ms-2">{customer.address}</span>
+                                        </p>
+                                        <p className="text-muted font-13">
+                                            <strong>Firma Adı : </strong>{' '}
+                                            <span className="ms-2">{customer.firmName}</span>
+                                        </p>
+                                    </div>
+                                    <Link
+                                        to={{
+                                            pathname: '/apps/projects/',
+                                        }}>
+                                        <Button
+                                            className="rounded-pill waves-effect waves-light"
+                                            onClick={() => handleSelectCustomer(customer)}>
+                                            Müşteriyi Seç
+                                        </Button>
+                                    </Link>
                                 </div>
-                                <Link
-                                    to={{
-                                        pathname: '/apps/projects/',
-                                    }}>
-                                    <Button
-                                        className="rounded-pill waves-effect waves-light"
-                                        onClick={() => handleSelectCustomer(contact)}>
-                                        Müşteriyi Seç
-                                    </Button>
-                                </Link>
-                            </div>
-                        </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
             <Modal show={showEditModal} onHide={handleCloseEditModal}>
                 <Modal.Header closeButton>
                     <Modal.Title>Müşteri Bilgilerini Düzenle</Modal.Title>
@@ -256,9 +260,7 @@ const ContactDetails = ({ contact }: ContactDetailsProps) => {
                 <Modal.Footer></Modal.Footer>
             </Modal>
         </>
-      );
-    };
-    
-    export default ContactDetails;
-    
+    );
+};
 
+export default ContactDetails;
