@@ -19,7 +19,7 @@ import { contacts } from './data';
 // dummy data
 
 type MemberData = {
-    id: string;
+    id: number;
     name: string;
     position: string;
     company: string;
@@ -46,13 +46,21 @@ const List = () => {
         ],
     });
 
+    const [triggerGetCustomers, setTriggerGetCustomers] = useState(false);
+
+    useEffect(() => {
+        handleGetCustomers();
+    }, [triggerGetCustomers]);
+
     const [modal, setModal] = useState<boolean>(false);
     const [avatar, setAvatar] = useState<File | null>(null);
+    const [customers, setCustomers] = useState<CustomerData[]>([]);
 
     const token = localStorage.getItem('token') || '';
 
     // Show/hide the modal
     const toggle = () => {
+        setTriggerGetCustomers(!triggerGetCustomers);
         setModal(!modal);
     };
 
@@ -108,7 +116,19 @@ const List = () => {
       };
     
       const chunkedContacts = chunkArray(contacts, contacts.length);
-    
+
+
+    const handleGetCustomers = async () => {
+        try {
+            const response = await getCustomers(token);
+
+            setCustomers(response);
+            console.log('Müşteriler:', customers);
+        } catch (error) {
+            console.error('Müşteri listeleme hatası:', error);
+        }
+    };
+
     return (
         <>
             <Row>

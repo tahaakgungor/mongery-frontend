@@ -60,7 +60,7 @@ const Siparisler = () => {
             state: 'Hazırlanıyor',
             variant: 'warning',
             urun: 'Ürün 1',
-        },
+        }
     ];
 
 

@@ -1,3 +1,6 @@
+import { UserData } from "../../../redux/actions";
+import { MusterilerData } from "../../../redux/musteriler/actions";
+
 export type SiparislerList = {
     id: number;
     image: string;

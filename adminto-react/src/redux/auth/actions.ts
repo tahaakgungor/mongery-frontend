@@ -14,7 +14,7 @@ export type AuthActionType = {
     payload: {} | string;
 };
 
-type UserData = {
+export type UserData = {
     id: number;
     email: string;
     username: string;
