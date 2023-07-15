@@ -116,3 +116,34 @@ export const getProducts = async (token: string) => {
     throw error;
   }
 }
+
+export const removeProduct = async (id: number, token: string) => {
+  try {
+    console.log(id);
+    const response = await fetch(Constants.API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        query: `
+        mutation {
+          removeProduct(${id})
+        }
+        `,
+      }),
+    });
+
+    const data = await response.json();
+
+    console.log(data);
+    if (response.ok) {
+      return data.data.removeProduct;
+    }
+    throw new Error(data.errors[0].message);
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}

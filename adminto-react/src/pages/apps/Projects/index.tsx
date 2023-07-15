@@ -14,6 +14,7 @@ import {
     Form,
     InputGroup,
     FormControl,
+    Dropdown,
 } from 'react-bootstrap';
 import { BsPlus, BsDash } from 'react-icons/bs';
 import classNames from 'classnames';
@@ -37,7 +38,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { useRedux } from '../../../hooks';
 import { selectedSepet } from '../../../redux/sepet/actions';
 import { createKategori, getKategori, getKategoriler } from '../../../service/kategori';
-import { addProduct, getProducts } from '../../../service/urunler';
+import { addProduct, getProducts, removeProduct } from '../../../service/urunler';
 import { set } from 'react-hook-form';
 
 type SingleProjectProps = {
@@ -49,12 +50,39 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
     const [cartItems, setCartItems] = useState<ProjectsList[]>([]);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
     const [products, setProducts] = useState<any[]>([]);
+    const [state, setState] = useState<string>('');
     const { dispatch, appSelector } = useRedux();
 
     const token = localStorage.getItem('token') || '';
 
     useEffect(() => {
         handleGetProducts();
+    }, []);
+
+    useEffect(() => {
+        // Stock check
+        const checkStock = (stock: number) => {
+            console.log('Stock:', stock);
+            if (stock <= 0) {
+                setState('Stok Yok');
+            }
+            if (stock < 100) {
+                setState('Stok Az');
+            }
+            if (stock > 100) {
+                setState('Stok Var');
+            }
+        };
+
+        // Update project stock status
+        const updateStockStatus = () => {
+            const updatedProjects = products.map((product) => ({
+                ...product,
+                stockStatus: checkStock(product.stock),
+            }));
+        };
+
+        updateStockStatus();
     }, []);
 
     const addToCart = (project: ProjectsList, quantity: number) => {
@@ -92,6 +120,10 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
         return category ? category.name : '';
     };
 
+    const handleRemoveProduct = (id: number) => {
+        removeProduct(id, token);
+    };
+
     return (
         <Row>
             {(products || []).map((product, index) => {
@@ -99,8 +131,20 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                     <Col xl={4} key={index.toString()}>
                         <Card>
                             <Card.Body className="project-box">
+                                <Dropdown className="float-end" align="end">
+                                    <Dropdown.Toggle as="a" className="cursor-pointer card-drop">
+                                        <i className="mdi mdi-dots-vertical"></i>
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item> Düzenle</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => handleRemoveProduct(product.id)}>
+                                            {' '}
+                                            Sil
+                                        </Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
                                 <Badge bg={product.variant} className="float-end">
-                                    {product.state}
+                                    {state}
                                 </Badge>
                                 <h4 className="mt-0">
                                     <Link to="#" className="text-dark">
@@ -123,11 +167,16 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                                         <h4 className="mb-0">{product.price}</h4>
                                         <p className="text-muted">Fiyat</p>
                                     </li>
+                                    <li className="list-inline-item">
+                                        <h4 className="mb-0">{product.customInputs[0].value}</h4>
+                                        <p className="text-muted">{product.customInputs[0].key}</p>
+                                    </li>
                                 </ul>
+
                                 <h5 className="mb-2 fw-semibold">
                                     Stok
                                     <span className={classNames('float-end', 'text-' + product.variant)}>
-                                        {product.stock}%
+                                        {product.stock}
                                     </span>
                                 </h5>
                                 <ProgressBar
@@ -268,6 +317,8 @@ const Projects = () => {
 
     useEffect(() => {
         hangleGetKategoriler();
+        console.log(products);
+
         console.log(searchInputValue);
     }, [res]);
 
@@ -340,14 +391,20 @@ const Projects = () => {
                     categoryId = categoryObject.id;
                     console.log('Kategori id ELSE:', categoryId);
                 }
-
+                if (stock <= 0) {
+                    setVariant('danger');
+                } else if (stock < 100) {
+                    setVariant('warning');
+                } else if (stock > 100) {
+                    setVariant('success');
+                }
                 // Save the product information to the database
                 const productData = {
                     name: name,
                     price: price,
                     stock: stock,
                     description: description,
-                    variant: 'danger',
+                    variant: variant,
                     category: categoryId,
                     customFields: customInputs,
                     image: 'avatar',
@@ -373,6 +430,16 @@ const Projects = () => {
 
             setSearchOptions(response); // Update the search options with the formatted categories
             console.log('Kategorsiler:', searchOptions);
+        } catch (error) {
+            console.error('Error fetching categories:', error);
+        }
+    };
+
+    const handleGetProducts = async () => {
+        try {
+            const response = await getProducts(token); // Fetch categories from the database
+            setProducts(response); // Update the search options with the formatted categories
+            console.log('Ürünler:', response);
         } catch (error) {
             console.error('Error fetching categories:', error);
         }
