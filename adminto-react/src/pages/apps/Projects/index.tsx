@@ -29,10 +29,10 @@ import { CustomInput, ProjectsList, SepetData } from './types';
 
 // dummy data
 import { projects } from './data';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useRedux } from '../../../hooks';
 import { selectedSepet } from '../../../redux/sepet/actions';
-
+import { createKategori, getKategoriler } from '../../../service/kategori';
 
 type SingleProjectProps = {
     projects: ProjectsList[];
@@ -59,9 +59,8 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
         setSelectedQuantity(Number(value));
     };
     const handleSelectSepet = (sepet: ProjectsList[]) => {
-
-        dispatch(selectedSepet('sepet',cartItems));
-      };
+        dispatch(selectedSepet('sepet', cartItems));
+    };
 
     const musteri = appSelector((state) => state.Musteriler.musteriler);
 
@@ -221,6 +220,23 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
 const Projects = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [customInputs, setCustomInputs] = useState<CustomInput[]>([{ name: '', placeholder: '' }]);
+    const [kategoriInput, setKategoriInput] = useState('');
+    const [existingKategoriler, setExistingKategoriler] = useState<string[]>([]);
+    const token = localStorage.getItem('token') || '';
+
+    useEffect(() => {
+        // Kategorileri getir ve setExistingKategoriler ile mevcut kategorileri güncelle
+        const fetchKategoriler = async () => {
+            try {
+                const existingKategoriler = await getKategoriler(token); // Veritabanından mevcut kategorileri getir
+                setExistingKategoriler(existingKategoriler);
+            } catch (error) {
+                console.error('Kategorileri getirme hatası:', error);
+            }
+        };
+
+        fetchKategoriler();
+    }, []);
 
     // set pagetitle
     usePageTitle({
@@ -261,6 +277,36 @@ const Projects = () => {
         list.splice(index, 1);
         setCustomInputs(list);
     }
+
+    const handleKategoriInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setKategoriInput(event.target.value);
+    };
+
+    const handleCreateKategori = async () => {
+        try {
+            // Kategori adını kontrol et
+            const existingKategori = existingKategoriler.find(
+                (kategori) => kategori.toLowerCase() === kategoriInput.toLowerCase()
+            );
+            if (existingKategori) {
+                console.log('Bu kategori zaten mevcut:', existingKategori);
+                return;
+            }
+
+            // Kategoriyi oluştur
+            const response = await createKategori(kategoriInput, token);
+            console.log('Yeni kategori oluşturuldu:', response);
+
+            // Kategori eklendikten sonra mevcut kategorileri güncelle
+            setExistingKategoriler([...existingKategoriler, kategoriInput]);
+
+            // Kategori eklendiğinde yapılması gereken işlemleri burada gerçekleştirebilirsiniz.
+            // Örneğin, yeni kategori verilerini güncellemek veya yeniden yüklemek gibi.
+        } catch (error) {
+            console.error('Kategori oluşturma hatası:', error);
+        }
+    };
+
     return (
         <>
             <Row>
@@ -270,12 +316,17 @@ const Projects = () => {
                     </Modal.Header>
                     <Modal.Body>
                         <Col sm={8}>
-                            <FormSelect name="phase" className="mb-3">
-                                <option value="0">Ürün Kategorisi</option>
-                                <option value="1">Kategori 1</option>
-                                <option value="2">Kategori 2</option>
-                                <option value="3">Kategori 3</option>
-                            </FormSelect>
+                            <InputGroup className="mb-3">
+                                <FormControl
+                                    type="text"
+                                    placeholder="Ürün Kategorisi"
+                                    value={kategoriInput}
+                                    onChange={handleKategoriInputChange}
+                                />
+                                <Button variant="success" onClick={handleCreateKategori}>
+                                    <BsPlus />
+                                </Button>
+                            </InputGroup>
 
                             <FormInput type="text" name="name" placeholder="Ürün Adı" containerClass={'mb-3'} />
 
