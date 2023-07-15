@@ -18,6 +18,10 @@ import {
 import { BsPlus, BsDash } from 'react-icons/bs';
 import classNames from 'classnames';
 
+import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
+import Autocomplete from '@mui/material/Autocomplete';
+
 // hooks
 import { usePageTitle } from '../../../hooks';
 
@@ -32,16 +36,26 @@ import { projects } from './data';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useRedux } from '../../../hooks';
 import { selectedSepet } from '../../../redux/sepet/actions';
-import { createKategori, getKategoriler } from '../../../service/kategori';
+import { createKategori, getKategori, getKategoriler } from '../../../service/kategori';
+import { addProduct, getProducts } from '../../../service/urunler';
+import { set } from 'react-hook-form';
 
 type SingleProjectProps = {
     projects: ProjectsList[];
+    searchOptions: any[];
 };
 
-const SingleProject = ({ projects }: SingleProjectProps) => {
+const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
     const [cartItems, setCartItems] = useState<ProjectsList[]>([]);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
+    const [products, setProducts] = useState<any[]>([]);
     const { dispatch, appSelector } = useRedux();
+
+    const token = localStorage.getItem('token') || '';
+
+    useEffect(() => {
+        handleGetProducts();
+    }, []);
 
     const addToCart = (project: ProjectsList, quantity: number) => {
         const exist = cartItems.find((x) => x.id === project.id);
@@ -64,26 +78,41 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
 
     const musteri = appSelector((state) => state.Musteriler.musteriler);
 
+    const handleGetProducts = async () => {
+        try {
+            const response = await getProducts(token); // Fetch categories from the database
+            setProducts(response); // Update the search options with the formatted categories
+            console.log('Ürünler:', response);
+        } catch (error) {
+            console.error('Error fetching categories:', error);
+        }
+    };
+    const getCategoryName = (categoryId: string) => {
+        const category = searchOptions.find((option) => option.id === categoryId);
+        return category ? category.name : '';
+    };
+
     return (
         <Row>
-            {(projects || []).map((project, index) => {
+            {(products || []).map((product, index) => {
                 return (
                     <Col xl={4} key={index.toString()}>
                         <Card>
                             <Card.Body className="project-box">
-                                <Badge bg={project.variant} className="float-end">
-                                    {project.state}
+                                <Badge bg={product.variant} className="float-end">
+                                    {product.state}
                                 </Badge>
                                 <h4 className="mt-0">
                                     <Link to="#" className="text-dark">
-                                        {project.title}
+                                        {product.title}
                                     </Link>
                                 </h4>
-                                <p className={classNames('text-' + project.variant, 'text-uppercase', 'font-13')}>
-                                    {project.category}
+                                <p className={classNames('text-' + product.variant, 'text-uppercase', 'font-13')}>
+                                    {getCategoryName(product.categoryId)}
                                 </p>
+
                                 <p className="text-muted font-13">
-                                    {project.shortDesc}
+                                    {product.description}
                                     <Link to="#" className="text-primary">
                                         View more
                                     </Link>
@@ -91,21 +120,21 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
 
                                 <ul className="list-inline">
                                     <li className="list-inline-item me-4">
-                                        <h4 className="mb-0">{project.price}</h4>
+                                        <h4 className="mb-0">{product.price}</h4>
                                         <p className="text-muted">Fiyat</p>
                                     </li>
                                 </ul>
                                 <h5 className="mb-2 fw-semibold">
                                     Stok
-                                    <span className={classNames('float-end', 'text-' + project.variant)}>
-                                        {project.quantity}%
+                                    <span className={classNames('float-end', 'text-' + product.variant)}>
+                                        {product.stock}%
                                     </span>
                                 </h5>
                                 <ProgressBar
-                                    className={classNames('quantity-bar-alt-' + project.variant, 'quantity-sm')}>
+                                    className={classNames('quantity-bar-alt-' + product.variant, 'quantity-sm')}>
                                     <ProgressBar
-                                        variant={project.variant}
-                                        now={project.quantity}
+                                        variant={product.variant}
+                                        now={product.stock}
                                         className="quantity-animated"
                                     />
                                 </ProgressBar>
@@ -118,7 +147,7 @@ const SingleProject = ({ projects }: SingleProjectProps) => {
                                 <Button
                                     variant="outline-primary"
                                     className="btn-sm mt-3"
-                                    onClick={() => addToCart(project, selectedQuantity)}>
+                                    onClick={() => addToCart(product, selectedQuantity)}>
                                     <i className="mdi mdi-cart me-1"></i>
                                     Sepete Ekle
                                 </Button>
@@ -222,21 +251,25 @@ const Projects = () => {
     const [customInputs, setCustomInputs] = useState<CustomInput[]>([{ name: '', placeholder: '' }]);
     const [kategoriInput, setKategoriInput] = useState('');
     const [existingKategoriler, setExistingKategoriler] = useState<string[]>([]);
+    const [avatar, setAvatar] = useState<File>() || '';
+    const [name, setName] = useState<string>('');
+    const [price, setPrice] = useState<number>(0);
+    const [stock, setStock] = useState<number>(0);
+    const [description, setDescription] = useState<string>('');
+    const [variant, setVariant] = useState<string>('');
+    const [res, setRes] = useState<any>();
+
+    const [searchInputValue, setSearchInputValue] = useState<string>('');
+    const [searchOptions, setSearchOptions] = useState<any[]>([]);
+    const [triggerGetKategoriler, setTriggerGetKategoriler] = useState<boolean>(false);
+    const [products, setProducts] = useState<any[]>([]);
+
     const token = localStorage.getItem('token') || '';
 
     useEffect(() => {
-        // Kategorileri getir ve setExistingKategoriler ile mevcut kategorileri güncelle
-        const fetchKategoriler = async () => {
-            try {
-                const existingKategoriler = await getKategoriler(token); // Veritabanından mevcut kategorileri getir
-                setExistingKategoriler(existingKategoriler);
-            } catch (error) {
-                console.error('Kategorileri getirme hatası:', error);
-            }
-        };
-
-        fetchKategoriler();
-    }, []);
+        hangleGetKategoriler();
+        console.log(searchInputValue);
+    }, [res]);
 
     // set pagetitle
     usePageTitle({
@@ -262,10 +295,6 @@ const Projects = () => {
         toggleModal();
     };
 
-    const handleSaveProduct = () => {
-        toggleModal();
-    };
-
     const handleAddInput = (index: number, key: string = '', value: string = ''): void => {
         const list = [...customInputs];
         list[index][key] = value;
@@ -278,32 +307,81 @@ const Projects = () => {
         setCustomInputs(list);
     }
 
-    const handleKategoriInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setKategoriInput(event.target.value);
+    const handleSaveProduct = async () => {
+        toggleModal();
+
+        if (searchInputValue) {
+            try {
+                console.log('Kategori oluşturuluyor:', searchInputValue, 'exist', existingKategoriler);
+                // Check if the category already exists
+                const categoryExists = existingKategoriler.some(
+                    (x) => x.toLowerCase() === searchInputValue.toLowerCase()
+                );
+
+                let categoryId = null;
+
+                if (!categoryExists) {
+                    console.log('Yeni kategori oluşturuluyor:', searchInputValue);
+                    const response = await createKategori(searchInputValue, token);
+                    setRes(response);
+                    categoryId = response.id;
+                    console.log('Yeni Kategori, ', categoryId);
+                    console.log('Yeni kategori oluşturuldu:', response);
+
+                    // Update the existing categories with the newly added category
+                    setExistingKategoriler([...existingKategoriler, searchInputValue]);
+                    setTriggerGetKategoriler(!triggerGetKategoriler);
+                } else {
+                    console.log('Bu kategori zaten mevcut:', searchInputValue);
+                    const category = existingKategoriler.find(
+                        (x) => x.toLowerCase() === searchInputValue.toLowerCase()
+                    );
+                    const categoryObject = searchOptions.find((option) => option.name === category);
+                    categoryId = categoryObject.id;
+                    console.log('Kategori id ELSE:', categoryId);
+                }
+
+                // Save the product information to the database
+                const productData = {
+                    name: name,
+                    price: price,
+                    stock: stock,
+                    description: description,
+                    variant: 'danger',
+                    category: categoryId,
+                    customFields: customInputs,
+                    image: 'avatar',
+                };
+
+                console.log('Ürün kaydediliyor:', productData);
+
+                // Perform the API request to save the product data to the database
+                await addProduct(productData, token);
+
+                // Perform additional operations after saving the product, such as updating or reloading the product data
+            } catch (error) {
+                console.error('Ürün kaydetme hatası:', error);
+            }
+        }
     };
 
-    const handleCreateKategori = async () => {
+    const hangleGetKategoriler = async () => {
         try {
-            // Kategori adını kontrol et
-            const existingKategori = existingKategoriler.find(
-                (kategori) => kategori.toLowerCase() === kategoriInput.toLowerCase()
-            );
-            if (existingKategori) {
-                console.log('Bu kategori zaten mevcut:', existingKategori);
-                return;
-            }
+            const response = await getKategoriler(token); // Fetch categories from the database
 
-            // Kategoriyi oluştur
-            const response = await createKategori(kategoriInput, token);
-            console.log('Yeni kategori oluşturuldu:', response);
+            setExistingKategoriler(response.map((x: any) => x.name));
 
-            // Kategori eklendikten sonra mevcut kategorileri güncelle
-            setExistingKategoriler([...existingKategoriler, kategoriInput]);
-
-            // Kategori eklendiğinde yapılması gereken işlemleri burada gerçekleştirebilirsiniz.
-            // Örneğin, yeni kategori verilerini güncellemek veya yeniden yüklemek gibi.
+            setSearchOptions(response); // Update the search options with the formatted categories
+            console.log('Kategorsiler:', searchOptions);
         } catch (error) {
-            console.error('Kategori oluşturma hatası:', error);
+            console.error('Error fetching categories:', error);
+        }
+    };
+
+    const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files && e.target.files[0];
+        if (file) {
+            setAvatar(file);
         }
     };
 
@@ -316,24 +394,63 @@ const Projects = () => {
                     </Modal.Header>
                     <Modal.Body>
                         <Col sm={8}>
-                            <InputGroup className="mb-3">
-                                <FormControl
-                                    type="text"
-                                    placeholder="Ürün Kategorisi"
-                                    value={kategoriInput}
-                                    onChange={handleKategoriInputChange}
+                            <Stack spacing={2} sx={{ width: 310, height: 70 }}>
+                                <Autocomplete
+                                    freeSolo
+                                    id="free-solo-2-demo"
+                                    disableClearable
+                                    options={searchOptions.map((option) => option.name)}
+                                    onInputChange={(event, value) => setSearchInputValue(value)}
+                                    renderInput={(params) => (
+                                        <TextField
+                                            {...params}
+                                            label="Kategori Ara"
+                                            InputProps={{
+                                                ...params.InputProps,
+                                                type: 'search',
+                                            }}
+                                        />
+                                    )}
                                 />
-                                <Button variant="success" onClick={handleCreateKategori}>
-                                    <BsPlus />
-                                </Button>
-                            </InputGroup>
+                            </Stack>
 
-                            <FormInput type="text" name="name" placeholder="Ürün Adı" containerClass={'mb-3'} />
+                            <FormInput
+                                type="text"
+                                name="name"
+                                placeholder="Ürün Adı"
+                                containerClass={'mb-3'}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+                            />
 
-                            <FormInput type="text" name="name" placeholder="Ürün Fiyatı" containerClass={'mb-3'} />
-                            <FormInput type="text" name="name" placeholder="Ürün Stoğu" containerClass={'mb-3'} />
-                            <FormInput type="text" name="name" placeholder="Ürün Açıklaması" containerClass={'mb-3'} />
-                            <FormInput type="text" name="name" placeholder="Ürün Resmi" containerClass={'mb-3'} />
+                            <FormInput
+                                type="text"
+                                name="name"
+                                placeholder="Ürün Fiyatı"
+                                containerClass={'mb-3'}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => setPrice(Number(e.target.value))}
+                            />
+                            <FormInput
+                                type="text"
+                                name="name"
+                                placeholder="Ürün Stoğu"
+                                containerClass={'mb-3'}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => setStock(Number(e.target.value))}
+                            />
+                            <FormInput
+                                type="text"
+                                name="name"
+                                placeholder="Ürün Açıklaması"
+                                containerClass={'mb-3'}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => setDescription(e.target.value)}
+                            />
+                            <FormInput
+                                label={'Avatar'}
+                                type="file"
+                                name="avatar"
+                                accept="image/*"
+                                onChange={handleAvatarChange}
+                                containerClass={'mb-3'}
+                            />
                             <Form.Group>
                                 <Form.Label>Özel Alanlar</Form.Label>
                                 {customInputs.map((input, index) => (
@@ -381,7 +498,7 @@ const Projects = () => {
                     </Button>
                 </Col>
             </Row>
-            <SingleProject projects={projects} />
+            <SingleProject projects={projects} searchOptions={searchOptions} />
         </>
     );
 };

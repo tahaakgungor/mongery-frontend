@@ -1,56 +1,118 @@
 import axios from 'axios';
 import { Constants } from '../links';
-import { getToken } from '../redux/token/actions';
-import { useRedux } from '../hooks';
+import { CustomInput } from '../pages/apps/Projects/types';
 
-export const addProduct = async (productData: any) => {
-    const {appSelector}= useRedux()
+export const addProduct = async (productData: any, token: string) => {
+
+  const customInputs = productData.customFields.map((item: CustomInput) => {
+    return {
+      key: item.name,
+      value: item.placeholder,
+    };
+  });
+
+
+
   try {
-    // Token'i al
-    const token = appSelector((state)=>state.Token.token)
-
     // GraphQL sorgusu
     const query = `
-      mutation CreateProduct($input: CreateProductInput!) {
-        createProduct(createProductInput: $input) {
-          id
-          image
-          title
-          stateId
-          categoryId
-          price
-          stock
-          variant
-          createdAt
-          updatedAt
-          customInputs {
-            key
-            value
-          }
+    mutation CreateProduct($customInputs: [CustomInput!]) {
+      createProduct(createProductInput: {
+        image: "${productData.image}",
+        title: "${productData.name}",
+        categoryId: ${productData.category},
+        price: ${productData.price},
+        stock: ${productData.stock},
+        variant: "${productData.variant}",
+        customInputs: $customInputs
+      }) {
+        id
+        image
+        title
+        categoryId
+        price
+        stock
+        variant
+        customInputs {
+          key
+          value
         }
+        createdAt
+        updatedAt
       }
+    }
     `;
 
     // GraphQL isteği gönder
-    const response = await axios.post(
-      Constants.API,
-      {
+    const response = await fetch(Constants.API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
         query,
         variables: {
           input: productData,
+          customInputs: customInputs,
         },
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+      }),
 
-    // İstek başarılıysa yeni ürünün verilerini döndür
-    return response.data.data.createProduct;
+    });
+
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    if (response.ok) {
+      return data.data.createProduct;
+    }
+    throw new Error(data.errors[0].message);
   } catch (error) {
-    // İstek başarısızsa hata fırlat
     console.log(error);
+    throw error;
   }
 };
+
+export const getProducts = async (token: string) => {
+  try {
+    const response = await fetch(Constants.API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        query: `
+        query {
+          products {
+            id
+            image
+            title
+            categoryId
+            price
+            stock
+            variant
+            customInputs {
+              key
+              value
+            }
+            createdAt
+            updatedAt
+          }
+        }
+        `,
+      }),
+    });
+
+
+
+    const data = await response.json();
+    if (response.ok) {
+      return data.data.products;
+    }
+    throw new Error(data.errors[0].message);
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}

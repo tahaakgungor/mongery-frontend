@@ -67,4 +67,35 @@ export const getKategoriler = async (token: string) => {
     }
 }
 
+export const getKategori = async (id: string, token: string) => {
+    try {
+        const query = `
+        query {
+            category(id: "${id}") {
+              id
+              name
+            }
+          }
+    `;
+        const response = await fetch(Constants.API, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+                query,
+            }),
+        });
+        const data = await response.json();
+        if (data.errors) {
+            throw new Error(data.errors[0].message);
+        }
+        return data.data.category;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
 

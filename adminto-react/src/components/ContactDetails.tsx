@@ -2,7 +2,7 @@ import { Button, Card, Col, Dropdown, Form, Modal, Row } from 'react-bootstrap';
 import { VerticalForm, FormInput } from '../components/form';
 // types
 import { Contact } from '../pages/apps/Contacts/List/types';
-import { Link, Location } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { BaseSyntheticEvent, SetStateAction, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { musteriSec } from '../myRedux/Musteriler/slice';
