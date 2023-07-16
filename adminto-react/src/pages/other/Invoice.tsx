@@ -9,6 +9,7 @@ import { usePageTitle } from '../../hooks';
 // data
 import { invoiceDetails } from './data';
 import { useRedux } from '../../hooks';
+import { createSiparis } from '../../service/siparisler';
 
 const Invoice = () => {
     // set pagetitle
@@ -28,6 +29,8 @@ const Invoice = () => {
     });
 
     const { dispatch, appSelector } = useRedux();
+
+    const token = localStorage.getItem('token') || '';
 
     const musteri = appSelector((state) => state.Musteriler.musteriler);
 
@@ -70,6 +73,27 @@ const Invoice = () => {
         // Update the order number when a new order is created
         setProformaNumber((prevNumber) => prevNumber + 1);
     }, []);
+
+    const handleSaveOrder = async () => {
+        try{
+            const data = {
+                customerId: musteri.id,
+                stateId: 'Hazırlanıyor',
+                createdAt: formattedDate,
+                productId: sepet,
+                price: subTotal,
+                quantity: itemCount,
+                toplamFiyat: subTotal,
+            };
+            await createSiparis(data, token);
+
+
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
+
 
     return (
         <Row>
