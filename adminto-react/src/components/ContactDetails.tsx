@@ -13,6 +13,7 @@ import { getCustomers, CustomerData, deleteCustomer, updateCustomer } from '../s
 type ContactDetailsProps = {
     contact: Contact;
 };
+//aS
 
 const ContactDetails = ({ contact }: ContactDetailsProps) => {
     const [selectedCustomer, setSelectedCustomer] = useState<CustomerData | null>(null);
