@@ -62,7 +62,7 @@ const Invoice = () => {
     console.log(sepet);
     console.log(musteri);
     const itemCount = sepet.length;
-    
+
     // Calculate subtotal dynamically
     const subTotal = sepet.reduce((total:any, item:any) => total + item.quantity * item.price, 0);
 
@@ -128,7 +128,7 @@ const Invoice = () => {
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Ürün</th>
-                                                    <th>Açıklama</th>
+                                                    <th>Özellikler</th>
                                                     <th>Adet</th>
                                                     <th>Birim Fiyat</th>
                                                     <th>Toplam</th>
@@ -140,7 +140,17 @@ const Invoice = () => {
                                                         <tr key={item.id}>
                                                             <td>{index + 1}</td>
                                                             <td>{item.title}</td>
-                                                            <td>{item.title}</td>
+                                                              <td
+                                                              style={{
+                                                                  width: '200px',
+                                                              }}>
+                                                              {item.customInputs.map((input: any, index: number) => (
+                                                                  <div key={index.toString()}>
+                                                                      <h5 className="m-0">{input.key}</h5>
+                                                                      <p className="m-0">{input.value}</p>
+                                                                  </div>
+                                                              ))}
+                                                          </td>
                                                             <td>{item.quantity}</td>
                                                             <td>{item.price}</td>
                                                             <td>{item.quantity * item.price}</td>
