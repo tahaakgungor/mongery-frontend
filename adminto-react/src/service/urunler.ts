@@ -116,3 +116,109 @@ export const getProducts = async (token: string) => {
     throw error;
   }
 }
+
+export const removeProduct = async (id: number, token: string) => {
+  try {
+    console.log(id);
+    const response = await fetch(Constants.API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        query: `
+        mutation ($id: Int!) {
+          removeProduct(id: $id)
+        }
+        `,
+        variables: {
+          id: id,
+        },
+      }),
+    });
+
+    const data = await response.json();
+
+    console.log(data);
+    if (response.ok) {
+      return data.data.removeProduct;
+    }
+    throw new Error(data.errors[0].message);
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+export const updateProduct = async (productData: any, token: string) => {
+  const customInputs = productData.customFields.map((item: CustomInput) => {
+    return {
+      key: item.name,
+      value: item.placeholder,
+    };
+  });
+
+  console.log(productData);
+
+  try {
+    // GraphQL sorgusu
+    const query = `
+    mutation UpdateProduct($customInputs: [CustomInput!]) {
+      updateProduct(updateProductInput: {
+        id: ${productData.id},
+        image: "${productData.image}",
+        title: "${productData.title}",
+        categoryId: ${productData.category},
+        price: ${productData.price},
+        stock: ${productData.stock},
+        variant: "${productData.variant}",
+        customInputs: $customInputs
+      }) {
+        id
+        image
+        title
+        categoryId
+        price
+        stock
+        variant
+        customInputs {
+          key
+          value
+        }
+        createdAt
+        updatedAt
+      }
+    }
+    `;
+
+    // GraphQL isteği gönder
+    const response = await fetch(Constants.API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        query,
+        variables: {
+          input: productData,
+          customInputs: customInputs,
+        },
+      }),
+
+    });
+
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    if (response.ok) {
+      return data.data.updateProduct;
+    }
+    throw new Error(data.errors[0].message);
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+

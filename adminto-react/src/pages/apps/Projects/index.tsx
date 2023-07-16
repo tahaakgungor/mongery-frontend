@@ -14,6 +14,7 @@ import {
     Form,
     InputGroup,
     FormControl,
+    Dropdown,
 } from 'react-bootstrap';
 import { BsPlus, BsDash } from 'react-icons/bs';
 import classNames from 'classnames';
@@ -37,7 +38,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { useRedux } from '../../../hooks';
 import { selectedSepet } from '../../../redux/sepet/actions';
 import { createKategori, getKategori, getKategoriler } from '../../../service/kategori';
-import { addProduct, getProducts } from '../../../service/urunler';
+import { addProduct, getProducts, removeProduct, updateProduct } from '../../../service/urunler';
 import { set } from 'react-hook-form';
 
 type SingleProjectProps = {
@@ -49,12 +50,67 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
     const [cartItems, setCartItems] = useState<ProjectsList[]>([]);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
     const [products, setProducts] = useState<any[]>([]);
+    const [state, setState] = useState<string>('');
     const { dispatch, appSelector } = useRedux();
-
+    const [triggerGetProducts, setTriggerGetProducts] = useState<boolean>(false);
+    const [stockLabels, setStockLabels] = useState<{ [key: string]: string }>({});
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selectedProject, setSelectedProject] = useState(null);
+    const [updatedData, setUpdatedData] = useState<any>({});
     const token = localStorage.getItem('token') || '';
 
     useEffect(() => {
+        // Retrieve stock labels from localStorage
+        const storedStockLabels = localStorage.getItem('stockLabels');
+        if (storedStockLabels) {
+            setStockLabels(JSON.parse(storedStockLabels));
+        }
+    }, []);
+
+    useEffect(() => {
+        // Save stock labels to localStorage
+        localStorage.setItem('stockLabels', JSON.stringify(stockLabels));
+    }, [stockLabels]);
+
+    useEffect(() => {
         handleGetProducts();
+    }, [triggerGetProducts]);
+    const checkStock = (stock: number) => {
+        if (stock == 0) {
+            return 'Stok Yok';
+        }
+        if (stock < 100) {
+            return 'Stok Az';
+        }
+        return 'Stok Var';
+    };
+
+    const openEditModal = (title: any) => {
+        setModalVisible(true);
+        setSelectedProject(title);
+        setUpdatedData({ title });
+    };
+    const handleInputChange = (e: any) => {
+        const { name, value } = e.target;
+        setUpdatedData((prevData: any) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const updateStockStatus = () => {
+        const updatedStockLabels: { [key: string]: string } = {};
+
+        products.forEach((project) => {
+            const stockStatus = checkStock(project.stock);
+            updatedStockLabels[project.id] = stockStatus;
+        });
+
+        setStockLabels(updatedStockLabels);
+    };
+
+    useEffect(() => {
+        updateStockStatus();
     }, []);
 
     const addToCart = (project: ProjectsList, quantity: number) => {
@@ -92,6 +148,31 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
         return category ? category.name : '';
     };
 
+    const handleRemoveProduct = (id: number) => {
+        removeProduct(id, token);
+        setTriggerGetProducts(!triggerGetProducts);
+    };
+
+    const handleUpdateProduct = async (id: number) => {
+        try {
+            // Find the product with the matching id
+            const product = products.find((item) => item.id === id);
+            console.log('Ürün:', product);
+
+            if (product) {
+                // Perform the update operation on the product
+                await updateProduct(product, token);
+                console.log('Ürün güncellendi:', product);
+
+                // Trigger the getProducts function to fetch the updated product list
+                setTriggerGetProducts(!triggerGetProducts);
+                setModalVisible(false);
+            }
+        } catch (error) {
+            console.error('Ürün güncelleme hatası:', error);
+        }
+    };
+
     return (
         <Row>
             {(products || []).map((product, index) => {
@@ -99,8 +180,50 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                     <Col xl={4} key={index.toString()}>
                         <Card>
                             <Card.Body className="project-box">
+                                <Dropdown className="float-end" align="end">
+                                    <Dropdown.Toggle as="a" className="cursor-pointer card-drop">
+                                        <i className="mdi mdi-dots-vertical"></i>
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item onClick={() => openEditModal(product.title)}>
+                                            {' '}
+                                            Düzenle
+                                        </Dropdown.Item>
+                                        <Dropdown.Item onClick={() => handleRemoveProduct(product.id)}>
+                                            {' '}
+                                            Sil
+                                        </Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                                <Modal show={modalVisible} onHide={() => setModalVisible(false)}>
+                                    <Modal.Header closeButton>
+                                        <Modal.Title>Proje Düzenle</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <Form>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label>Proje Adı</Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    name="title"
+                                                    value={updatedData.title || ''}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </Form.Group>
+                                            {/* Add more form fields for other project properties */}
+                                        </Form>
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Button variant="secondary" onClick={() => setModalVisible(false)}>
+                                            İptal
+                                        </Button>
+                                        <Button variant="primary" onClick={() => handleUpdateProduct(product.id)}>
+                                            Düzenle
+                                        </Button>
+                                    </Modal.Footer>
+                                </Modal>
                                 <Badge bg={product.variant} className="float-end">
-                                    {product.state}
+                                    {state}
                                 </Badge>
                                 <h4 className="mt-0">
                                     <Link to="#" className="text-dark">
@@ -123,11 +246,18 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                                         <h4 className="mb-0">{product.price}</h4>
                                         <p className="text-muted">Fiyat</p>
                                     </li>
+                                    {product.customInputs.map((input: any, index: number) => (
+                                        <li className="list-inline-item" key={index.toString()}>
+                                            <h4 className="mb-0">{input.value}</h4>
+                                            <p className="text-muted">{input.key}</p>
+                                        </li>
+                                    ))}
                                 </ul>
+
                                 <h5 className="mb-2 fw-semibold">
                                     Stok
                                     <span className={classNames('float-end', 'text-' + product.variant)}>
-                                        {product.stock}%
+                                        {product.stock}
                                     </span>
                                 </h5>
                                 <ProgressBar
@@ -268,6 +398,8 @@ const Projects = () => {
 
     useEffect(() => {
         hangleGetKategoriler();
+        console.log(products);
+
         console.log(searchInputValue);
     }, [res]);
 
@@ -347,12 +479,11 @@ const Projects = () => {
                     price: price,
                     stock: stock,
                     description: description,
-                    variant: 'danger',
+                    variant: stock >= 100 ? 'success' : stock < 100 ? 'warning' : stock === 0 ? 'danger' : 'danger',
                     category: categoryId,
                     customFields: customInputs,
                     image: 'avatar',
                 };
-
                 console.log('Ürün kaydediliyor:', productData);
 
                 // Perform the API request to save the product data to the database
@@ -373,6 +504,16 @@ const Projects = () => {
 
             setSearchOptions(response); // Update the search options with the formatted categories
             console.log('Kategorsiler:', searchOptions);
+        } catch (error) {
+            console.error('Error fetching categories:', error);
+        }
+    };
+
+    const handleGetProducts = async () => {
+        try {
+            const response = await getProducts(token); // Fetch categories from the database
+            setProducts(response); // Update the search options with the formatted categories
+            console.log('Ürünler:', response);
         } catch (error) {
             console.error('Error fetching categories:', error);
         }
