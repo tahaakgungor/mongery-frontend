@@ -53,7 +53,6 @@ const Invoice = () => {
     const formattedDate = `${day} ${month} ${year}`;
 
     const [proformaNumber, setProformaNumber] = useState(1);
-    const proformaDate = `${day} ${monthIndex + 1} ${year} ${proformaNumber}`;
 
     console.log(formattedDate);
 
@@ -62,10 +61,13 @@ const Invoice = () => {
     const sepet = appSelector((state) => state.Sepet.sepet);
     console.log(sepet);
     console.log(musteri);
+    const itemCount = sepet.length;
+    
+    // Calculate subtotal dynamically
+    const subTotal = sepet.reduce((total:any, item:any) => total + item.quantity * item.price, 0);
 
     useEffect(() => {
-        // Proforma numarasını artırmak için gerekli işlemler
-        // Örneğin, proforma onaylandığında bu kodu çağırabilirsiniz:
+        // Update the order number when a new order is created
         setProformaNumber((prevNumber) => prevNumber + 1);
     }, []);
 
@@ -85,7 +87,7 @@ const Invoice = () => {
                                     <h4>
                                         Proforma #
                                         <br />
-                                        <strong>{proformaDate}</strong>
+                                        <strong>{`${day}${monthIndex + 1}${year}${proformaNumber}`}</strong>
                                     </h4>
                                 </div>
                             </div>
@@ -112,7 +114,7 @@ const Invoice = () => {
                                             <span className="label label-pink">{invoiceDetails.order_status}</span>
                                         </p>
                                         <p className="m-t-10">
-                                            <strong>Sipariş Numarası: </strong> {invoiceDetails.order_id}
+                                            <strong>Sipariş Numarası: {proformaNumber} </strong>
                                         </p>
                                     </div>
                                 </Col>
@@ -133,15 +135,15 @@ const Invoice = () => {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {(invoiceDetails.items || []).map((item, idx) => {
+                                                {sepet.map((item:any, index:number) => {
                                                     return (
-                                                        <tr key={idx}>
-                                                            <td>{idx + 1}</td>
-                                                            <td>{item.name}</td>
-                                                            <td>{item.description}</td>
+                                                        <tr key={item.id}>
+                                                            <td>{index + 1}</td>
+                                                            <td>{item.title}</td>
+                                                            <td>{item.title}</td>
                                                             <td>{item.quantity}</td>
-                                                            <td>{item.unit_cost}</td>
-                                                            <td>{item.total}</td>
+                                                            <td>{item.price}</td>
+                                                            <td>{item.quantity * item.price}</td>
                                                         </tr>
                                                     );
                                                 })}
@@ -163,14 +165,18 @@ const Invoice = () => {
                                         </small>
                                     </div>
                                 </Col>
-                                <Col xs={6} xl={{ offset: 3, span: 3 }} className="col-xl-3 col-6 offset-xl-3">
+                                <Col
+                                    xs={6}
+                                    xl={{ offset: 3, span: 3 }}
+                                    className="col-xl-3 col-6 offset-xl-3"
+                                >
                                     <p className="text-end">
-                                        <b>Sub-total:</b> {invoiceDetails.sub_total}
+                                        <b>Sub-total:</b> {subTotal}
                                     </p>
                                     <p className="text-end">İndirim: {invoiceDetails.discount}%</p>
                                     <p className="text-end">KDV: {invoiceDetails.vat}%</p>
                                     <hr />
-                                    <h3 className="text-end">$ {invoiceDetails.total}</h3>
+                                    <h3 className="text-end">$ {subTotal}</h3>
                                 </Col>
                             </Row>
                             <hr />
@@ -181,10 +187,14 @@ const Invoice = () => {
                                         className="btn btn-dark waves-effect waves-light me-1"
                                         onClick={(e) => {
                                             window.print();
-                                        }}>
+                                        }}
+                                    >
                                         <i className="fa fa-print"></i>
                                     </Link>
-                                    <Link to="/apps/siparisler" className="btn btn-primary waves-effect waves-light">
+                                    <Link
+                                        to="/apps/siparisler"
+                                        className="btn btn-primary waves-effect waves-light"
+                                    >
                                         Bitir
                                     </Link>
                                 </div>
