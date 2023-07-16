@@ -38,7 +38,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { useRedux } from '../../../hooks';
 import { selectedSepet } from '../../../redux/sepet/actions';
 import { createKategori, getKategori, getKategoriler } from '../../../service/kategori';
-import { addProduct, getProducts, removeProduct } from '../../../service/urunler';
+import { addProduct, getProducts, removeProduct, updateProduct } from '../../../service/urunler';
 import { set } from 'react-hook-form';
 
 type SingleProjectProps = {
@@ -52,36 +52,64 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
     const [products, setProducts] = useState<any[]>([]);
     const [state, setState] = useState<string>('');
     const { dispatch, appSelector } = useRedux();
-
+    const [triggerGetProducts, setTriggerGetProducts] = useState<boolean>(false);
+    const [stockLabels, setStockLabels] = useState<{ [key: string]: string }>({});
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selectedProject, setSelectedProject] = useState(null);
+    const [updatedData, setUpdatedData] = useState<any>({});
     const token = localStorage.getItem('token') || '';
 
     useEffect(() => {
-        handleGetProducts();
+        // Retrieve stock labels from localStorage
+        const storedStockLabels = localStorage.getItem('stockLabels');
+        if (storedStockLabels) {
+            setStockLabels(JSON.parse(storedStockLabels));
+        }
     }, []);
 
     useEffect(() => {
-        // Stock check
-        const checkStock = (stock: number) => {
-            console.log('Stock:', stock);
-            if (stock <= 0) {
-                setState('Stok Yok');
-            }
-            if (stock < 100) {
-                setState('Stok Az');
-            }
-            if (stock > 100) {
-                setState('Stok Var');
-            }
-        };
+        // Save stock labels to localStorage
+        localStorage.setItem('stockLabels', JSON.stringify(stockLabels));
+    }, [stockLabels]);
 
-        // Update project stock status
-        const updateStockStatus = () => {
-            const updatedProjects = products.map((product) => ({
-                ...product,
-                stockStatus: checkStock(product.stock),
-            }));
-        };
+    useEffect(() => {
+        handleGetProducts();
+    }, [triggerGetProducts]);
+    const checkStock = (stock: number) => {
+        if (stock == 0) {
+            return 'Stok Yok';
+        }
+        if (stock < 100) {
+            return 'Stok Az';
+        }
+        return 'Stok Var';
+    };
 
+    const openEditModal = (title: any) => {
+        setModalVisible(true);
+        setSelectedProject(title);
+        setUpdatedData({ title });
+    };
+    const handleInputChange = (e: any) => {
+        const { name, value } = e.target;
+        setUpdatedData((prevData: any) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const updateStockStatus = () => {
+        const updatedStockLabels: { [key: string]: string } = {};
+
+        products.forEach((project) => {
+            const stockStatus = checkStock(project.stock);
+            updatedStockLabels[project.id] = stockStatus;
+        });
+
+        setStockLabels(updatedStockLabels);
+    };
+
+    useEffect(() => {
         updateStockStatus();
     }, []);
 
@@ -122,6 +150,27 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
 
     const handleRemoveProduct = (id: number) => {
         removeProduct(id, token);
+        setTriggerGetProducts(!triggerGetProducts);
+    };
+
+    const handleUpdateProduct = async (id: number) => {
+        try {
+            // Find the product with the matching id
+            const product = products.find((item) => item.id === id);
+            console.log('Ürün:', product);
+
+            if (product) {
+                // Perform the update operation on the product
+                await updateProduct(product, token);
+                console.log('Ürün güncellendi:', product);
+
+                // Trigger the getProducts function to fetch the updated product list
+                setTriggerGetProducts(!triggerGetProducts);
+                setModalVisible(false);
+            }
+        } catch (error) {
+            console.error('Ürün güncelleme hatası:', error);
+        }
     };
 
     return (
@@ -136,13 +185,43 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                                         <i className="mdi mdi-dots-vertical"></i>
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                        <Dropdown.Item> Düzenle</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => openEditModal(product.title)}>
+                                            {' '}
+                                            Düzenle
+                                        </Dropdown.Item>
                                         <Dropdown.Item onClick={() => handleRemoveProduct(product.id)}>
                                             {' '}
                                             Sil
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
+                                <Modal show={modalVisible} onHide={() => setModalVisible(false)}>
+                                    <Modal.Header closeButton>
+                                        <Modal.Title>Proje Düzenle</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <Form>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label>Proje Adı</Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    name="title"
+                                                    value={updatedData.title || ''}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </Form.Group>
+                                            {/* Add more form fields for other project properties */}
+                                        </Form>
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Button variant="secondary" onClick={() => setModalVisible(false)}>
+                                            İptal
+                                        </Button>
+                                        <Button variant="primary" onClick={() => handleUpdateProduct(product.id)}>
+                                            Düzenle
+                                        </Button>
+                                    </Modal.Footer>
+                                </Modal>
                                 <Badge bg={product.variant} className="float-end">
                                     {state}
                                 </Badge>
@@ -167,10 +246,12 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                                         <h4 className="mb-0">{product.price}</h4>
                                         <p className="text-muted">Fiyat</p>
                                     </li>
-                                    <li className="list-inline-item">
-                                        <h4 className="mb-0">{product.customInputs[0].value}</h4>
-                                        <p className="text-muted">{product.customInputs[0].key}</p>
-                                    </li>
+                                    {product.customInputs.map((input: any, index: number) => (
+                                        <li className="list-inline-item" key={index.toString()}>
+                                            <h4 className="mb-0">{input.value}</h4>
+                                            <p className="text-muted">{input.key}</p>
+                                        </li>
+                                    ))}
                                 </ul>
 
                                 <h5 className="mb-2 fw-semibold">
@@ -391,25 +472,18 @@ const Projects = () => {
                     categoryId = categoryObject.id;
                     console.log('Kategori id ELSE:', categoryId);
                 }
-                if (stock <= 0) {
-                    setVariant('danger');
-                } else if (stock < 100) {
-                    setVariant('warning');
-                } else if (stock > 100) {
-                    setVariant('success');
-                }
+
                 // Save the product information to the database
                 const productData = {
                     name: name,
                     price: price,
                     stock: stock,
                     description: description,
-                    variant: variant,
+                    variant: stock >= 100 ? 'success' : stock < 100 ? 'warning' : stock === 0 ? 'danger' : 'danger',
                     category: categoryId,
                     customFields: customInputs,
                     image: 'avatar',
                 };
-
                 console.log('Ürün kaydediliyor:', productData);
 
                 // Perform the API request to save the product data to the database
