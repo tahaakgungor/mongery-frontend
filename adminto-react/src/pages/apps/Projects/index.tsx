@@ -33,7 +33,7 @@ import { FormInput } from '../../../components/form';
 import { CustomInput, ProjectsList, SepetData } from './types';
 
 // dummy data
-import { projects } from './data';
+
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useRedux } from '../../../hooks';
 import { selectedSepet } from '../../../redux/sepet/actions';
@@ -42,12 +42,11 @@ import { addProduct, getProducts, removeProduct, updateProduct } from '../../../
 import { set } from 'react-hook-form';
 
 type SingleProjectProps = {
-    projects: ProjectsList[];
     searchOptions: any[];
 };
 
-const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
-    const [cartItems, setCartItems] = useState<ProjectsList[]>([]);
+const SingleProject = ({ searchOptions }: SingleProjectProps) => {
+    const [cartItems, setCartItems] = useState<any[]>([]);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
     const [products, setProducts] = useState<any[]>([]);
     const [state, setState] = useState<string>('');
@@ -55,7 +54,7 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
     const [triggerGetProducts, setTriggerGetProducts] = useState<boolean>(false);
     const [stockLabels, setStockLabels] = useState<{ [key: string]: string }>({});
     const [modalVisible, setModalVisible] = useState(false);
-    const [selectedProject, setSelectedProject] = useState(null);
+    const [selectedProduct, setSelectedProduct] = useState<ProjectsList>();
     const [updatedData, setUpdatedData] = useState<any>({});
     const token = localStorage.getItem('token') || '';
 
@@ -85,10 +84,20 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
         return 'Stok Var';
     };
 
-    const openEditModal = (title: any) => {
+    const openEditModal = (product: ProjectsList) => {
+        const prod = {
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            stock: product.quantity,
+            description: product.shortDesc,
+            variant: product.quantity >= 100 ? 'success' : product.variant,
+        };
         setModalVisible(true);
-        setSelectedProject(title);
-        setUpdatedData({ title });
+        setUpdatedData(prod);
+
+        setSelectedProduct(product);
+        console.log('Ürün:', product);
     };
     const handleInputChange = (e: any) => {
         const { name, value } = e.target;
@@ -153,23 +162,15 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
         setTriggerGetProducts(!triggerGetProducts);
     };
 
-    const handleUpdateProduct = async (id: number) => {
+    const handleUpdateProduct = async () => {
         try {
-            // Find the product with the matching id
-            const product = products.find((item) => item.id === id);
-            console.log('Ürün:', product);
-
-            if (product) {
-                // Perform the update operation on the product
-                await updateProduct(product, token);
-                console.log('Ürün güncellendi:', product);
-
-                // Trigger the getProducts function to fetch the updated product list
-                setTriggerGetProducts(!triggerGetProducts);
-                setModalVisible(false);
-            }
+            setSelectedProduct({ ...selectedProduct, ...updatedData });
+            console.log('Güncellenen Ürün:', updatedData);
+            await updateProduct(updatedData, token);
+            setTriggerGetProducts(!triggerGetProducts);
+            setModalVisible(false);
         } catch (error) {
-            console.error('Ürün güncelleme hatası:', error);
+            console.error('Error updating product:', error);
         }
     };
 
@@ -185,10 +186,7 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                                         <i className="mdi mdi-dots-vertical"></i>
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                        <Dropdown.Item onClick={() => openEditModal(product.title)}>
-                                            {' '}
-                                            Düzenle
-                                        </Dropdown.Item>
+                                        <Dropdown.Item onClick={() => openEditModal(product)}> Düzenle</Dropdown.Item>
                                         <Dropdown.Item onClick={() => handleRemoveProduct(product.id)}>
                                             {' '}
                                             Sil
@@ -197,12 +195,12 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                                 </Dropdown>
                                 <Modal show={modalVisible} onHide={() => setModalVisible(false)}>
                                     <Modal.Header closeButton>
-                                        <Modal.Title>Proje Düzenle</Modal.Title>
+                                        <Modal.Title>Ürünleri Düzenle</Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
                                         <Form>
                                             <Form.Group className="mb-3">
-                                                <Form.Label>Proje Adı</Form.Label>
+                                                <Form.Label>Ürün Adı</Form.Label>
                                                 <Form.Control
                                                     type="text"
                                                     name="title"
@@ -210,14 +208,40 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                                                     onChange={handleInputChange}
                                                 />
                                             </Form.Group>
-                                            {/* Add more form fields for other project properties */}
+                                            <Form.Group className="mb-3">
+                                                <Form.Label>Ürün Fiyatı</Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    name="price"
+                                                    value={updatedData.price || ''}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label>Ürün Stoğu</Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    name="stock"
+                                                    value={updatedData.stock || ''}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3">
+                                                <Form.Label>Ürün Açıklaması</Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    name="description"
+                                                    value={updatedData.description || ''}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </Form.Group>
                                         </Form>
                                     </Modal.Body>
                                     <Modal.Footer>
                                         <Button variant="secondary" onClick={() => setModalVisible(false)}>
                                             İptal
                                         </Button>
-                                        <Button variant="primary" onClick={() => handleUpdateProduct(product.id)}>
+                                        <Button variant="primary" onClick={() => handleUpdateProduct()}>
                                             Düzenle
                                         </Button>
                                     </Modal.Footer>
@@ -243,7 +267,7 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
 
                                 <ul className="list-inline">
                                     <li className="list-inline-item me-4">
-                                        <h4 className="mb-0">{product.price}</h4>
+                                        <h4 className="mb-0">${product.price}</h4>
                                         <p className="text-muted">Fiyat</p>
                                     </li>
                                     {product.customInputs.map((input: any, index: number) => (
@@ -257,7 +281,7 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                                 <h5 className="mb-2 fw-semibold">
                                     Stok
                                     <span className={classNames('float-end', 'text-' + product.variant)}>
-                                        {product.stock}
+                                        {product.stock}KG
                                     </span>
                                 </h5>
                                 <ProgressBar
@@ -265,6 +289,7 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                                     <ProgressBar
                                         variant={product.variant}
                                         now={product.stock}
+                                        max={1000}
                                         className="quantity-animated"
                                     />
                                 </ProgressBar>
@@ -297,6 +322,7 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                                         <tr>
                                             <th style={{ width: '70px' }}>Ürün</th>
                                             <th>Ürün Adı</th>
+                                            <th>Özellikler</th>
                                             <th>Adet</th>
                                             <th>Fiyat</th>
                                             <th>Toplam</th>
@@ -317,8 +343,19 @@ const SingleProject = ({ projects, searchOptions }: SingleProjectProps) => {
                                                     </td>
                                                     <td>
                                                         <h5 className="m-0">{item.title}</h5>
-                                                        <p className="mb-0 text-muted">{item.shortDesc}</p>
                                                     </td>
+                                                    <td
+                                                        style={{
+                                                            width: '200px',
+                                                        }}>
+                                                        {item.customInputs.map((input: any, index: number) => (
+                                                            <div key={index.toString()}>
+                                                                <h5 className="m-0">{input.key}</h5>
+                                                                <p className="m-0">{input.value}</p>
+                                                            </div>
+                                                        ))}
+                                                    </td>
+
                                                     <td>
                                                         <h5 className="m-0">{item.quantity}</h5>
                                                     </td>
@@ -398,9 +435,6 @@ const Projects = () => {
 
     useEffect(() => {
         hangleGetKategoriler();
-        console.log(products);
-
-        console.log(searchInputValue);
     }, [res]);
 
     // set pagetitle
@@ -503,17 +537,6 @@ const Projects = () => {
             setExistingKategoriler(response.map((x: any) => x.name));
 
             setSearchOptions(response); // Update the search options with the formatted categories
-            console.log('Kategorsiler:', searchOptions);
-        } catch (error) {
-            console.error('Error fetching categories:', error);
-        }
-    };
-
-    const handleGetProducts = async () => {
-        try {
-            const response = await getProducts(token); // Fetch categories from the database
-            setProducts(response); // Update the search options with the formatted categories
-            console.log('Ürünler:', response);
         } catch (error) {
             console.error('Error fetching categories:', error);
         }
@@ -639,7 +662,7 @@ const Projects = () => {
                     </Button>
                 </Col>
             </Row>
-            <SingleProject projects={projects} searchOptions={searchOptions} />
+            <SingleProject searchOptions={searchOptions} />
         </>
     );
 };

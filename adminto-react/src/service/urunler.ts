@@ -24,6 +24,7 @@ export const addProduct = async (productData: any, token: string) => {
         price: ${productData.price},
         stock: ${productData.stock},
         variant: "${productData.variant}",
+        description: "${productData.description}",
         customInputs: $customInputs
       }) {
         id
@@ -33,6 +34,7 @@ export const addProduct = async (productData: any, token: string) => {
         price
         stock
         variant
+        description
         customInputs {
           key
           value
@@ -92,6 +94,7 @@ export const getProducts = async (token: string) => {
             price
             stock
             variant
+            description
             customInputs {
               key
               value
@@ -152,40 +155,35 @@ export const removeProduct = async (id: number, token: string) => {
 }
 
 export const updateProduct = async (productData: any, token: string) => {
-  const customInputs = productData.customFields.map((item: CustomInput) => {
-    return {
-      key: item.name,
-      value: item.placeholder,
-    };
-  });
 
-  console.log(productData);
+  if(productData.stock >= 100){
+    productData.variant = "success"
+  }
+  else if(productData.stock < 100){
+    productData.variant = "warning"
+  }
+  else if(productData.stock <= 1){
+    productData.variant = "danger"
+  }
+
 
   try {
     // GraphQL sorgusu
     const query = `
-    mutation UpdateProduct($customInputs: [CustomInput!]) {
+    mutation {
       updateProduct(updateProductInput: {
         id: ${productData.id},
-        image: "${productData.image}",
         title: "${productData.title}",
-        categoryId: ${productData.category},
         price: ${productData.price},
         stock: ${productData.stock},
         variant: "${productData.variant}",
-        customInputs: $customInputs
+        description: "${productData.description}",
       }) {
         id
-        image
         title
-        categoryId
         price
         stock
         variant
-        customInputs {
-          key
-          value
-        }
         createdAt
         updatedAt
       }
@@ -203,7 +201,6 @@ export const updateProduct = async (productData: any, token: string) => {
         query,
         variables: {
           input: productData,
-          customInputs: customInputs,
         },
       }),
 

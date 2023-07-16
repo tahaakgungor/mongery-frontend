@@ -1,4 +1,5 @@
 export type ProjectsList = {
+    customInputs: any;
     id: number;
     image: string;
     title: string;
@@ -8,7 +9,11 @@ export type ProjectsList = {
     price: number;
     quantity: number;
     variant: string;
-    customInput?: CustomInput;
+    customInput?: [{
+        name: string;
+        placeholder: string;
+        [key: string]: string;
+    }]
 };
 
 export type CustomInput = {
