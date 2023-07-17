@@ -9,6 +9,7 @@ import { usePageTitle } from '../../hooks';
 // data
 import { invoiceDetails } from './data';
 import { useRedux } from '../../hooks';
+import { createSiparis } from '../../service/siparisler';
 
 const Invoice = () => {
     // set pagetitle
@@ -29,7 +30,8 @@ const Invoice = () => {
     });
 
     const { dispatch, appSelector } = useRedux();
-    const [countProforma , setCountProforma] = useState(0);
+    const token = localStorage.getItem('token') || '';
+
     const musteri = appSelector((state) => state.Musteriler.musteriler);
     console.log(musteri)
     const currentDate = new Date();
@@ -54,6 +56,7 @@ const Invoice = () => {
     const formattedDate = `${day} ${month} ${year}`;
 
     const [proformaNumber, setProformaNumber] = useState(1);
+    const [countProforma, setCountProforma] = useState(1);
 
     console.log(formattedDate);
 
@@ -94,6 +97,27 @@ const Invoice = () => {
         window.location.href = '/apps/siparisler';
         setCountProforma(countProforma+1)
     };
+
+    const handleSaveOrder = async () => {
+        try{
+            const data = {
+                customerId: musteri.id,
+                stateId: 'Hazırlanıyor',
+                createdAt: formattedDate,
+                productId: sepet,
+                price: subTotal,
+                quantity: itemCount,
+                toplamFiyat: subTotal,
+            };
+            await createSiparis(data, token);
+
+
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
+
 
     return (
         <Row>
