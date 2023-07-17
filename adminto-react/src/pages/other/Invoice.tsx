@@ -12,6 +12,7 @@ import { useRedux } from '../../hooks';
 
 const Invoice = () => {
     // set pagetitle
+
     usePageTitle({
         title: 'Invoice',
         breadCrumbItems: [
@@ -28,9 +29,9 @@ const Invoice = () => {
     });
 
     const { dispatch, appSelector } = useRedux();
-
+    const [countProforma , setCountProforma] = useState(0);
     const musteri = appSelector((state) => state.Musteriler.musteriler);
-
+    console.log(musteri)
     const currentDate = new Date();
     const day = currentDate.getDate();
     const monthNames = [
@@ -71,6 +72,29 @@ const Invoice = () => {
         setProformaNumber((prevNumber) => prevNumber + 1);
     }, []);
 
+    useEffect(() => {
+        // Listen for beforeunload event
+        const handleBeforeUnload = (event:any) => {
+            event.preventDefault();
+            // Prompt the user before leaving the page
+            event.returnValue = '';
+        };
+
+        // Add beforeunload event listener
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        // Cleanup function to remove the event listener
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, []);
+
+    const handleFinishClick = () => {
+        // Yönlendirmek istediğiniz sayfa yolunu buraya yazın
+        window.location.href = '/apps/siparisler';
+        setCountProforma(countProforma+1)
+    };
+
     return (
         <Row>
             <Col md={12}>
@@ -87,7 +111,7 @@ const Invoice = () => {
                                     <h4>
                                         Proforma #
                                         <br />
-                                        <strong>{`${day}${monthIndex + 1}${year}${proformaNumber}`}</strong>
+                                        <strong>{`${day}${monthIndex + 1}${year}${countProforma}`}</strong>
                                     </h4>
                                 </div>
                             </div>
@@ -96,11 +120,14 @@ const Invoice = () => {
                                 <Col md={12}>
                                     <div className="float-start mt-3">
                                         <address>
-                                            <strong>{musteri.firmaAdi}</strong>
+                                            <strong>{musteri.firmName}</strong>
                                             <br />
-                                            {musteri.adres}
+                                            {musteri.address}
                                             <br />
-                                            <abbr title="Phone">Phone:</abbr> {musteri.mobile}
+                                            <abbr title="Phone">Phone:</abbr> {musteri.phone}
+                                            <br />
+                                            
+                                            <abbr title="İsim">İsim:</abbr> {musteri.name}
                                             <br />
                                             <abbr title="Email">Email:</abbr> {musteri.email}
                                         </address>
@@ -128,29 +155,29 @@ const Invoice = () => {
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Ürün</th>
-                                                    <th>Özellikler</th>
+                                                    <th>Açıklama</th>
                                                     <th>Adet</th>
                                                     <th>Birim Fiyat</th>
                                                     <th>Toplam</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {sepet.map((item:any, index:number) => {
+                                                {sepet.map((item:any, index:any) => {
                                                     return (
                                                         <tr key={item.id}>
                                                             <td>{index + 1}</td>
                                                             <td>{item.title}</td>
-                                                              <td
-                                                              style={{
+                                                            <td
+                                                                  style={{
                                                                   width: '200px',
-                                                              }}>
-                                                              {item.customInputs.map((input: any, index: number) => (
-                                                                  <div key={index.toString()}>
-                                                                      <h5 className="m-0">{input.key}</h5>
-                                                                      <p className="m-0">{input.value}</p>
-                                                                  </div>
-                                                              ))}
-                                                          </td>
+                                                          }}>
+                                                  {item.customInputs.map((input: any, index: number) => (
+                                                  <div key={index.toString()}>
+                                                  <h5 className="m-0">{input.key}</h5>
+                                                    <p className="m-0">{input.value}</p>
+                                                    </div>
+                                                       ))}
+                                                    </td>
                                                             <td>{item.quantity}</td>
                                                             <td>{item.price}</td>
                                                             <td>{item.quantity * item.price}</td>
@@ -181,12 +208,12 @@ const Invoice = () => {
                                     className="col-xl-3 col-6 offset-xl-3"
                                 >
                                     <p className="text-end">
-                                        <b>Sub-total:</b> {subTotal}
+                                        <b>Tutar:</b> {subTotal}
                                     </p>
-                                    <p className="text-end">İndirim: {invoiceDetails.discount}%</p>
+                                    
                                     <p className="text-end">KDV: {invoiceDetails.vat}%</p>
                                     <hr />
-                                    <h3 className="text-end">$ {subTotal}</h3>
+                                    <h3 className="text-end">TL {subTotal*1.2}</h3>
                                 </Col>
                             </Row>
                             <hr />
@@ -201,12 +228,12 @@ const Invoice = () => {
                                     >
                                         <i className="fa fa-print"></i>
                                     </Link>
-                                    <Link
-                                        to="/apps/siparisler"
+                                    <button
                                         className="btn btn-primary waves-effect waves-light"
+                                        onClick={handleFinishClick}
                                     >
                                         Bitir
-                                    </Link>
+                                    </button>
                                 </div>
                                 <div className="clearfix"></div>
                             </div>
