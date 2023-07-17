@@ -99,7 +99,6 @@ const List = () => {
             console.error('Müşteri oluşturma hatası:', error);
         }
     };
-    console.log(contacts);
     const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files && e.target.files[0];
         if (file) {
@@ -122,7 +121,6 @@ const List = () => {
             const response = await getCustomers(token);
 
             setCustomers(response);
-            console.log('Müşteriler:', customers);
         } catch (error) {
             console.error('Müşteri listeleme hatası:', error);
         }
