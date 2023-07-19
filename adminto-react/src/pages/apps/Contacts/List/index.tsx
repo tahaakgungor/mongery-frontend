@@ -48,6 +48,7 @@ const List = () => {
 
     const [triggerGetCustomers, setTriggerGetCustomers] = useState(false);
 
+
     useEffect(() => {
         handleGetCustomers();
     }, [triggerGetCustomers]);
@@ -91,8 +92,11 @@ const List = () => {
             };
 
             const response = await createCustomer(customerData, token);
+            setCustomers([...customers, response]);
             console.log('Müşteri oluşturuldu:', response);
             toggle();
+
+            setTriggerGetCustomers((prevState) => !prevState);
 
             // Handle any additional logic or state updates here
         } catch (error) {
@@ -165,7 +169,7 @@ const List = () => {
                 </Col>
             </Row>
             <Row>
-                <ContactDetails contact={contacts[1]} />
+                <ContactDetails contact={contacts[1]} customers={customers} setCustomers={setCustomers}/>
             </Row>
             {/* Displaying contacts horizontally in a 3x5 grid */}
 

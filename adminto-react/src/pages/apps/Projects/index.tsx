@@ -40,36 +40,27 @@ import { selectedSepet } from '../../../redux/sepet/actions';
 import { createKategori, getKategori, getKategoriler } from '../../../service/kategori';
 import { addProduct, getProducts, removeProduct, updateProduct } from '../../../service/urunler';
 import { set } from 'react-hook-form';
+import { createSepet, getSepet, removeCart, updateCart } from '../../../service/sepet';
 
 type SingleProjectProps = {
     searchOptions: any[];
 };
 
 const SingleProject = ({ searchOptions }: SingleProjectProps) => {
-    const [cartItems, setCartItems] = useState<any[]>([]);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
     const [products, setProducts] = useState<any[]>([]);
     const [state, setState] = useState<string>('');
     const { dispatch, appSelector } = useRedux();
     const [triggerGetProducts, setTriggerGetProducts] = useState<boolean>(false);
-    const [stockLabels, setStockLabels] = useState<{ [key: string]: string }>({});
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState<ProjectsList>();
     const [updatedData, setUpdatedData] = useState<any>({});
     const token = localStorage.getItem('token') || '';
+    const [sepet, setSepet] = useState<any[]>([]);
 
     useEffect(() => {
-        // Retrieve stock labels from localStorage
-        const storedStockLabels = localStorage.getItem('stockLabels');
-        if (storedStockLabels) {
-            setStockLabels(JSON.parse(storedStockLabels));
-        }
-    }, []);
-
-    useEffect(() => {
-        // Save stock labels to localStorage
-        localStorage.setItem('stockLabels', JSON.stringify(stockLabels));
-    }, [stockLabels]);
+        handleGetCartItems();
+    }, [setSepet]);
 
     useEffect(() => {
         handleGetProducts();
@@ -114,34 +105,49 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
             const stockStatus = checkStock(project.stock);
             updatedStockLabels[project.id] = stockStatus;
         });
-
-        setStockLabels(updatedStockLabels);
     };
 
     useEffect(() => {
         updateStockStatus();
     }, []);
 
-    const addToCart = (project: ProjectsList, quantity: number) => {
-        const exist = cartItems.find((x) => x.id === project.id);
-
-        if (exist) {
-            setCartItems(
-                cartItems.map((x) => (x.id === project.id ? { ...exist, quantity: exist.quantity + quantity } : x))
-            );
+    const addToCart = async (project: ProjectsList, quantity: number) => {
+        const existingCartItem = sepet.find((item) => item.products.id === project.id);
+        if (existingCartItem) {
+            const updatedCartItem = {
+                ...existingCartItem,
+                quantity: existingCartItem.quantity + quantity,
+            };
+            setSepet(sepet.map((item) => (item.products.id === project.id ? updatedCartItem : item)));
+            try {
+                await updateCartQuantity(existingCartItem.id, updatedCartItem.quantity);
+                console.log('Sepet güncellendi:', existingCartItem.id);
+            } catch (error) {
+                console.error('Sepet güncelleme hatası:', error);
+            }
         } else {
-            setCartItems([...cartItems, { ...project, quantity: quantity }]);
+            try {
+                console.log('Sepet oluşturuluyor:', project);
+                const response = await createSepet(project, quantity, token);
+                setSepet([...sepet, response]);
+                console.log('Sepet oluşturuldu:', response);
+            } catch (error) {
+                console.error('Sepet oluşturma hatası:', error);
+            }
         }
     };
 
-    const handleSelectQuantity = (value: string) => {
-        setSelectedQuantity(Number(value));
-    };
-    const handleSelectSepet = (sepet: ProjectsList[]) => {
-        dispatch(selectedSepet('sepet', cartItems));
+    const updateCartQuantity = async (cartItemId: number, quantity: number) => {
+        try {
+            await updateCart(cartItemId, quantity, token);
+        } catch (error) {
+            console.error('Hata:', error);
+        }
     };
 
-    const musteri = appSelector((state) => state.Musteriler.musteriler);
+    const handleSelectQuantity = async (value: string) => {
+        setSelectedQuantity(Number(value));
+    };
 
     const handleGetProducts = async () => {
         try {
@@ -171,6 +177,21 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
             setModalVisible(false);
         } catch (error) {
             console.error('Error updating product:', error);
+        }
+    };
+
+    const handleRemoveFromCart = async (id: number) => {
+        await removeCart(id, token);
+        setSepet(sepet.filter((item) => item.id !== id));
+    };
+
+    const handleGetCartItems = async () => {
+        try {
+            const response = await getSepet(token); // Fetch categories from the database
+            setSepet(response); // Update the search options with the formatted categories
+            console.log('Sepet:', response);
+        } catch (error) {
+            console.error('Error fetching categories:', error);
         }
     };
 
@@ -311,7 +332,7 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
                     </Col>
                 );
             })}
-            {cartItems.length >= 0 && (
+            {sepet.length >= 0 && (
                 <Col xl={12}>
                     <Card>
                         <Card.Body>
@@ -330,25 +351,25 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {cartItems.map((item, index) => {
+                                        {sepet.map((item, index) => {
                                             return (
                                                 <tr key={index.toString()}>
                                                     <td>
                                                         <img
-                                                            src={item.image}
-                                                            alt={item.title}
-                                                            title={item.title}
+                                                            src={item.products.image}
+                                                            alt={item.products.title}
+                                                            title={item.products.title}
                                                             className="avatar-sm"
                                                         />
                                                     </td>
                                                     <td>
-                                                        <h5 className="m-0">{item.title}</h5>
+                                                        <h5 className="m-0">{item.products.title}</h5>
                                                     </td>
                                                     <td
                                                         style={{
                                                             width: '200px',
                                                         }}>
-                                                        {item.customInputs.map((input: any, index: number) => (
+                                                        {item.products.customInputs.map((input: any, index: number) => (
                                                             <div key={index.toString()}>
                                                                 <h5 className="m-0">{input.key}</h5>
                                                                 <p className="m-0">{input.value}</p>
@@ -359,8 +380,8 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
                                                     <td>
                                                         <h5 className="m-0">{item.quantity}</h5>
                                                     </td>
-                                                    <td>{item.price}</td>
-                                                    <td>{item.price * item.quantity}</td>
+                                                    <td>{item.products.price}</td>
+                                                    <td>{item.products.price * item.quantity}</td>
                                                     <td>
                                                         <OverlayTrigger
                                                             placement="top"
@@ -368,11 +389,7 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
                                                             <Button
                                                                 variant="light"
                                                                 className="btn-sm"
-                                                                onClick={() =>
-                                                                    setCartItems(
-                                                                        cartItems.filter((x) => x.id !== item.id)
-                                                                    )
-                                                                }>
+                                                                onClick={() => handleRemoveFromCart(item.id)}>
                                                                 <i className="mdi mdi-close"></i>
                                                             </Button>
                                                         </OverlayTrigger>
@@ -395,10 +412,7 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
                                             to={{
                                                 pathname: `/pages/invoice/`,
                                             }}>
-                                            <Button
-                                                variant="success"
-                                                className="waves-effect waves-light"
-                                                onClick={() => handleSelectSepet(cartItems)}>
+                                            <Button variant="success" className="waves-effect waves-light">
                                                 <i className="mdi mdi-cash-multiple me-1"></i> Onayla
                                             </Button>
                                         </Link>
@@ -432,6 +446,11 @@ const Projects = () => {
     const [products, setProducts] = useState<any[]>([]);
 
     const token = localStorage.getItem('token') || '';
+
+    const categoryObject = {
+        id: '',
+        name: '',
+    };
 
     useEffect(() => {
         hangleGetKategoriler();
@@ -484,27 +503,25 @@ const Projects = () => {
                     (x) => x.toLowerCase() === searchInputValue.toLowerCase()
                 );
 
-                let categoryId = null;
-
                 if (!categoryExists) {
                     console.log('Yeni kategori oluşturuluyor:', searchInputValue);
                     const response = await createKategori(searchInputValue, token);
-                    setRes(response);
-                    categoryId = response.id;
-                    console.log('Yeni Kategori, ', categoryId);
+                    categoryObject.id = response.id;
+                    categoryObject.name = response.name;
                     console.log('Yeni kategori oluşturuldu:', response);
 
                     // Update the existing categories with the newly added category
                     setExistingKategoriler([...existingKategoriler, searchInputValue]);
                     setTriggerGetKategoriler(!triggerGetKategoriler);
                 } else {
-                    console.log('Bu kategori zaten mevcut:', searchInputValue);
                     const category = existingKategoriler.find(
                         (x) => x.toLowerCase() === searchInputValue.toLowerCase()
                     );
-                    const categoryObject = searchOptions.find((option) => option.name === category);
-                    categoryId = categoryObject.id;
-                    console.log('Kategori id ELSE:', categoryId);
+                    console.log('Kategori id:', category);
+                    const kategoriObject = searchOptions.find((option) => option.name === category);
+                    console.log('Kategori object:', kategoriObject);
+                    categoryObject.id = kategoriObject?.id;
+                    categoryObject.name = kategoriObject?.name;
                 }
 
                 // Save the product information to the database
@@ -514,7 +531,10 @@ const Projects = () => {
                     stock: stock,
                     description: description,
                     variant: stock >= 100 ? 'success' : stock < 100 ? 'warning' : stock === 0 ? 'danger' : 'danger',
-                    category: categoryId,
+                    categoryId: {
+                        id: categoryObject.id,
+                        name: categoryObject.name,
+                    },
                     customFields: customInputs,
                     image: 'avatar',
                 };
@@ -522,6 +542,8 @@ const Projects = () => {
 
                 // Perform the API request to save the product data to the database
                 await addProduct(productData, token);
+                
+
 
                 // Perform additional operations after saving the product, such as updating or reloading the product data
             } catch (error) {

@@ -1,31 +1,72 @@
 import { Constants } from '../links';
 
 export const createSiparis = async (siparisData: any, token: string) => {
+    const customerId = localStorage.getItem('customerId');
+    console.log(siparisData);
+    const variables = {
+        input: {
+            image: 'asd',
+            title: 'asdas',
+            categoryId: 1,
+            stateId: 1,
+            shortDesc:" siparisData.products.description",
+            variant: 'danger',
+            total: siparisData.price * siparisData.quantity,
+            products: siparisData.products.map((siparis:any) => {
+                return {
+             productId: siparis.products.id,
+             quantity: siparis.quantity
+            }
+            }),
+            customerId: 1,
+        }
+    };
+
+    console.log(variables)
+
     try {
         const query = `
-        mutation {
-            createOrder(createOrderInput: {
-              image: "${siparisData.image}","
-              title: "${siparisData.title}",
-              categoryId: "${siparisData.categoryId}",
-              stateId: "${siparisData.stateId}",
-              shortDesc: "${siparisData.shortDesc}",
-              price: "${siparisData.price}",
-              quantity: "${siparisData.quantity}",
-              variant: "${siparisData.variant}",
-              productId: "${siparisData.productId}",
-              customerId: "${siparisData.customerId}",
-            }) {
+        mutation CreateOrder($input: CreateOrderInput!) {
+            createOrder(createOrderInput: $input) {
+              id
               image
               title
-              categoryId
-              stateId
+              category{
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              state{
+                id
+                name
+                createdAt
+                updatedAt
+              }
               shortDesc
-              price
-              quantity
+              total
               variant
-              productId
-              customerId
+              customer{
+                id
+                name
+                email
+                phone
+                address
+                firmName
+                avatar
+                description
+                address
+                createdAt
+                updatedAt
+              }
+              products {
+                  id
+                  orderId
+                  quantity
+                  productId
+              }
+              createdAt
+              updatedAt
             }
           }
         `;
@@ -37,6 +78,7 @@ export const createSiparis = async (siparisData: any, token: string) => {
         },
         body: JSON.stringify({
             query,
+            variables,
         }),
         });
         const data = await response.json();

@@ -23,6 +23,8 @@ import avatar4 from '../../../assets/images/users/user-10.jpg';
 // dummy data
 import { contact, statisticsWidgets } from './data';
 import { members, reminder } from '../../apps/Contacts/Profile/data';
+import { useState } from 'react';
+import { CustomerData } from '../../../service/musteri';
 
 const Widgets = () => {
     // set pagetitle
@@ -40,6 +42,8 @@ const Widgets = () => {
             },
         ],
     });
+
+    const [customers, setCustomers] = useState<CustomerData[]>([]);
 
     return (
         <>
@@ -175,7 +179,7 @@ const Widgets = () => {
                     <TeamMembers members={members} />
                 </Col>
                 <Col xl={3} md={6}>
-                    <ContactDetails contact={contact} />
+                    <ContactDetails contact={contact} customers={customers} setCustomers={setCustomers} />
                 </Col>
                 <Col xl={3} md={6}>
                     <Progressbar />

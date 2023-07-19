@@ -12,13 +12,14 @@ import { getCustomers, CustomerData, deleteCustomer, updateCustomer } from '../s
 
 type ContactDetailsProps = {
     contact: Contact;
+    customers: CustomerData[];
+    setCustomers: React.Dispatch<React.SetStateAction<CustomerData[]>>;
 };
 //aS
 
-const ContactDetails = ({ contact }: ContactDetailsProps) => {
+const ContactDetails = ({ contact, customers, setCustomers}: ContactDetailsProps) => {
     const [selectedCustomer, setSelectedCustomer] = useState<CustomerData | null>(null);
     const { dispatch, appSelector } = useRedux();
-    const [customers, setCustomers] = useState<CustomerData[]>([]);
     const [showEditModal, setShowEditModal] = useState(false);
     const [updatedCustomerData, setUpdatedCustomerData] = useState<CustomerData | null>(null);
     const [avatar, setAvatar] = useState<File | null>(null);
@@ -32,7 +33,7 @@ const ContactDetails = ({ contact }: ContactDetailsProps) => {
 
     const handleSelectCustomer = (customer: CustomerData) => {
         setSelectedCustomer(customer);
-        console.log(customer);
+        localStorage.setItem('customerId', customer.id.toString());
         dispatch(selectedMusteri('musteri', customer));
     };
 
@@ -158,6 +159,9 @@ const ContactDetails = ({ contact }: ContactDetailsProps) => {
                                         <p className="text-muted font-13">
                                             <strong>Firma Adı : </strong>{' '}
                                             <span className="ms-2">{customer.firmName}</span>
+                                        </p>
+                                        <p className="text-muted font-13">
+                                            <strong>Açıklama : </strong> <span className="ms-2">{customer.description}</span>
                                         </p>
                                     </div>
                                     <Link

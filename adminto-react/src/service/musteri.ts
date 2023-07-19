@@ -217,3 +217,45 @@ export const createCustomer = async (customerData: CustomerData, token:string): 
     }
   };
 
+
+  export const getCustomer = async (customerId: number, token: string) => {
+    try {
+      const query = `
+      query {
+        customer(id: ${customerId}) {
+          id
+          name
+          email
+          phone
+          firmName
+          avatar
+          description
+          address
+          createdAt
+          updatedAt
+        }
+      }
+    `;
+      const response = await fetch(Constants.API, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          query,
+        }),
+      });
+
+      const result = await response.json();
+      console.log(result);
+
+      if (response.ok) {
+        return result.data.customer;
+      }
+      throw new Error(result.errors[0].message);
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };

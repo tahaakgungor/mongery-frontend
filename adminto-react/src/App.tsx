@@ -1,11 +1,16 @@
-// all routes
+import jwt_decode from 'jwt-decode';
 import Routes from './routes/Routes';
-
-// helpers
 import { configureFakeBackend } from './helpers';
-
-// For Default import Theme.scss
 import './assets/scss/Theme.scss';
+import { useEffect } from 'react';
+import { login } from './service/login';
+import useRedux from './hooks/useRedux';
+
+interface DecodedToken {
+    email: string;
+    password: string;
+    // Add other properties if needed
+}
 
 const App = () => {
     configureFakeBackend();

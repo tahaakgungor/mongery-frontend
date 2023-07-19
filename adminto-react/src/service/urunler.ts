@@ -11,39 +11,52 @@ export const addProduct = async (productData: any, token: string) => {
     };
   });
 
+  console.log(productData)
+
+  const categoryId = productData.categoryId.id
+  console.log(categoryId)
+
 
 
   try {
-    // GraphQL sorgusu
     const query = `
-    mutation CreateProduct($customInputs: [CustomInput!]) {
-      createProduct(createProductInput: {
-        image: "${productData.image}",
-        title: "${productData.name}",
-        categoryId: ${productData.category},
-        price: ${productData.price},
-        stock: ${productData.stock},
-        variant: "${productData.variant}",
-        description: "${productData.description}",
-        customInputs: $customInputs
-      }) {
+  mutation CreateProduct($customInputs: [CustomInput!], $categoryId: Int!) {
+    createProduct(createProductInput: {
+      image: "${productData.image}",
+      title: "${productData.name}",
+      categoryId: $categoryId,
+      price: ${productData.price},
+      stock: ${productData.stock},
+      variant: "${productData.variant}",
+      description: "${productData.description}",
+      customInputs: $customInputs
+    }) {
+      id
+      image
+      title
+      category {
         id
-        image
-        title
-        categoryId
-        price
-        stock
-        variant
-        description
-        customInputs {
-          key
-          value
-        }
-        createdAt
-        updatedAt
+        name
       }
+      price
+      stock
+      variant
+      description
+      customInputs {
+        key
+        value
+      }
+      createdAt
+      updatedAt
     }
-    `;
+  }
+`;
+
+const variables = {
+  customInputs: customInputs,
+  categoryId: categoryId,
+};
+
 
     // GraphQL isteği gönder
     const response = await fetch(Constants.API, {
@@ -54,10 +67,7 @@ export const addProduct = async (productData: any, token: string) => {
       },
       body: JSON.stringify({
         query,
-        variables: {
-          input: productData,
-          customInputs: customInputs,
-        },
+        variables: variables,
       }),
 
     });
@@ -77,6 +87,30 @@ export const addProduct = async (productData: any, token: string) => {
 
 export const getProducts = async (token: string) => {
   try {
+    const query = ` query {
+      products {
+        id
+        image
+        title
+        category {
+          id
+          name
+        }
+        price
+        stock
+        variant
+        description
+        customInputs {
+          key
+          value
+        }
+        createdAt
+        updatedAt
+      }
+    }
+    `;
+
+
     const response = await fetch(Constants.API, {
       method: 'POST',
       headers: {
@@ -84,26 +118,8 @@ export const getProducts = async (token: string) => {
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
-        query: `
-        query {
-          products {
-            id
-            image
-            title
-            categoryId
-            price
-            stock
-            variant
-            description
-            customInputs {
-              key
-              value
-            }
-            createdAt
-            updatedAt
-          }
-        }
-        `,
+        query,
+
       }),
     });
 
@@ -123,6 +139,12 @@ export const getProducts = async (token: string) => {
 export const removeProduct = async (id: number, token: string) => {
   try {
     console.log(id);
+    const query = `
+    mutation ($id: Int!) {
+      removeProduct(id: $id)
+    }
+    `;
+
     const response = await fetch(Constants.API, {
       method: 'POST',
       headers: {
@@ -130,11 +152,7 @@ export const removeProduct = async (id: number, token: string) => {
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
-        query: `
-        mutation ($id: Int!) {
-          removeProduct(id: $id)
-        }
-        `,
+        query,
         variables: {
           id: id,
         },

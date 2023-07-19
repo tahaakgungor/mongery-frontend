@@ -10,6 +10,8 @@ import { usePageTitle } from '../../hooks';
 import { invoiceDetails } from './data';
 import { useRedux } from '../../hooks';
 import { createSiparis } from '../../service/siparisler';
+import { getSepet } from '../../service/sepet';
+import { getCustomer } from '../../service/musteri';
 
 const Invoice = () => {
     // set pagetitle
@@ -33,9 +35,9 @@ const Invoice = () => {
 
     const token = localStorage.getItem('token') || '';
 
-    const [countProforma , setCountProforma] = useState(0);
+    const [countProforma, setCountProforma] = useState(0);
     const musteri = appSelector((state) => state.Musteriler.musteriler);
-    console.log(musteri)
+    console.log(musteri);
     const currentDate = new Date();
     const day = currentDate.getDate();
     const monthNames = [
@@ -58,18 +60,31 @@ const Invoice = () => {
     const formattedDate = `${day} ${month} ${year}`;
 
     const [proformaNumber, setProformaNumber] = useState(1);
+    const [customerInfo, setCustomerInfo] = useState<any>({});
 
     console.log(formattedDate);
 
     console.log(formattedDate);
 
-    const sepet = appSelector((state) => state.Sepet.sepet);
+    const [sepet, setSepet] = useState<any>([]);
+
+    const customerId = localStorage.getItem('customerId') || '';
+
+    const parsedCustomerId = parseInt(customerId);
+
+    useEffect(() => {
+        handleGetSepet();
+    }, [setSepet]);
     console.log(sepet);
     console.log(musteri);
     const itemCount = sepet.length;
 
+    useEffect(() => {
+        handleGetCustomer();
+    }, [setSepet]);
+
     // Calculate subtotal dynamically
-    const subTotal = sepet.reduce((total:any, item:any) => total + item.quantity * item.price, 0);
+    const subTotal = sepet.reduce((total: any, item: any) => total + item.quantity * item.products.price, 0);
 
     useEffect(() => {
         // Update the order number when a new order is created
@@ -77,47 +92,67 @@ const Invoice = () => {
     }, []);
 
     const handleSaveOrder = async () => {
-        try{
+        try {
             const data = {
-                customerId: musteri.id,
-                stateId: 'Hazırlanıyor',
+                customerId: parsedCustomerId,
+                stateId: 1,
                 createdAt: formattedDate,
-                productId: sepet,
+                products: sepet,
                 price: subTotal,
                 quantity: itemCount,
                 toplamFiyat: subTotal,
             };
-            await createSiparis(data, token);
-
-
-        }
-        catch (error) {
+            console.log(data);
+            const res = await createSiparis(data, token);
+            console.log(res);
+        } catch (error) {
             console.log(error);
         }
     };
 
+    // useEffect(() => {
+    //     // Listen for beforeunload event
+    //     const handleBeforeUnload = (event: any) => {
+    //         event.preventDefault();
+    //         // Prompt the user before leaving the page
+    //         event.returnValue = '';
+    //     };
 
-    useEffect(() => {
-        // Listen for beforeunload event
-        const handleBeforeUnload = (event:any) => {
-            event.preventDefault();
-            // Prompt the user before leaving the page
-            event.returnValue = '';
-        };
+    //     // Add beforeunload event listener
+    //     window.addEventListener('beforeunload', handleBeforeUnload);
 
-        // Add beforeunload event listener
-        window.addEventListener('beforeunload', handleBeforeUnload);
-
-        // Cleanup function to remove the event listener
-        return () => {
-            window.removeEventListener('beforeunload', handleBeforeUnload);
-        };
-    }, []);
+    //     // Cleanup function to remove the event listener
+    //     return () => {
+    //         window.removeEventListener('beforeunload', handleBeforeUnload);
+    //     };
+    // }, []);
 
     const handleFinishClick = () => {
         // Yönlendirmek istediğiniz sayfa yolunu buraya yazın
-        window.location.href = '/apps/siparisler';
-        setCountProforma(countProforma+1)
+
+        setCountProforma(countProforma + 1);
+        handleSaveOrder();
+        // window.location.href = '/apps/siparisler';
+    };
+
+    const handleGetSepet = async () => {
+        try {
+            const response = await getSepet(token);
+            console.log(response);
+            setSepet(response);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const handleGetCustomer = async () => {
+        try {
+            const response = await getCustomer(parsedCustomerId, token);
+            console.log(response);
+            setCustomerInfo(response);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -145,16 +180,15 @@ const Invoice = () => {
                                 <Col md={12}>
                                     <div className="float-start mt-3">
                                         <address>
-                                            <strong>{musteri.firmName}</strong>
+                                            <strong>{customerInfo.firmName}</strong>
                                             <br />
-                                            {musteri.address}
+                                            {customerInfo.address}
                                             <br />
-                                            <abbr title="Phone">Phone:</abbr> {musteri.phone}
+                                            <abbr title="Phone">Telefon:</abbr> {customerInfo.phone}
                                             <br />
-                                            
-                                            <abbr title="İsim">İsim:</abbr> {musteri.name}
+                                            <abbr title="İsim">İsim:</abbr> {customerInfo.name}
                                             <br />
-                                            <abbr title="Email">Email:</abbr> {musteri.email}
+                                            <abbr title="Email">Email:</abbr> {customerInfo.email}
                                         </address>
                                     </div>
                                     <div className="float-end mt-3">
@@ -187,25 +221,27 @@ const Invoice = () => {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {sepet.map((item:any, index:any) => {
+                                                {sepet.map((item: any, index: any) => {
                                                     return (
                                                         <tr key={item.id}>
                                                             <td>{index + 1}</td>
-                                                            <td>{item.title}</td>
+                                                            <td>{item.products.title}</td>
                                                             <td
-                                                                  style={{
-                                                                  width: '200px',
-                                                          }}>
-                                                  {item.customInputs.map((input: any, index: number) => (
-                                                  <div key={index.toString()}>
-                                                  <h5 className="m-0">{input.key}</h5>
-                                                    <p className="m-0">{input.value}</p>
-                                                    </div>
-                                                       ))}
-                                                    </td>
+                                                                style={{
+                                                                    width: '200px',
+                                                                }}>
+                                                                {item.products.customInputs.map(
+                                                                    (input: any, index: number) => (
+                                                                        <div key={index.toString()}>
+                                                                            <h5 className="m-0">{input.key}</h5>
+                                                                            <p className="m-0">{input.value}</p>
+                                                                        </div>
+                                                                    )
+                                                                )}
+                                                            </td>
                                                             <td>{item.quantity}</td>
-                                                            <td>{item.price}</td>
-                                                            <td>{item.quantity * item.price}</td>
+                                                            <td>{item.products.price}</td>
+                                                            <td>{item.quantity * item.products.price}</td>
                                                         </tr>
                                                     );
                                                 })}
@@ -227,18 +263,14 @@ const Invoice = () => {
                                         </small>
                                     </div>
                                 </Col>
-                                <Col
-                                    xs={6}
-                                    xl={{ offset: 3, span: 3 }}
-                                    className="col-xl-3 col-6 offset-xl-3"
-                                >
+                                <Col xs={6} xl={{ offset: 3, span: 3 }} className="col-xl-3 col-6 offset-xl-3">
                                     <p className="text-end">
                                         <b>Tutar:</b> {subTotal}
                                     </p>
-                                    
+
                                     <p className="text-end">KDV: {invoiceDetails.vat}%</p>
                                     <hr />
-                                    <h3 className="text-end">TL {subTotal*1.2}</h3>
+                                    <h3 className="text-end">TL {subTotal * 1.2}</h3>
                                 </Col>
                             </Row>
                             <hr />
@@ -249,14 +281,12 @@ const Invoice = () => {
                                         className="btn btn-dark waves-effect waves-light me-1"
                                         onClick={(e) => {
                                             window.print();
-                                        }}
-                                    >
+                                        }}>
                                         <i className="fa fa-print"></i>
                                     </Link>
                                     <button
                                         className="btn btn-primary waves-effect waves-light"
-                                        onClick={handleFinishClick}
-                                    >
+                                        onClick={handleFinishClick}>
                                         Bitir
                                     </button>
                                 </div>

@@ -11,7 +11,7 @@ export type AuthActionType = {
         | AuthActionTypes.LOGOUT_USER
         | AuthActionTypes.RESET
         | AuthActionTypes.SIGNUP_USER;
-    payload: {} | string;
+    payload: any;
 };
 
 export type UserData = {

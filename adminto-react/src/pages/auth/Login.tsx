@@ -10,7 +10,7 @@ import axios from 'axios';
 import { useRedux } from '../../hooks/';
 
 // actions
-import { resetAuth, loginUser } from '../../redux/actions';
+import { loginUser } from '../../redux/actions';
 
 // components
 import { VerticalForm, FormInput } from '../../components/form/';
@@ -67,6 +67,8 @@ const Login = () => {
     const [userLoggedIn, setUserLoggedIn] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [email, setEmail] = useState<UserData['email']>(''); // Define email state
+    const [password, setPassword] = useState<UserData['password']>('');
 
     const tok = appSelector((state) => state);
 
@@ -92,6 +94,8 @@ const Login = () => {
     const onSubmit = (formData: UserData) => {
         setLoading(true);
         setError('');
+        setPassword(formData['password']);
+        setEmail(formData['email']);
         handleLogin(formData['email'], formData['password']);
     };
 
@@ -100,7 +104,7 @@ const Login = () => {
             let token = await login(email, password);
             localStorage.setItem('token', token);
             dispatch(getToken('token', token));
-
+            dispatch(loginUser(email, password)); // Dispatch the loginUser action with email and password
             let verifiedToken = await verifyToken(token);
             console.log(verifiedToken);
 
