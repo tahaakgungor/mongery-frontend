@@ -17,7 +17,7 @@ type ContactDetailsProps = {
 };
 //aS
 
-const ContactDetails = ({ contact, customers, setCustomers}: ContactDetailsProps) => {
+const ContactDetails = ({ contact, customers, setCustomers }: ContactDetailsProps) => {
     const [selectedCustomer, setSelectedCustomer] = useState<CustomerData | null>(null);
     const { dispatch, appSelector } = useRedux();
     const [showEditModal, setShowEditModal] = useState(false);
@@ -134,7 +134,7 @@ const ContactDetails = ({ contact, customers, setCustomers}: ContactDetailsProps
                                 </Dropdown>
                                 <div>
                                     <img
-                                        src={customer.avatar}
+                                        src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
                                         alt="profileImage"
                                         className="rounded-circle avatar-xl img-thumbnail mb-2"
                                     />
@@ -159,9 +159,6 @@ const ContactDetails = ({ contact, customers, setCustomers}: ContactDetailsProps
                                         <p className="text-muted font-13">
                                             <strong>Firma Adı : </strong>{' '}
                                             <span className="ms-2">{customer.firmName}</span>
-                                        </p>
-                                        <p className="text-muted font-13">
-                                            <strong>Açıklama : </strong> <span className="ms-2">{customer.description}</span>
                                         </p>
                                     </div>
                                     <Link

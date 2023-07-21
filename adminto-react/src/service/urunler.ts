@@ -237,3 +237,52 @@ export const updateProduct = async (productData: any, token: string) => {
   }
 }
 
+export const updateStock = async (id: number, stock: number, token: string) => {
+  try {
+    // GraphQL sorgusu
+    const query = `
+    mutation {
+      updateProduct(updateProductInput: {
+        id: ${id},
+        stock: ${stock},
+      }) {
+        id
+        title
+        price
+        stock
+        variant
+        createdAt
+        updatedAt
+      }
+    }
+    `;
+
+    // GraphQL isteği gönder
+    const response = await fetch(Constants.API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        query,
+        variables: {
+          input: id,
+        },
+      }),
+
+    });
+
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    if (response.ok) {
+      return data.data.updateProduct;
+    }
+    throw new Error(data.errors[0].message);
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+

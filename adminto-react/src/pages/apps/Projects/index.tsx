@@ -44,11 +44,12 @@ import { createSepet, getSepet, removeCart, updateCart } from '../../../service/
 
 type SingleProjectProps = {
     searchOptions: any[];
+    products: any[];
+    setProducts: React.Dispatch<React.SetStateAction<any[]>>;
 };
 
-const SingleProject = ({ searchOptions }: SingleProjectProps) => {
+const SingleProject = ({ searchOptions, products, setProducts }: SingleProjectProps) => {
     const [selectedQuantity, setSelectedQuantity] = useState(1);
-    const [products, setProducts] = useState<any[]>([]);
     const [state, setState] = useState<string>('');
     const { dispatch, appSelector } = useRedux();
     const [triggerGetProducts, setTriggerGetProducts] = useState<boolean>(false);
@@ -64,7 +65,7 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
 
     useEffect(() => {
         handleGetProducts();
-    }, [triggerGetProducts]);
+    }, [setProducts, setTriggerGetProducts]);
     const checkStock = (stock: number) => {
         if (stock == 0) {
             return 'Stok Yok';
@@ -75,13 +76,14 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
         return 'Stok Var';
     };
 
-    const openEditModal = (product: ProjectsList) => {
+    const openEditModal = (product: any) => {
+        console.log('(80 PROD):', product);
         const prod = {
             id: product.id,
             title: product.title,
             price: product.price,
-            stock: product.quantity,
-            description: product.shortDesc,
+            stock: product.stock,
+            description: product.description,
             variant: product.quantity >= 100 ? 'success' : product.variant,
         };
         setModalVisible(true);
@@ -163,9 +165,10 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
         return category ? category.name : '';
     };
 
-    const handleRemoveProduct = (id: number) => {
-        removeProduct(id, token);
-        setTriggerGetProducts(!triggerGetProducts);
+    const handleRemoveProduct = async (id: number) => {
+        console.log('remove', id);
+        await removeProduct(id, token);
+        setProducts(products.filter((item) => item.id !== id));
     };
 
     const handleUpdateProduct = async () => {
@@ -173,10 +176,10 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
             setSelectedProduct({ ...selectedProduct, ...updatedData });
             console.log('Güncellenen Ürün:', updatedData);
             await updateProduct(updatedData, token);
-            setTriggerGetProducts(!triggerGetProducts);
+
             setModalVisible(false);
         } catch (error) {
-            console.error('Error updating product:', error);
+            console.error('Ürün güncelleme hatası:', error);
         }
     };
 
@@ -243,7 +246,7 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
                                                 <Form.Control
                                                     type="text"
                                                     name="stock"
-                                                    value={updatedData.stock || ''}
+                                                    value={updatedData.stock}
                                                     onChange={handleInputChange}
                                                 />
                                             </Form.Group>
@@ -356,7 +359,7 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
                                                 <tr key={index.toString()}>
                                                     <td>
                                                         <img
-                                                            src={item.products.image}
+                                                            src="https://w7.pngwing.com/pngs/346/530/png-transparent-wire-mesh-fence-wire-mesh-fence-blocked-isolated-garden-fence-wire-braid-fenced-enclosure.png"
                                                             alt={item.products.title}
                                                             title={item.products.title}
                                                             className="avatar-sm"
@@ -402,7 +405,7 @@ const SingleProject = ({ searchOptions }: SingleProjectProps) => {
                             </div>
                             <Row>
                                 <Col sm={6}>
-                                    <Link to="#" className="btn btn-secondary waves-effect waves-light">
+                                    <Link to="/apps/contacts" className="btn btn-secondary waves-effect waves-light">
                                         <i className="mdi mdi-arrow-left"></i> Geri
                                     </Link>
                                 </Col>
@@ -541,9 +544,9 @@ const Projects = () => {
                 console.log('Ürün kaydediliyor:', productData);
 
                 // Perform the API request to save the product data to the database
-                await addProduct(productData, token);
-                
+                const response = await addProduct(productData, token);
 
+                setProducts([...products, response]);
 
                 // Perform additional operations after saving the product, such as updating or reloading the product data
             } catch (error) {
@@ -684,7 +687,7 @@ const Projects = () => {
                     </Button>
                 </Col>
             </Row>
-            <SingleProject searchOptions={searchOptions} />
+            <SingleProject searchOptions={searchOptions} products={products} setProducts={setProducts} />
         </>
     );
 };

@@ -12,6 +12,7 @@ import { useRedux } from '../../hooks';
 import { createSiparis } from '../../service/siparisler';
 import { getSepet } from '../../service/sepet';
 import { getCustomer } from '../../service/musteri';
+import { updateProduct, updateStock } from '../../service/urunler';
 
 const Invoice = () => {
     // set pagetitle
@@ -105,27 +106,18 @@ const Invoice = () => {
             console.log(data);
             const res = await createSiparis(data, token);
             console.log(res);
+
+            for (const item of sepet) {
+                const updatedStock = item.products.stock - item.quantity;
+                console.log(updatedStock);
+                // Ürünün stok sayısını güncelleme işlemini yapmak için ilgili servisi kullanabilirsiniz
+                await updateStock(item.products.id, updatedStock, token);
+            }
         } catch (error) {
             console.log(error);
         }
     };
 
-    // useEffect(() => {
-    //     // Listen for beforeunload event
-    //     const handleBeforeUnload = (event: any) => {
-    //         event.preventDefault();
-    //         // Prompt the user before leaving the page
-    //         event.returnValue = '';
-    //     };
-
-    //     // Add beforeunload event listener
-    //     window.addEventListener('beforeunload', handleBeforeUnload);
-
-    //     // Cleanup function to remove the event listener
-    //     return () => {
-    //         window.removeEventListener('beforeunload', handleBeforeUnload);
-    //     };
-    // }, []);
 
     const handleFinishClick = () => {
         // Yönlendirmek istediğiniz sayfa yolunu buraya yazın
@@ -154,6 +146,7 @@ const Invoice = () => {
             console.log(error);
         }
     };
+
 
     return (
         <Row>
@@ -214,7 +207,7 @@ const Invoice = () => {
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Ürün</th>
-                                                    <th>Açıklama</th>
+                                                    <th>Özellikler</th>
                                                     <th>Adet</th>
                                                     <th>Birim Fiyat</th>
                                                     <th>Toplam</th>
@@ -284,11 +277,13 @@ const Invoice = () => {
                                         }}>
                                         <i className="fa fa-print"></i>
                                     </Link>
-                                    <button
-                                        className="btn btn-primary waves-effect waves-light"
-                                        onClick={handleFinishClick}>
-                                        Bitir
-                                    </button>
+                                    <Link to="/apps/siparisler">
+                                        <button
+                                            className="btn btn-primary waves-effect waves-light"
+                                            onClick={handleFinishClick}>
+                                            Bitir
+                                        </button>
+                                    </Link>
                                 </div>
                                 <div className="clearfix"></div>
                             </div>

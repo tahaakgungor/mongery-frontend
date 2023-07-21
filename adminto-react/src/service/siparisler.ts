@@ -5,20 +5,15 @@ export const createSiparis = async (siparisData: any, token: string) => {
     console.log(siparisData);
     const variables = {
         input: {
-            image: 'asd',
-            title: 'asdas',
-            categoryId: 1,
             stateId: 1,
-            shortDesc:" siparisData.products.description",
             variant: 'danger',
-            total: siparisData.price * siparisData.quantity,
             products: siparisData.products.map((siparis:any) => {
                 return {
              productId: siparis.products.id,
              quantity: siparis.quantity
             }
             }),
-            customerId: 1,
+            customerId: Number(customerId),
         }
     };
 
@@ -29,22 +24,12 @@ export const createSiparis = async (siparisData: any, token: string) => {
         mutation CreateOrder($input: CreateOrderInput!) {
             createOrder(createOrderInput: $input) {
               id
-              image
-              title
-              category{
-                id
-                name
-                createdAt
-                updatedAt
-              }
               state{
                 id
                 name
                 createdAt
                 updatedAt
               }
-              shortDesc
-              total
               variant
               customer{
                 id
@@ -98,16 +83,44 @@ export const getSiparisler = async (token: string) => {
         query {
             orders {
               id
-              image
-              title
-              categoryId
-              stateId
-              shortDesc
-              price
-              quantity
+              customer {
+                  id
+                  name
+                  email
+                  firmName
+              }
+              state {
+                  id
+                  name
+              }
+              total
               variant
-              productId
-              customerId
+              products {
+                  orderId
+                  productId
+                  quantity
+                  product {
+                      price
+                      title
+                      createdAt
+                      updatedAt
+                      category {
+                          id
+                          name
+                      }
+                      customInputs {
+                          key
+                          value
+                      }
+                  }
+              }
+              invoice {
+                  fileName
+                  mimeType
+                  proforma
+              }
+              createdAt
+              updatedAt
             }
           }
 
@@ -132,3 +145,100 @@ export const getSiparisler = async (token: string) => {
         console.log(error);
     }
 }
+
+export const updateSiparis = async (id: number, stateId: number, token: string) => {
+    try {
+      const query = `
+        mutation UpdateOrder($input: UpdateOrderInput!) {
+          updateOrder(updateOrderInput: $input) {
+            id
+            state {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            variant
+            customer {
+              id
+              name
+              email
+              phone
+              address
+              firmName
+              avatar
+              description
+              address
+              createdAt
+              updatedAt
+            }
+            products {
+              id
+              orderId
+              quantity
+              productId
+            }
+            createdAt
+            updatedAt
+          }
+        }
+      `;
+      const response = await fetch(Constants.API, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          query,
+          variables: {
+            input: {
+              id: id, // Update variable name to "id"
+              stateId: stateId,
+              variant: 'danger',
+            },
+          },
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+      if (data.errors) {
+        throw new Error(data.errors[0].message);
+      }
+      return data.data.updateOrder;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  export const deleteSiparis = async (id: number, token: string) => {
+    try {
+      const query = `
+      mutation RemoveOrder($orderId: Int!) {
+        removeOrder(id: $orderId)
+      }
+      `;
+      const response = await fetch(Constants.API, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          query,
+            variables: {
+                orderId: id,
+            },
+        }),
+        });
+        const data = await response.json();
+        console.log(data);
+        if (data.errors) {
+            throw new Error(data.errors[0].message);
+        }
+        return data.data.removeOrder;
+    } catch (error) {
+        console.log(error);
+    }
+    };
+    
