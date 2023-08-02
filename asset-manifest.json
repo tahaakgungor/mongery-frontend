@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mongery-frontend/static/css/main.0c2bd7c4.css",
-    "main.js": "/mongery-frontend/static/js/main.19685cf0.js",
+    "main.js": "/mongery-frontend/static/js/main.b8aa3580.js",
     "static/js/4498.721e8d31.chunk.js": "/mongery-frontend/static/js/4498.721e8d31.chunk.js",
     "static/js/7539.b3119a87.chunk.js": "/mongery-frontend/static/js/7539.b3119a87.chunk.js",
     "static/js/3606.dd3e5a83.chunk.js": "/mongery-frontend/static/js/3606.dd3e5a83.chunk.js",
@@ -199,7 +199,7 @@
     "static/media/icon-minus-gray.svg": "/mongery-frontend/static/media/icon-minus-gray.fedf0680e4cc60b17e14.svg",
     "index.html": "/mongery-frontend/index.html",
     "main.0c2bd7c4.css.map": "/mongery-frontend/static/css/main.0c2bd7c4.css.map",
-    "main.19685cf0.js.map": "/mongery-frontend/static/js/main.19685cf0.js.map",
+    "main.b8aa3580.js.map": "/mongery-frontend/static/js/main.b8aa3580.js.map",
     "4498.721e8d31.chunk.js.map": "/mongery-frontend/static/js/4498.721e8d31.chunk.js.map",
     "7539.b3119a87.chunk.js.map": "/mongery-frontend/static/js/7539.b3119a87.chunk.js.map",
     "3606.dd3e5a83.chunk.js.map": "/mongery-frontend/static/js/3606.dd3e5a83.chunk.js.map",
@@ -314,6 +314,6 @@
   },
   "entrypoints": [
     "static/css/main.0c2bd7c4.css",
-    "static/js/main.19685cf0.js"
+    "static/js/main.b8aa3580.js"
   ]
 }
